@@ -8,10 +8,8 @@ navbar:
       href: about.html
     - text: "Raspored"
       href: schedule.html
-    - text: "Ocjenjivanje"
-      href: evaluation.html
-    - text: "Resursi"
-      href: resources.html
+    - text: "Literatura"
+      href: literatura.html
     - text: "Predavanja"
       menu:
         - text: "Uvod u kolegij"
@@ -35,8 +33,11 @@ navbar:
         - text: "ANOVA"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/10_ANOVA.html"
         - text: "Linearna regresija"
-          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/11_REG.html"
-        - text: "Faktorska ANOVA"  
+        
+    - text: "Ocjenjivanje"
+      href: evaluation.html
+    - text: "Resursi"
+      href: resources.html   
         
   right:
     - text: "O stranici"
