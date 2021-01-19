@@ -13,7 +13,31 @@ navbar:
     - text: "Resursi"
       href: resources.html
     - text: "Predavanja"
-     
+      menu:
+        - text: "Uvod u kolegij"
+          href: "https://github.com/BrbanMiro/Statistika/blob/main/Moduli/01_UVOD.pdf"
+        - text: "Uvod u R"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/02_UVOD_U_R.pdf" 
+        - text: "DEskriptivna statistika"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/03_DESKRIPTIVNA_STATISTIKA_xar.html"
+        - text: "Grafikoni i vizualizacije"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/04_GRAFIKONI_I_VIZUALIZACIJE_xar.html"
+        - text: "Distribucije"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/05_VJEROJATNOST.html"
+        - text: "Uzorak i populacija"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/06_UZORAK_POPULACIJA.html"
+        - text: "Testiranje hipoteza"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/07_HIPOTEZE.html"
+        - text: "Kategorijalna analiza"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/08_KATEGORIJALNA_ANALIZA.html"
+        - text: "Usporedba prosjeka"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/09_USPOREDBA_PROSJEKA.html"
+        - text: "ANOVA"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/10_ANOVA.html"
+        - text: "Linearna regresija"
+          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/11_REG.html"
+        - text: "Faktorska ANOVA"  
+        
   right:
     - text: "O stranici"
       href: site-info.html
