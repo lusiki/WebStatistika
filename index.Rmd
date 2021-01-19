@@ -1,0 +1,56 @@
+---
+pagetitle: "Osnovne informacije"
+---
+<br>
+<br>
+<br>
+
+# PRIMJENA STATISTIKE U DRUŠTVENIM ISTRAŽIVANJIMA
+
+<br>
+<br>
+
+Dobrodošli na stranice kolegija <b>Primjena statistike u društvenim istraživanjima</b> koji u zimskom semestru, 2020/21 izvodi [Luka Šikić](https://www.lukasikic.info/), PhD na Fakultetu hrvatskih studija u Zagrebu. Kolegij je prvenstveno namijenjen studentima sociologije na preddiplomskoj razini, a može koristiti svim studentima društvenih i humanističkih smjerova koji su upoznati sa osnovama statistike.
+
+
+<p align="center">
+  <img src="Foto/avatar.jpg" width="550" title="hover text">
+</p>
+
+
+## Raspored 
+
+<b>Predavanja</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ponedjeljkom,&nbsp;16:00–17:30
+<br><b>Vježbe</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ponedjeljkom,&nbsp;17:30–19:00
+<br><b>Konzultacije</b>&nbsp;&nbsp;&nbsp;Četvrtkom,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17:30-18:30
+
+### Predavač
+
+[Luka Šikić](https://www.lukasikic.info/), Ph.D.</br>
+Hrvatski studiji, Katedra za sociologiju</br>
+
+### Kontakt
+
+00 385 98 162 30 52</br>
+lsikic@hrstud.hr</br>
+
+
+## Knjige
+
+Koristiti ćemo tri knjige.
+
+<a href="https://www.fon.hum.uva.nl/paul/lot2015/Navarro2014.pdf">Learning statistics with R (LSR)</a>
+<br><i>od Danielle Navarro.</i> 
+<br>Ovo je glavna literatura. <a href = "https://learningstatisticswithr.com/">Pogledajte</a> i dodatne materijale koji prate knjigu. Dostupna je i <a href="https://learningstatisticswithr.com/book/">bookdown</a> verzija.
+
+
+<a href="https://www.superknjizara.hr/?page=knjiga&id_knjiga=90301">Osnovne statističke metode za nematematičare</a>
+<br><i>od Boris Petz.</i> 
+<br>Ovo je također glavna literatura i preporuča se studentima koji ne polože ispit preko kolokvija.
+
+
+<a href="http://daviddalpiaz.github.io/appliedstats/applied_statistics.pdf">Applied Statistics with R</a>
+<br><i>od David Dalpiaz.</i> 
+<br>Ovo je dodatna literatura za one koji žele znati više. Dostupna je i <a href="http://daviddalpiaz.github.io/appliedstats/">bookdown</a> verzija.
+
+

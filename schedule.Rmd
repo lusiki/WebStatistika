@@ -1,0 +1,141 @@
+---
+title: "Raspored predavanja"
+---
+
+<br>
+<br>
+
+## Predavanje 01: Pregled kolegija i studentskih obveza
+
+- Uvod u kolegij
+- Potrebe, interesi i ciljevi
+- Rasprava: Zašto (podatkovna) znanost?
+- Software 
+    
+    
+## Predavanje 02: Uvod u R
+
+
+- Radni prostor
+- Osnovne naredbe
+- Funkcije
+- Vektori
+- Logički operatori
+
+
+
+## Predavanje 03: Deskriptivna statistika
+
+
+
+- Podatci
+- Mjere centralne tendencije
+- Mjere varijabilnosti
+- Mjere asimetrije i zaobljenosti
+- Pregled varijabli i skupova podataka
+- Standardizirane vrijednostii
+- Korelacija
+
+## Predavanje 04: Vizualizacija podataka
+
+
+- Vizualizacija, alati i podrška 
+- Izrada jednostavnog grafikona
+- Histogram
+- Box-plot
+- Prikaz korelacije
+- Dijagram rasipanja
+- Stupčasti grafikon
+
+
+## Predavanje 05: Distribucije
+
+
+- Deskriptivna vs. inferencijalna statistika
+- Binomna distribucija
+- Standardna distribucija
+- Druge često korištene distribucije
+
+## Predavanje 06: Uzorak i populacija
+
+
+- Uzorak i populacija
+- Procjena prosjeka i standardne devijacije populacije
+- Sampling distribucije
+- Teorem centralne tendencije
+- Intervali pouzdanosti
+
+
+## Predavanje 07: Testiranje hipoteza
+
+
+- Vrste pogrešaka
+- Testna statistika i sampling distribucija
+- Kritičke vrijednosti i granice
+- p-vrijednosti
+- Interpretacija rezultata
+- Testiranje hipoteza u R
+- Efekt veličine i snaga testa
+- Dodatni koncepti
+
+
+## Predavanje 08: Kategorijalna analiza
+
+
+- Goodness-of-fit test
+- Test nezavisnosti
+- Korekcija kontinuiranosti
+- Efekt veličine
+- Pretpostavke testa
+- Izvođenje chi-sq testova u R
+- Fisherov test za male uzorke
+- McNemarov test zavisnih uzoraka
+
+## Predavanje 09: Usporedba prosjeka
+
+
+- z-test
+- t-test
+- t-test u nezavisnim uzorcima
+- t-test u zavisnim uzorcima
+- Jednostrani testovi
+- Izvođenje t-testova u R
+- Efekt veličine
+- Provjera normalnosti distribucije
+
+## Predavanje 10: ANOVA
+
+
+- ANOVA
+- ANOVA u R
+- Efekt veličine
+- Post hoc testovi
+- Pretpostavke jednostrane ANOVA-e
+- Homogenost varijance
+- Normalnost distribucije
+
+## Predavanje 11: Linearna regresija
+
+
+- Linearna regresija
+- Multivarijatna linearna regresija
+- Karakteristike procijenjenog modela
+- Testiranje hipoteza
+- Pretpostavke modela
+- Provjera modela
+- Izbor parametara modela
+
+## Predavanje 12: Faktorska ANOVA
+
+
+- Faktorska ANOVA (balansirani dizajn;bez interakcija)
+- Faktorska ANOVA (balansirani dizajn;interakcije)
+- Efekt veličine
+- Provjera pretpostavki
+- Faktorska ANOVA (nebalansirani dizajn)
+
+<br>
+<br>
+<br>
+
+

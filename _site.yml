@@ -1,0 +1,27 @@
+name: "Statistika" 
+navbar:
+  title: "Stats 102"
+  left:
+    - text: "Osnovne informacije"
+      href: index.html
+    - text: "O kolegiju"
+      href: about.html
+    - text: "Raspored"
+      href: schedule.html
+    - text: "Ocjenjivanje"
+      href: evaluation.html
+    - text: "Resursi"
+      href: resources.html
+    - text: "Predavanja"
+     
+  right:
+    - text: "O stranici"
+      href: site-info.html
+    - icon: ion-social-github
+      href: https://github.com/BrbanMiro/Statistika
+output_dir: "docs"
+output:
+  html_document:
+    theme: flatly
+    highlight: textmate
+    

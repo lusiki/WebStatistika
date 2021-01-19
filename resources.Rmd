@@ -1,0 +1,103 @@
+---
+title: "Resursi"
+---
+<br>
+<br>
+
+### R
+
+<ul>
+<li><a href="https://education.rstudio.com/learn/">RStudio: Finding Your Way To R</a></li>
+<li><a href="https://www.datacamp.com/courses/free-introduction-to-r">DataCamp's Introduction to R</a></li>
+<li>
+<a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li><a href="https://swirlstats.com/">Učenje R u Swirl-u</a></li>
+<li><a href="https://www.r-bloggers.com/">R bloggers</a></li>
+<li><a href="http://adv-r.had.co.nz/">Advanced R</a></li>
+<li><a href="https://cran.r-project.org/web/views/SocialSciences.html">CRAN Task View:Statistics for the Social Science</a></li
+</ul>
+
+### Popularne knjige iz statistike
+
+<ul>
+<li><a href="https://www.pdfdrive.com/penguin-books-how-to-lie-with-statistics-darrell-huff-e119748826.html">How to lie with statistics</a></li>
+<li><a href="https://www.bookdepository.com/Art-Statistics-David-Spiegelhalter/9780241258767?pdg=dsa-19959388920:cmp-8862937091:adg-86528077382:crv-411135277650:pos-:dev-c&gclid=CjwKCAjwiOv7BRBREiwAXHbv3LXBoXSa-a8cNTrV3aewUF0MkjMZRiknrYma4gIeWYxwf4eiV9obQBoC2EAQAvD_BwEl">The Art of Statistics: Learning from Data</a></li>
+<li><a href="https://www.amazon.com/How-Make-World-Add-Up/dp/1408712245">How-Make-World-Add-Up</a></li>
+<ul>
+
+
+### Ostalo
+
+<ul>
+<li><a href="https://towardsdatascience.com/best-data-science-blogs-to-follow-in-2020-d03044169eb4">Data science blogovi</a></li>
+<li><a href="https://towardsdatascience.com/data-science-books-you-should-read-in-2020-358f70e1d9b2">Data science knjige</a></li>
+<li><a href="https://rpubs.com/shichich">Prošlogodišnja predavanja</a></li>
+<ul>
+
+
+### Zanimljivosti
+
+<ul>
+<li><a href="https://stackoverflow.blog/2017/10/10/impressive-growth-r/">Popularizacija R</a></li>
+<li><a href="http://r4stats.com/articles/popularity/"> Software za Data Science</a></li>
+<ul>
+
+### GitHub repozitoriji
+
+- [Jupyter notebook resources](https://github.com/psu-psychology/jupyter-resources)
+- [Shiny resources](https://github.com/psu-psychology/shiny-resources)
+- [R Markdown ioslides resources](https://github.com/psu-psychology/rmarkdown-ioslides)
+- [Websites in R Markdown](https://github.com/psu-psychology/rmarkdown-website-template)
+- [jsPsych resources](https://github.com/psu-psychology/jsPsych-resources)
+
+
+### Online kolegiji
+
+- [RStudio.conf](https://rstudio.com/conference/)
+    - [GitHub repo for 2020 conference](https://github.com/rstudio/rstudio-conf)
+- [Data Carpentry](https://datacarpentry.org/), now [The Carpentries](https://carpentries.org/)
+    - [OpenRefine for Social Science Data](https://datacarpentry.org/openrefine-socialsci/) by Data Carpentry.
+    - [R for Reproducible Scientific Analysis](http://swcarpentry.github.io/r-novice-gapminder/)
+    - [Programming with Python](http://swcarpentry.github.io/python-novice-inflammation/)
+    - [Plotting and Programming in Python](http://swcarpentry.github.io/python-novice-gapminder/)
+    - [Version Control with Git](http://swcarpentry.github.io/git-novice/)
+    
+### Korisne knjige
+
+- Chang, W. (2012). *R Graphics Cookbook*. <http://ase.tufts.edu/bugs/guide/assets/R%20Graphics%20Cookbook.pdf>
+- Gandrud, C. (2015). *Reproducible Research with R and R Studio, Second Edition*. CRC Press. <https://www.crcpress.com/Reproducible-Research-with-R-and-R-Studio-Second-Edition/Gandrud/p/book/9781498715379>
+- VanderPlas, J. (2016). *Python Data Science Handbook*. <https://jakevdp.github.io/PythonDataScienceHandbook/>
+- Wickham, H. & Grolemund, G. (2016). *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly Media. <http://shop.oreilly.com/product/0636920034407.do>.
+- Wickham, H. (2019). *Advanced R, 2nd Ed*. Chapman & Hall/CRC. <https://adv-r.hadley.nz/>. 
+- Xie, Y., Allaire, J.J., & Grolemund, G. (2019). *R Markdown: The Definitive Guide*. Chapman & Hall/CRC. <https://bookdown.org/yihui/rmarkdown/>.
+
+### Blogovi i projekti
+
+- R bloggers <https://www.r-bloggers.com/>
+- Open science in practice. <https://inattentionalcoffee.wordpress.com/2017/01/03/open-science-in-practice/>
+- Practicing what I preach: The open Ph.D. experiment. <http://www.librarianinthecity.com/2016/12/practicing-what-i-preach-the-open-phd-experiment/>
+- [Open Stats Lab](https://sites.trinity.edu/osl). Use data published with psychology papers to teach statistics.
+- Jupyter, Zeppelin, Beaker: The Rise of the Notebooks. <https://opendatascience.com/blog/jupyter-zeppelin-beaker-the-rise-of-the-notebooks/>
+- Open science and free culture. <http://www.simoncolumbus.com/publications-2/open-science-and-free-culture/>
+- [Collaborative Replications and Education Project (CREP)](https://osf.io/wfc6u/).
+
+### Software
+
+- OpenRefine, <https://openrefine.org>
+- LaTeX on the web
+    - ShareLaTex <http://sharelatex.com>
+    - Overleaf <http://www.overleaf.com>
+    - Authorea <http://www.authorea.com>
+- Experimental Design Assistant for planning animal studies <https://eda.nc3rs.org.uk/>
+- p-hacker Shiny app <http://shinyapps.org/apps/p-hacker/>
+
+### Članci
+
+- Schweinsberg, M., Madan, N., Vianello, M., Sommer, S. A., Jordan, J., Tierney, W., … Uhlmann, E. L. (2016). The pipeline project: Pre-publication independent replications of a single laboratory’s research pipeline. Journal of Experimental Social Psychology, 66, 55–67. <https://doi.org/10.1016/j.jesp.2015.10.001>
+- Munafò, M. R., Nosek, B. A., Bishop, D. V. M., Button, K. S., Chambers, C. D., Sert, N. P. du, … Ioannidis, J. P. A. (2017). A manifesto for reproducible science. Nature Human Behaviour, 1, 0021. <https://doi.org/10.1038/s41562-016-0021>.
+- Poldrack, R. A., Baker, C. I., Durnez, J., Gorgolewski, K. J., Matthews, P. M., Munafò, M. R., … Yarkoni, T. (2017). Scanning the horizon: towards transparent and reproducible neuroimaging research. Nature Reviews Neuroscience, advance online publication. <https://doi.org/10.1038/nrn.2016.167>.
+
+<br>
+<br>
+<br>
+
