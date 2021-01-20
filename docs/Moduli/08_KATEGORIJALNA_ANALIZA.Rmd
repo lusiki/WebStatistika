@@ -633,16 +633,14 @@ knitr::kable(tibble::tribble(
 .hi[**Formuliraj testnu statistiku**]
 
 
-$${{E}}_{ij} = C_j \times P_i$$
 <br>
 
 $$\hat{P}_i = \frac{R_i}{N}$$ 
 <br>
 
-$${{E}}_{ij} = \frac{R_i \times C_j}{N}$$
 <br>
 
-$$X^2 = \sum_{i=1}^r\sum_{j=1}^c\frac{({E}_{ij} - O_{ij})^2}{{E}_{ij}}$$
+$$X^2 = \sum_{i=1}^r\sum_{j=1}^c\frac{({E}_{ij} - O_{ij})^2}{{E}}_{ij}}$$
 
 ---
 .hi[**Stupnjevi slobode kod testa nezavisnosti**]
