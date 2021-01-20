@@ -20,7 +20,7 @@ navbar:
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/03_DESKRIPTIVNA_STATISTIKA_xar.html"
         - text: "Grafikoni i vizualizacije"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/04_GRAFIKONI_I_VIZUALIZACIJE_xar.html"
-        - text: "Viyualiyacijski paket ggplot2"
+        - text: "Vizualizacijski paket ggplot2"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/04_GRAFIKONI_I_VIZUALIZACIJE_DODATNO_xar.html"  
         - text: "Distribucije"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/05_VJEROJATNOST.html"
@@ -36,7 +36,7 @@ navbar:
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/10_ANOVA.html"
         - text: "Linearna regresija"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/11_REG.html"
-    - text: "Obavjesti"
+    - text: "Obavijesti"
       href: news.html     
     - text: "Resursi"
       href: resources.html   
