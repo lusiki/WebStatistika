@@ -5,6 +5,8 @@ title: " "
 <br>
 <br>
 
+*Napomena*: .html i .Rmd formati predavanja su dostupni u [repozitoriju](https://github.com/BrbanMiro/WebStatistika). 
+
 ## Predavanje 01: Pregled kolegija i studentskih obveza
 
 - Uvod u kolegij
@@ -23,7 +25,6 @@ title: " "
 - Logički operatori
 
 
-<b>Format predavanja:</b> <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/01_UVOD.Rmd">.html</a> | <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/01_UVOD.pdf">.pdf</a> | <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/02_UVOD_U_R.Rmd">.Rmd</a> (+ Dodatni koncepti R: <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/02_DODATNI_KONCEPTI_R.html">.html</a> | <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/02_DODATNI_KONCEPTI_R.pdf">.pdf</a> | <a href="https://github.com/BrbanMiro/WebStatistika/blob/main/Moduli/02_DODATNI_KONCEPTI_R.Rmd">.Rmd</a>)
 <br><b>Čitanje: </b><a href="https://www.srce.unizg.hr/files/srce/docs/edu/R/s720_polaznik.pdf">Uvod u R - skripta I</a> + </b><a href="https://cran.r-project.org/doc/contrib/Kasum+Legovic-UvodUr.pdf">Uvod u R - skripta II</a> + </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR, poglavlja 3 i 4</a>
 
 
@@ -41,7 +42,6 @@ title: " "
 - Korelacija
 
 
-<b>Format predavanja:</b>  <a href="/Moduli/03_DESKRIPTIVNA_STATISTIKA_xar.html">.html</a> | <a href="/Moduli/03_DESKRIPTIVNA_STATISTIKA_xar.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 5.</a>
 
 
@@ -56,7 +56,7 @@ title: " "
 - Dijagram rasipanja
 - Stupčasti grafikon
 
-<b>Format predavanja:</b> <a href="/Moduli/04_GRAFIKONI_I_VIZUALIZACIJE_xar.html">.html</a> | <a href="/Moduli/04_GRAFIKONI_I_VIZUALIZACIJE_xar.Rmd">.Rmd</a>
+
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 6.</a>
 
 
@@ -69,7 +69,6 @@ title: " "
 - Druge često korištene distribucije
 
 
-<b>Format predavanja:</b> <a href="/Moduli/05_VJEROJATNOST.html">.html</a> | <a href="/Moduli/05_VJEROJATNOST..Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 9.</a>
 
 
@@ -81,7 +80,6 @@ title: " "
 - Teorem centralne tendencije
 - Intervali pouzdanosti
 
-<b>Format predavanja:</b> <a href="/Moduli/06_UZORAK_POPULACIJA.html">.html</a> | <a href="/Moduli/06_UZORAK_POPULACIJA.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 10.</a>
 
 
@@ -97,7 +95,7 @@ title: " "
 - Efekt veličine i snaga testa
 - Dodatni koncepti
 
-<b>Format predavanja:</b> <a href="/Moduli/07_HIPOTEZE.html">.html</a> | <a href="/Moduli/07_HIPOTEZE.Rmd">.Rmd</a>
+
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 11.</a>
 
 
@@ -114,7 +112,6 @@ title: " "
 - McNemarov test zavisnih uzoraka
 
 
-<b>Format predavanja:</b> <a href="/Moduli/08_KATEGORIJALNA_ANALIZA.html">.html</a> | <a href="/Moduli/08_KATEGORIJALNA_ANALIZA.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 12.</a>
 
 
@@ -130,9 +127,6 @@ title: " "
 - Efekt veličine
 - Provjera normalnosti distribucije
 
-
-
-<b>Format predavanja:</b> <a href="/Moduli/09_USPOREDBA_PROSJEKA.html">.html</a> | <a href="/Moduli/09_USPOREDBA_PROSJEKA.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 13.</a>
 
 
@@ -147,9 +141,6 @@ title: " "
 - Homogenost varijance
 - Normalnost distribucije
 
-
-
-<b>Format predavanja:</b> <a href="/Moduli/10_ANOVA.html">.html</a> | <a href="/Moduli/10_ANOVA.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 14.</a>
 
 
@@ -164,7 +155,6 @@ title: " "
 - Provjera modela
 - Izbor parametara modela
 
-<b>Format predavanja:</b> <a href="/Moduli/11_REG.html">.html</a> | <a href="/Moduli/11_REG.Rmd">.Rmd</a>
 <br><b>Čitanje: </b><a href="https://learningstatisticswithr.com/lsr-0.6.pdf">LSR,poglavlje 15.</a>
 
 

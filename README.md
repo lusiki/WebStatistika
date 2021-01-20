@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="Foto/stats2.png" width="750" title="hover text">
+  <img src="Foto/stats.png" width="750" title="hover text">
 </p> 
 
  

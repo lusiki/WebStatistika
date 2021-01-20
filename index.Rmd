@@ -8,32 +8,34 @@ pagetitle: "Osnovne informacije"
 <br>
 
 <p align="center">
-  <img src="Foto/avatar.jpg" width="550" title="hover text">
+  <img src="Foto/stats2.png" width="550" title="hover text">
 </p>
 
-# Primjena statistike u društvenim istraživanjima
+
+<br>
+<br>
+
+
+# **Primjena statistike u društvenim istraživanjima**
 
 <br>
 <br>
 
 Dobrodošli na stranice kolegija <b>Primjena statistike u društvenim istraživanjima</b> koji u zimskom semestru, 2020/21 izvodi [Luka Šikić](https://www.lukasikic.info/), PhD na Fakultetu hrvatskih studija u Zagrebu. Kolegij je prvenstveno namijenjen studentima sociologije na preddiplomskoj razini, a može koristiti svim studentima društvenih i humanističkih smjerova koji su upoznati sa osnovama statistike.
 
-
-## Raspored 
-
-<b>Predavanja</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ponedjeljkom,&nbsp;16:00–17:30
-<br><b>Vježbe</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ponedjeljkom,&nbsp;17:30–19:00
-<br><b>Konzultacije</b>&nbsp;&nbsp;&nbsp;Četvrtkom,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;17:30-18:30
+<br>
+<br>
+<br>
+<br>
 
 ### Predavač
 
 [Luka Šikić](https://www.lukasikic.info/), Ph.D.</br>
 Hrvatski studiji, Katedra za sociologiju</br>
-
-### Kontakt
-
-mob:  + 385 98 162 30 52</br>
+<b>Konzultacije</b>&nbsp;&nbsp;&nbsp;Četvrtkom,&nbsp;&nbsp;&nbsp;&nbsp;17:30-18:30</br>
 mail: lsikic@hrstud.hr</br>
+mob:  + 385 98 162 30 52</br>
+
 
 
 
