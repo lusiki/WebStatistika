@@ -633,7 +633,6 @@ knitr::include_graphics(file.path("../Foto/influence.png"))
 
 - Formula
 
-$$D_i = \frac{{\epsilon_i^*}^2 }{K+1} \times \frac{h_i}{1-h_i}$$ 
 
 ```{r, eval = FALSE}
 # Izračunaj mjeru Cook-ove udaljenosti
