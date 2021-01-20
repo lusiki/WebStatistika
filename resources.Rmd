@@ -42,12 +42,12 @@ title: " "
 ### Blogovi i projekti
 
 <li><a href="https://towardsdatascience.com/best-data-science-blogs-to-follow-in-2020-d03044169eb4">Data science blogovi</a></li>
-- R bloggers <https://www.r-bloggers.com/>
-- Open science in practice. <https://inattentionalcoffee.wordpress.com/2017/01/03/open-science-in-practice/>
-- Practicing what I preach: The open Ph.D. experiment. <http://www.librarianinthecity.com/2016/12/practicing-what-i-preach-the-open-phd-experiment/>
+- [R bloggers](https://www.r-bloggers.com/)
+- [Open science in practice](https://inattentionalcoffee.wordpress.com/2017/01/03/open-science-in-practice/)
+- [Practicing what I preach: The open Ph.D. experiment.](http://www.librarianinthecity.com/2016/12/practicing-what-i-preach-the-open-phd-experiment/) 
 - [Open Stats Lab](https://sites.trinity.edu/osl). Use data published with psychology papers to teach statistics.
-- The Rise of the Notebooks. <https://opendatascience.com/blog/jupyter-zeppelin-beaker-the-rise-of-the-notebooks/>
-- Open science and free culture. <http://www.simoncolumbus.com/publications-2/open-science-and-free-culture/>
+- [The Rise of the Notebooks](https://opendatascience.com/blog/jupyter-zeppelin-beaker-the-rise-of-the-notebooks/).
+- [Open science and free culture](http://www.simoncolumbus.com/publications-2/open-science-and-free-culture/) 
 - [Collaborative Replications and Education Project (CREP)](https://osf.io/wfc6u/).    
 
 
@@ -61,19 +61,18 @@ title: " "
 
 ### Članci
 
-- The pipeline project: Pre-publication independent replications of a single laboratory’s research pipeline <https://doi.org/10.1016/j.jesp.2015.10.001>
-- A manifesto for reproducible science. <https://doi.org/10.1038/s41562-016-0021>.
-- Scanning the horizon: towards transparent and reproducible neuroimaging research. <https://doi.org/10.1038/nrn.2016.167>.    
+- [The pipeline project](https://doi.org/10.1016/j.jesp.2015.10.001)
+- [A manifesto for reproducible science](https://doi.org/10.1038/s41562-016-0021)
+- [Scanning the horizon: towards transparent and reproducible neuroimaging research](https://doi.org/10.1038/nrn.2016.167)  
     
 ### Korisne knjige
 
 <li><a href="https://towardsdatascience.com/data-science-books-you-should-read-in-2020-358f70e1d9b2">Data science knjige</a></li>
-- Chang, W. (2012). *R Graphics Cookbook*. <http://ase.tufts.edu/bugs/guide/assets/R%20Graphics%20Cookbook.pdf>
-- Gandrud, C. (2015). *Reproducible Research with R and R Studio, Second Edition*. CRC Press. <https://www.crcpress.com/Reproducible-Research-with-R-and-R-Studio-Second-Edition/Gandrud/p/book/9781498715379>
-- VanderPlas, J. (2016). *Python Data Science Handbook*. <https://jakevdp.github.io/PythonDataScienceHandbook/>
-- Wickham, H. & Grolemund, G. (2016). *R for Data Science: Import, Tidy, Transform, Visualize, and Model Data*. O'Reilly Media. <http://shop.oreilly.com/product/0636920034407.do>.
-- Wickham, H. (2019). *Advanced R, 2nd Ed*. Chapman & Hall/CRC. <https://adv-r.hadley.nz/>. 
-- Xie, Y., Allaire, J.J., & Grolemund, G. (2019). *R Markdown: The Definitive Guide*. Chapman & Hall/CRC. <https://bookdown.org/yihui/rmarkdown/>.
+- Chang, W. (2012). [R Graphics Cookbook](http://ase.tufts.edu/bugs/guide/assets/R%20Graphics%20Cookbook.pdf)
+- Gandrud, C. (2015). [Reproducible Research with R and R Studio](ttps://www.crcpress.com/Reproducible-Research-with-R-and-R-Studio-Second-Edition/Gandrud/p/book/9781498715379), CRC Press. 
+- VanderPlas, J. (2016). [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) 
+- Wickham, H. & Grolemund, G. (2016). [R for Data Science: Import, Tidy, Transform, Visualize, and Model Data](http://shop.oreilly.com/product/0636920034407.do). 
+- Xie, Y., Allaire, J.J., & Grolemund, G. (2019). [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/. Chapman & Hall/CRC. 
 
 ### Zanimljivosti
 
