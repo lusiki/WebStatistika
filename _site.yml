@@ -11,7 +11,7 @@ navbar:
     - text: "Predavanja"
       menu:
         - text: "Uvod u kolegij"
-          href: "https://github.com/BrbanMiro/Statistika/blob/main/Moduli/01_UVOD.pdf"
+          href: "https://raw.githack.com/BrbanMiro/WebStatistika/main/Moduli/01_UVOD_xar.html"
         - text: "Uvod u R"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/02_UVOD_U_R.pdf" 
         - text: "Dodatni koncepti R"
@@ -45,7 +45,7 @@ navbar:
     - text: "O stranici"
       href: site-info.html
     - icon: ion-social-github
-      href: https://github.com/BrbanMiro/Statistika
+      href: https://github.com/BrbanMiro/WebStatistika
 output_dir: "docs"
 output:
   html_document:
