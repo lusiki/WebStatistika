@@ -915,11 +915,11 @@ layout:true
 $$t = \frac{\bar{X}_1 - \bar{X}_2}{\mbox{SE}({\bar{X}_1 - \bar{X}_2})}$$
 .hi[Standardna greška statistike]
 
-$$\mbox{SE}({\bar{X}_1 - \bar{X}_2}) = \sqrt{ \frac{{\hat{\sigma}_1}^2}{N_1} + \frac{{\hat{\sigma}_2}^2}{N_2} }$$
+$$\mbox{SE}({\bar{X}_1 - \bar{X}_2}) = \sqrt{ \frac{{\hat}{\sigma}_1}^2}{N_1} + \frac{{\hat}{\sigma}_2}^2}{N_2} $$
 
 .hi[Izračun stupnjeva slobode]
 
-$$\mbox{df} = \frac{ ({\hat{\sigma}_1}^2 / N_1 + {\hat{\sigma}_2}^2 / N_2)^2 }{  ({\hat{\sigma}_1}^2 / N_1)^2 / (N_1 -1 )  + ({\hat{\sigma}_2}^2 / N_2)^2 / (N_2 -1 ) }$$
+$$\mbox{df} = \frac{ ({\hat}{\sigma}_1}^2 / N_1 + {\hat{\sigma}_2}^2 / N_2)^2 }{  ({\hat{\sigma}_1}^2 / N_1)^2 / (N_1 -1 )  + ({\hat}{\sigma}_2}^2 / N_2)^2 / (N_2 -1 ) }$$
 
 ---
 
