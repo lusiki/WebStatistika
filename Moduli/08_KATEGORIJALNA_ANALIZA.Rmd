@@ -615,59 +615,7 @@ Total = c("R_1", "R_2", "R_3", "N")
 
 ---
 
-.hi[**Formuliraj nultu hipotezu**]
-<br>
-<br>
-<br>
-```{r echo=FALSE}
-knitr::kable(tibble::tribble(
-                      ~V1, ~V2,    
-                      "H_0:", " Sve od sljedećeg je točno: ",     
-                      "    ",  " P_11 = P_12 (jednaka vjerojatnost izbora puppy)",   
-                      "\t", " P_21 = P_22 (jednaka vjerojatnost izbora flower) i", 
-                      "\t",  " P_31 = P_32 (jednaka vjerojatnost izbora data)."),
-             col.names = c("", ""))
-```
 
----
-
-.hi[**Formuliraj testnu statistiku**]
-
-
-$$E_{ij} = C_j \times P_i$$
-<br>
-
-$$\hat{P}_i = \frac{R_i}{N}$$ 
-<br>
-
-$$E_{ij} = \frac{R_i \times C_j}{N}$$
-<br>
-
-$$X^2 = \sum_{i=1}^r\sum_{j=1}^c\frac{({E}_{ij} - O_{ij})^2}{{E}_{ij}}$$
-
----
-.hi[**Stupnjevi slobode kod testa nezavisnosti**]
-<br>
-
-$$df = (r-1)(c-1)$$
-<br>
-
-$$\begin{array}{rcl}
-df &=& \mbox{(broj opservacija)} - \mbox{(broj ograničenja)} \\
-&=& (rc) - (c + (r-1)) \\
-&=& rc - c - r + 1 \\
-&=& (r - 1)(c - 1)
-\end{array}$$
-
-<br>
-
-$$\begin{array}{rcl}
-df &=& \mbox{(broj opservacija)} - \mbox{(broj ograničenja)} \\
-&=& rc - ( (c-1) + (r-1) + 1) \\
-&=& rc - c - r + 1 \\
-&=& (r - 1)(c - 1)
-\end{array}$$
----
 
 .hi[**Izvođenje testa u R**]
 <br>
