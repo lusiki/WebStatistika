@@ -1113,7 +1113,13 @@ cor(sati_studiranja,ocjena) # Izračunaj korelaciju
 cor(effort$hours, effort$grade, method = "spearman")
 ```
 
+---
 
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje: Grafikoni i vizualizacije)
 
 
 

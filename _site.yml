@@ -15,7 +15,7 @@ navbar:
         - text: "Uvod u R"
           href: "https://raw.githack.com/BrbanMiro/WebStatistika/main/Moduli/02_UVOD_U_R_xar.html" 
         - text: "Dodatni koncepti R"
-          href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/02_DODATNI_KONCEPTI_R.pdf"  
+          href: "https://raw.githack.com/BrbanMiro/WebStatistika/main/Moduli/02_DODATNI_KONCEPTI_R_xar.html"  
         - text: "Deskriptivna statistika"
           href: "https://raw.githack.com/BrbanMiro/Statistika/main/Moduli/03_DESKRIPTIVNA_STATISTIKA_xar.html"
         - text: "Grafikoni i vizualizacije"

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>PRIMJENJENA STATISTIKA</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Luka Sikic, PhD" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# PRIMJENJENA STATISTIKA
+## Predavanje 2: Uvod u R
+### Luka Sikic, PhD
+### Fakultet hrvatskih studija | <a href="https://github.com/BrbanMiro/WebStatistika">Github PS</a>
+
+---
+
+
+
+class: inverse, middle
+
+
+
+
+
+# PREGLED PREDAVANJA
+
+---
+layout: true
+# PREGLED PREDAVANJA
+---
+
+## Ciljevi
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+- Osnovne naredbe
+- Što su varijable
+- Što su funkcije
+- Kakve vrste podataka postoje
+- Što su vektori
+- Logički operatori
+
+
+---
+layout: false
+class: middle, inverse
+
+# OSNOVNE NAREDBE
+---
+layout: true
+# OSNOVNE RAČUNSKE OPERACIJE
+---
+
+&lt;table&gt;
+&lt;caption&gt;Osnovne računske operacije u R-u. Ove naredbe ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Operacija &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;  Input &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Output &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; zbrajanje &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `+` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 + 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; odzimanje &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `-` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 9 - 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; množenje &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `*` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5 * 5 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; dijeljenje &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `/` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 10 / 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; eksponencija &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `^` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 5 ^ 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# PRIMJERI
+---
+
+
+```r
+# Zbrajanje
+&gt; 20 + 30
+[1] 50
+```
+
+
+```r
+# Oduzimanje
+&gt; 20 - 30
+[1] -10
+```
+
+
+```r
+# Množenje
+&gt; 57 * 61
+[1] 3477
+```
+
+
+```r
+# Eksponencije
+&gt; 5 * 5 * 5 * 5 # 5^4
+[1] 625         # 625
+```
+
+---
+layout: false
+class: middle, inverse
+
+# VARIJABLE
+---
+layout: true
+# OSNOVE RADA S VARIJABLAMA
+---
+
+
+```r
+# Pripisivanje vrijednosti varijabli
+placa &lt;- 5500
+mjeseci &lt;- 12
+# Pregled varijable
+placa
+```
+
+```
+#&gt; [1] 5500
+```
+
+```r
+# Kalukulacije sa varijablama
+placa*mjeseci # Jednako kao 5550*12!
+```
+
+```
+#&gt; [1] 66000
+```
+
+---
+layout: true
+# DODATNE MOGUĆNOSTI S VARIJABLAMA
+---
+
+
+
+```r
+# Stvori novu varijablu pomoću postojećih
+godisnja_placa &lt;- placa*mjeseci
+# Pregled varijable
+godisnja_placa
+```
+
+```
+#&gt; [1] 66000
+```
+
+```r
+# 13ta placa
+godisnja_zarada &lt;- godisnja_placa + 5500
+# Pregled varijable
+godisnja_zarada
+```
+
+```
+#&gt; [1] 71500
+```
+
+---
+layout: true
+# KONVENCIJE ZA VARIJABLE
+---
+
+- sva slova u nazivu varijable su *mala* ili *velika*
+- rijeci ne smiju sadržavati razmak
+- **godisnja_zarada** i **Godisnja_zarada** su različite varijable
+- naziv varijable može imati točku na početku ali (**.godisnja_zarada**) se ne preporuča   
+- naziv varijable ne može biti (REZERVIRANO!): `if`, `else`, `repeat`, `while`, `function`, `for`, `in`, `next`, `break`, `TRUE`, `FALSE`, `NULL`, `Inf`, `NaN`, `NA`, `NA_integer_`, `NA_real_`, `NA_complex_` niti `NA_character_`
+- naziv varijable treba biti informativan, kratak i prepoznatljiv
+- preporučene opcije za naziv varijable sa više riječi: **godisnja_zarada** ili **godisnja.zarada**
+
+---
+layout: false
+class: middle, inverse
+
+# FUNKCIJE
+---
+layout: true
+# KORIŠTENJE FUNKCIJA ZA RAČUNSKE OPERACIJE 
+
+---
+
+
+```r
+# Funkcija za korijen
+sqrt(25) 
+```
+
+```
+#&gt; [1] 5
+```
+
+```r
+#Jednako kao:
+25^0.5 
+```
+
+```
+#&gt; [1] 5
+```
+
+
+```r
+# Funkcija za uzimanje apsolutne vrijednosti
+abs(-10)
+```
+
+```
+#&gt; [1] 10
+```
+
+```r
+# Korištenje dvije funkcije u jednoj naredbi
+sqrt(1 + abs(-8))
+```
+
+```
+#&gt; [1] 3
+```
+
+---
+layout: true
+# FUNKCIJSKI ARGUMENTI
+---
+
+
+```r
+# Zaokruži vrijednost;pi
+round(3.1415)
+```
+
+```
+#&gt; [1] 3
+```
+
+```r
+# Dodatni funkcijski argumenti;broj decimala
+round(3.1415,2)#Jednako kao round(x = 3.1415, digits = 2)
+```
+
+```
+#&gt; [1] 3.14
+```
+
+---
+layout: false
+class: middle, inverse
+
+# VEKTORI
+---
+layout: true
+# VEKTORI 
+
+---
+
+&lt;br&gt;
+&lt;br&gt;
+
+- vektor se sastoji od (jedng ili) više elemenata 
+- svi elementi vektora *imaju* istu klasu
+- klase mogu biti brojevi, riječi, logičke tvrdnje
+- za stvaranje vektora se koristi `combine()` funkcija;skraćeno `c()`
+
+
+```r
+# NUMERIČKI VEKTOR 
+# Stvori vektor mjesečnih plaća za prvi kvartal u godini
+kvartalna_placa &lt;- c("5400", "5300", "5500")
+# Pregled varijable
+kvartalna_placa
+```
+
+```
+#&gt; [1] "5400" "5300" "5500"
+```
+
+---
+layout: true
+# IZVLAČENJE INFORMACIJA IZ VEKTORA 
+---
+
+
+
+```r
+# Plaća u veljači
+kvartalna_placa[2]
+```
+
+```
+#&gt; [1] "5300"
+```
+
+```r
+# Stvori varijablu iz (jednog elementa) vektora
+placa_u_sijecnju &lt;- kvartalna_placa[2]
+```
+
+---
+layout: true
+# DODATNE MOGUĆNOSTI S VEKTORIMA I 
+---
+
+
+```r
+# Koliko ima elemenata u vektoru? length()
+length(kvartalna_placa)
+```
+
+```
+#&gt; [1] 3
+```
+
+```r
+# Pomnoži sve elemente vektora brojem
+# konverzija iz "chr" u "numeric"
+as.numeric(kvartalna_placa) / 7.5
+```
+
+```
+#&gt; [1] 720.0000 706.6667 733.3333
+```
+
+---
+layout: true
+# DODATNE MOGUĆNOSTI S VEKTORIMA II
+---
+
+
+```r
+# Definiraj tečaj
+eur &lt;- 7.5
+# Plaća u eurima
+godisnja_placa_eur &lt;- godisnja_placa / eur 
+#Pregled varijable
+godisnja_placa_eur
+```
+
+```
+#&gt; [1] 8800
+```
+
+--
+layout: true
+# VEKTORI S TEKSTUALNIM VARIJABLAMA
+---
+
+
+```r
+# Stvori tekstualnu varijablu
+pozdrav &lt;- "ciao"
+# Pregled varijable
+pozdrav
+```
+
+```
+#&gt; [1] "ciao"
+```
+
+```r
+# Stvori vektor tekstualnih elemenata 
+prvi_kvartal_mj &lt;- c("sijecanj", "veljaca", "ozujak")
+# Pregled vektora
+prvi_kvartal_mj
+```
+
+```
+#&gt; [1] "sijecanj" "veljaca"  "ozujak"
+```
+
+
+--
+layout: true
+# DODATNE MOGUĆNOSTI S VEKTORIMA III
+---
+
+
+```r
+# Drugi mjesec 
+veljaca &lt;- prvi_kvartal_mj[2]
+# Pregled varijable
+nchar(veljaca) # Jenako: nchar(x = prvi_kvartal[2])!
+```
+
+```
+#&gt; [1] 7
+```
+
+```r
+# Pregled duljine elemenata(riječi) u vektoru
+nchar(prvi_kvartal_mj)
+```
+
+```
+#&gt; [1] 8 7 6
+```
+
+
+---
+layout: false
+class: middle, inverse
+
+# LOGIČKE VARIJABLE 
+---
+layout: true
+# OSNOVE RADA S LOGIČKIM VARIJABLAMA 
+---
+
+
+```r
+2 + 2
+```
+
+```
+#&gt; [1] 4
+```
+
+
+```r
+# Logička istina: TRUE
+2 + 2 == 4
+```
+
+```
+#&gt; [1] TRUE
+```
+
+```r
+# Logička ne-istina: FALSE
+2 + 2 == 5
+```
+
+```
+#&gt; [1] FALSE
+```
+
+---
+layout: true
+# LOGIČKI OPERATORI I 
+---
+
+
+&lt;table&gt;
+&lt;caption&gt;Osnovni operatori&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Operacija &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Input &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Odgovor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; manje &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &amp;lt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &amp;lt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `TRUE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; manje ili jednako &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &amp;lt;= &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &amp;lt;= 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `TRUE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; vece &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &amp;gt; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &amp;gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `FALSE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; vece ili jednako &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &amp;gt;= &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 &amp;gt;= 2 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `TRUE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; jednako &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; == &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 == 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `FALSE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; nije jednako &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; != &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 2 != 3 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `TRUE` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# LOGIČKI OPERATORI II 
+---
+
+
+```r
+# Primjeri
+99 &lt; 100
+```
+
+```
+#&gt; [1] TRUE
+```
+
+```r
+100 &lt;= 99
+```
+
+```
+#&gt; [1] FALSE
+```
+
+```r
+2 + 2 != 5
+```
+
+```
+#&gt; [1] TRUE
+```
+
+---
+layout: true
+# LOGIČKI OPERATORI III 
+---
+
+
+&lt;table&gt;
+&lt;caption&gt;Jos neki vazni logicki operatori.&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Operacija &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Operator &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Input &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Odgovor &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; ne &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; ! &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; !(1==1) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `FALSE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; ili &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; | &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; (1==1) | (2==3) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `TRUE` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; i &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; &amp;amp; &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; (1==1) &amp;amp; (2==3) &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `FALSE` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+layout: true
+# LOGIČKI OPERATORI IV
+---
+
+
+```r
+# Primjeri
+(2 + 2 == 4) | (2 + 2 == 5)
+```
+
+```
+#&gt; [1] TRUE
+```
+
+```r
+(2 + 2 == 4) &amp; (2 + 2 == 5)
+```
+
+```
+#&gt; [1] FALSE
+```
+
+```r
+!(2 + 2 == 5)
+```
+
+```
+#&gt; [1] TRUE
+```
+
+---
+layout: true
+# LOGIČKI OPERATORI V
+---
+
+
+```r
+# Jedna mogucnost
+da_li_je_ovo_tocno &lt;- 2 + 2 == 5
+da_li_je_ovo_tocno
+```
+
+```
+#&gt; [1] FALSE
+```
+
+```r
+# Druga mogucnost
+ovo_nije_tocno &lt;- FALSE # Jenako kao i F
+ovo_nije_tocno
+```
+
+```
+#&gt; [1] FALSE
+```
+
+---
+layout: true
+# VEKTORI S LOGIČKIM VARIJABLAMA
+---
+
+
+```r
+# Stvori logički vektor
+x &lt;- c(TRUE, TRUE, FALSE)
+# Pregled vektora
+x
+```
+
+```
+#&gt; [1]  TRUE  TRUE FALSE
+```
+
+
+```r
+# U kojim mjesecima je plaća bila veća od 5.200kn
+kvartalna_placa &gt; 5200
+```
+
+```
+#&gt; [1] TRUE TRUE TRUE
+```
+
+```r
+# Napravi logički vektor za mjesece sa visokom plaćom
+iznadprosjecna_placa &lt;- kvartalna_placa &gt; 5400
+# Pregled vektora
+iznadprosjecna_placa
+```
+
+```
+#&gt; [1] FALSE FALSE  TRUE
+```
+
+---
+layout: true
+# RISTUPANJE ELEMENTIMA VEKTORA I
+---
+
+
+
+```r
+# Izaberi 2. i 3. mjesec iz kvartala
+kvartalna_placa[ c(2,3) ]
+```
+
+```
+#&gt; [1] "5300" "5500"
+```
+
+```r
+# Izaberi 1. i 3. mjesec iz kvartala
+kvartalna_placa[ c(1,3) ]
+```
+
+```
+#&gt; [1] "5400" "5500"
+```
+
+```r
+# Dodatna mogućnost
+kvartalna_placa[ 1:3 ]
+```
+
+```
+#&gt; [1] "5400" "5300" "5500"
+```
+
+---
+layout: true
+# RISTUPANJE ELEMENTIMA VEKTORA II
+---
+
+
+```r
+# Poveži tekstualni i logički vektor 
+prvi_kvartal_mj[kvartalna_placa &gt; 5400]
+```
+
+```
+#&gt; [1] "ozujak"
+```
+
+```r
+# Stvori novi tekstualni vektor;visina plaće
+visina_place &lt;- c("niska", "visoka", "visoka")
+# U kojim mjesecima je bila visoka zarada?
+prvi_kvartal_mj[ visina_place == "visoka"]
+```
+
+```
+#&gt; [1] "veljaca" "ozujak"
+```
+
+
+---
+
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+(Sljedeće predavanje: Dodatni koncepti R)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
