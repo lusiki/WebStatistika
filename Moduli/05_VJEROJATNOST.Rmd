@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 5: Statisticka teorija - distribucije"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/Statistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
