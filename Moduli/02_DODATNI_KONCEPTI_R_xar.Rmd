@@ -1,0 +1,541 @@
+---
+title: "PRIMJENJENA STATISTIKA"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Predavanje 2: Uvod u R"
+author: "Luka Sikic, PhD"
+date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+class: inverse, middle
+
+```{R, setup, include = F}
+# devtools::install_github("dill/emoGG")
+library(pacman)
+p_load(
+  broom, tidyverse,
+  latex2exp, ggplot2, ggthemes, ggforce, viridis, extrafont, gridExtra,
+  kableExtra, snakecase, janitor,
+  data.table, dplyr, estimatr,
+  lubridate, knitr, parallel,
+  lfe,
+  here, magrittr
+)
+# Define pink color
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#2b59c3"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+# Dark slate grey: #314f4f
+# Knitr options
+opts_chunk$set(
+  comment = "#>",
+  fig.align = "center",
+  fig.height = 7,
+  fig.width = 10.5,
+  warning = F,
+  message = F
+)
+opts_chunk$set(dev = "svg")
+options(device = function(file, width, height) {
+  svg(tempfile(), width = width, height = height)
+})
+options(crayon.enabled = F)
+options(knitr.table.format = "html")
+# A blank theme for ggplot
+theme_empty <- theme_bw() + theme(
+  line = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  plot.margin = structure(c(0, 0, -0.5, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_simple <- theme_bw() + theme(
+  line = element_blank(),
+  panel.grid = element_blank(),
+  rect = element_blank(),
+  strip.text = element_blank(),
+  axis.text.x = element_text(size = 18, family = "STIXGeneral"),
+  axis.text.y = element_blank(),
+  axis.ticks = element_blank(),
+  plot.title = element_blank(),
+  axis.title = element_blank(),
+  # plot.margin = structure(c(0, 0, -1, -1), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_math <- theme_void() + theme(
+  text = element_text(family = "MathJax_Math"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes_serif <- theme_void() + theme(
+  text = element_text(family = "MathJax_Main"),
+  axis.title = element_text(size = 22),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = "grey70",
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_axes <- theme_void() + theme(
+  text = element_text(family = "Fira Sans Book"),
+  axis.title = element_text(size = 18),
+  axis.title.x = element_text(hjust = .95, margin = margin(0.15, 0, 0, 0, unit = "lines")),
+  axis.title.y = element_text(vjust = .95, margin = margin(0, 0.15, 0, 0, unit = "lines")),
+  axis.line = element_line(
+    color = grey_light,
+    size = 0.25,
+    arrow = arrow(angle = 30, length = unit(0.15, "inches")
+  )),
+  plot.margin = structure(c(1, 0, 1, 0), unit = "lines", valid.unit = 3L, class = "unit"),
+  legend.position = "none"
+)
+theme_set(theme_gray(base_size = 20))
+# Column names for regression results
+reg_columns <- c("Term", "Est.", "S.E.", "t stat.", "p-Value")
+# Function for formatting p values
+format_pvi <- function(pv) {
+  return(ifelse(
+    pv < 0.0001,
+    "<0.0001",
+    round(pv, 4) %>% format(scientific = F)
+  ))
+}
+format_pv <- function(pvs) lapply(X = pvs, FUN = format_pvi) %>% unlist()
+# Tidy regression results table
+tidy_table <- function(x, terms, highlight_row = 1, highlight_color = "black", highlight_bold = T, digits = c(NA, 3, 3, 2, 5), title = NULL) {
+  x %>%
+    tidy() %>%
+    select(1:5) %>%
+    mutate(
+      term = terms,
+      p.value = p.value %>% format_pv()
+    ) %>%
+    kable(
+      col.names = reg_columns,
+      escape = F,
+      digits = digits,
+      caption = title
+    ) %>%
+    kable_styling(font_size = 20) %>%
+    row_spec(1:nrow(tidy(x)), background = "white") %>%
+    row_spec(highlight_row, bold = highlight_bold, color = highlight_color)
+}
+```
+
+```{css, echo = F, eval = F}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+
+# PREGLED PREDAVANJA
+
+---
+layout: true
+# PREGLED PREDAVANJA
+---
+
+## Ciljevi
+<br>
+<br>
+<br>
+<br>
+- Što su paketi
+- Radni prostor
+- Učitavanje i spremanje podataka
+- Specijalne vrijednosti, nazivi i klase varijabli
+- Slozeniji tipovi varijabli: faktori,podatkovni okviri, liste 
+---
+
+layout: false
+class: middle, inverse
+
+# RAD SA PAKETIMA
+---
+layout: true
+# RAD SA PAKETIMA
+---
+<br>
+<br>
+- paket(knjižnica) je skup funkcija(podataka i sl.) koje je netko napisao i ponudio  na korištenje
+- paketi su javno dostupni (Open Source)
+- paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije - u okviru kolegija ćemo uglavnom koristiti nekoliko paketa: [*base R*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html), [*lsr*](https://cran.r-project.org/web/packages/lsr/index.html), [*ggplot2*](https://www.statmethods.net/advgraphs/ggplot2.html), [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf), [*car*](https://cran.r-project.org/web/packages/car/index.html) i dr. 
+
+---
+layout: true
+# RAD SA PAKETIMA
+---
+<br>
+<br>
+```{r eval=FALSE}
+# Instaliraj paket
+install.packages("lsr")
+# Učitaj paket
+library(lsr) # Također require()
+# Makni paket
+detach("package:lsr", unload=TRUE)
+
+```
+
+---
+
+layout: false
+class: middle, inverse
+
+# RADNI PROSTOR
+---
+layout: true
+# RADNI PROSTOR
+---
+<br>
+<br>
+
+```{r eval = FALSE}
+# Gdje se nalazi radni folder
+getwd()
+[1] "C:/Users/Dropbox/Kolegij_statistika"
+# Postavi radni folder
+setwd("C:/Users/Luka/Statistika/...")
+# Obrati pažnju na "/" vs "\\"
+
+```
+
+---
+
+layout: false
+class: middle, inverse
+
+# UČITAVANJE I SPREMANJE PODATAKA
+---
+layout: true
+# UČITAVANJE U R I
+---
+<br>
+<br>
+
+- *workspace files* imaju .Rdata ekstenziju i sadržavaju objekte iz radnog prostora
+- *.csv*, *.txt*, *.spss* sadržavaju podatke koje je potrebno učitati u radni prostor
+- *script files* sadržavaju napisani kod
+- postoje i brojni drugi objekti! (npr. RMarkdown)
+
+```{r eval = FALSE}
+# učitaj u radni prostor
+load( file = "~/datoteka.Rmd" )
+# ~ označava put do radnog direktorija
+```
+
+---
+layout: true
+# UČITAVANJE U R II
+---
+
+```{r eval=FALSE}
+# Učitaj podatke iz excela 
+podatci_statistika <- read.csv( file = "statistika.csv" )
+# U praksi je potrebno prilagoditi funkcijske argumente!
+```
+
+---
+layout: true
+# SPREMANJE
+---
+<br>
+<br>
+- obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*
+
+```{r eval=FALSE}
+# Pohrani radni prostor
+save.image("~/Desktop/radni_prostor.RData")
+# Pohrani podatke
+save(neki_podatci, file = "neki_podatci.Rdata")
+# Output je moguće pohraniti pomoću funkcije sink()
+```
+
+---
+
+layout: false
+class: middle, inverse
+
+# SPECIJALNE VRIJEDNOSTI, NAZIVI I KLASE 
+---
+layout: true
+# SPECIJALNE VRIJEDNOSTI 
+---
+
+```{r}
+# Beskonačno
+1 / 0
+```
+
+```{r}
+# Nije broj
+ 0 / 0
+```
+-  *nije dostupno* `NA`
+- *nema vrijednosti* `NULL` 
+
+---
+layout: true
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA I 
+---
+<br>
+<br>
+```{r}
+# Stvori numerički vektor
+ocjena <- c( 1, 2, 3 )
+ocjena # Pregledaj objekt
+# Pripiši nazive 
+names(ocjena) <- c("nedovoljan","dovoljan","dobar")
+ocjena # Pregledaj objekt
+```
+
+---
+layout: true
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA II 
+---
+<br>
+<br>
+```{r}
+# Stvori numerički vektor sa nazivima v2.0
+ocjena <- c("nedovoljan" = 1,"dovoljan" = 2,"dobar" = 3)
+ocjena # Pregledaj objekt
+# Indeksiranje pomoću naziva
+ocjena["dobar"] # Pregledaj objekt
+
+```
+
+---
+layout: true
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA III 
+---
+
+<br>
+<br>
+
+```{r}
+# Vidi nazive svih elemenata u vektoru
+names(ocjena) # Pregledaj objekt
+```
+
+---
+layout: true
+#  KLASE  
+---
+<br>
+<br>
+
+```{r}
+x <- "tekst"  # x je tekst
+class(x)      # Pregledaj klasu
+x <- TRUE     # x je logička klasa 
+class(x)      # Pregledaj klasu
+x <- 100      # x je broj
+class(x)      # Pregledaj klasu
+```
+
+---
+layout: true
+#  FAKTORI  
+---
+<br>
+<br>
+```{r}
+# Stvori numerički vektor
+grupa <- c(1,1,1,2,2,3,3)
+grupa # Pogledaj objekt
+# Pretvori numerički vektor u faktor
+grupa <- as.factor(grupa)
+grupa # Pogledaj objekt
+``` 
+
+---
+layout: true
+#  FAKTORI II
+---
+<br>
+<br>
+
+- računske operacije sa faktorima nisu iste kao sa numeričkim vektorima
+
+```{r}
+grupa + 2
+```
+
+---
+layout: true
+# NAZIVI FAKTORA
+---
+<br>
+<br>
+```{r}
+# Stvori faktoraku varijablu;spol ispitanika 
+spol <- as.factor(c(1,1,1,1,2,2,2))
+spol # Pogledaj objekt
+# Pripiši nazive faktorima
+levels(spol) <- c("muški", "ženski")
+print(spol) # Prikaži objekt
+```
+
+
+---
+
+layout: false
+class: middle, inverse
+
+# PODATKOVNI OKVIRI (*data frame*) 
+---
+layout: true
+# PODATKOVNI OKVIRI 
+---
+<br>
+<br>
+```{r}
+# Za stvaranje df-a ćemo koristiti varijable spol i grupa
+# Stvaranje dodatne dvije numeričke varijable
+starost <- c(17, 19, 21, 37, 18, 19, 47)
+bodovi <- c(12, 15, 16, 14, 25, 21, 29)
+# Stvori df
+df <- data.frame( grupa, spol, starost, bodovi ) 
+head(df, 5) # Pogledaj prvih 5 redova df-a
+```
+
+---
+layout: true
+#  IZVLAČENJE PODATAKA IZ DFa 
+---
+<br>
+<br>
+
+```{r}
+# Pogledaj seriju bodova
+df$bodovi 
+# Pogledaj nazive varijabli (kolona)
+names(df)
+```
+
+---
+
+layout: false
+class: middle, inverse
+
+# LISTE 
+---
+layout: true
+# LISTE 
+---
+<br>
+<br>
+```{r}
+# Stvori listu
+ana <- list(godine = 26,
+            student = TRUE,
+            roditelji = c("Marko","Mia"))
+ana # Pogledaj objekt
+```
+
+---
+layout: true
+# LISTE I
+---
+<br>
+<br>
+```{r}
+# Pristupi elementima liste
+ana$student
+ana$roditelji
+```
+
+
+---
+layout: true
+# LISTE I
+---
+<br>
+<br>
+```{r}
+# Dodaj element u listu
+ana$mjesto_stanovanja <- "Zagreb"
+ana # Pogledaj objekt 
+```
+---
+
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje: Deskriptivna statistika)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
