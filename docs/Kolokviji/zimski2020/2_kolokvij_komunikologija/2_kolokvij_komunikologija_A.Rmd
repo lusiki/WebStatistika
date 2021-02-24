@@ -1,0 +1,62 @@
+---
+title: 'II. KOLOKVIJ IZ STATISTIKE'
+subtitle: "Grupa A"
+#author: "dr.sc. Luka Šikić"
+#date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+institute: "Fakultet hrvatskih studija"
+font: 3t
+
+---
+
+Pitanja:
+
+1. Koje statističke testove iz područja inferencijalne statistike poznajete? Opišite u kojim situacijama biste koristili navedene testove.
+
+2. Kako biste analizirali normalnost distribucije neke varijable? 
+
+3. Proveden je pokus na 200 ljudi na način da je svaka osoba izabrala jednu od četiri moguće karte iz skupa igraćih karata u kojem su sve karte zatupljene u jednakim proporcijama. Rezultati su pokazali sljedeće izbore: **srce** 64, **karo** 50, **pik** 51, **tref** 35. Interpretirajte rezultate testa nezavisnosti proporcija.
+
+```{r chi_sq, echo=FALSE,warning=FALSE, fig.height=4}
+library(lsr)
+load(file.path("C:/Users/msagovac/Dropbox/Kolegij_statistika/KOLEGIJ_Materijali/SOCIOLOGIJA/Predavanja/PRIMJENA_STATISTIKE_U_DRUSTVENIM_ISTRAZIVANJIMA/randomness.Rdata"))
+izboriKarata <- table(cards$choice_1) # Tabuliraj prvu varijablu
+
+#podatci 
+
+chisq.test(x = izboriKarata)
+
+
+```
+
+4. Prikupljeni su podatci o uspjehu studenata statistike na dva različita fakulteta i proveden je test jednakosti postignuća. Interpretirajte rezultate testa.
+
+```{r, echo = FALSE}
+
+
+load(file.path("C:/Users/msagovac/Dropbox/Kolegij_statistika/KOLEGIJ_Materijali/SOCIOLOGIJA/Predavanja/PRIMJENA_STATISTIKE_U_DRUSTVENIM_ISTRAZIVANJIMA/harpo.Rdata" )) # Učitaj podatke
+# str(harpo) # Pregledaj podatke
+
+
+#str(harpo)
+levels(harpo$tutor) <- c("Filozofski.Fakultet", "Fakultet.Hrvatskih.Studija")
+
+# Izvedi test
+independentSamplesTTest( 
+      formula = grade ~ tutor,  # Formula za zavisnu i nezavisnu varijablu
+      data = harpo,             # Podatci
+      var.equal = TRUE          # Pretpostavka jednakih varijanci
+  )
+
+
+
+```
+
+
+
+
+
+
+
+
+

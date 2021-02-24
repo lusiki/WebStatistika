@@ -1,0 +1,36 @@
+---
+title: 'II. KOLOKVIJ IZ STATISTIKE'
+#author: "dr.sc. Luka Šikić"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+institute: Preddiplomski studij komunikologije
+subtitle: Hrvatski studiji
+font: 3t
+
+---
+
+Pitanja:
+
+1. Koje mjere centralne tendencije poznajete? Opišite distribuciju na donjem histogramu.
+
+```{r asimetrija, echo=FALSE,warning=FALSE, fig.height=4}
+
+library(psych)
+
+
+	x1 <- rbeta(n = 100000, shape1= 10, shape2 = 2)
+#	x2 <- rbeta(n = 100000, shape1= 10, shape2 = 10)
+#	x3 <- rbeta(n = 100000, shape1= 2, shape2 = 10)
+
+	  hist(x = x1,
+#	       breaks = seq(0,1,.05),
+	       xlab = "",
+	       ylab = "",
+	       main = "",
+	       axes = TRUE,
+	       col = "black",
+	       border = "white",
+			font.main = 1
+	       )
+
+```

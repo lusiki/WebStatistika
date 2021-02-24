@@ -1,0 +1,55 @@
+---
+title: 'II. KOLOKVIJ IZ STATISTIKE'
+subtitle: "Grupa B"
+#author: "dr.sc. Luka Šikić"
+#date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: pdf_document
+font: 3t
+
+---
+
+Pitanja:
+
+1. Navedite statističke testove koji se koriste za usporedbu prosjeka. Navedite primjere u kojima biste koristili navedene testove.
+
+2. Koje su pretpostpostavke **chi-square** testa? Koje biste testove koristili u slučaju da nisu zadovoljene pretpostavke?
+
+3. Provedeno je istraživanje potrošačkih preferencija između spolova pri čemu mogući odabiri uključuju **automobil**, **odjeću** ili **putovanje**. Interpretirajte rezultate testa zavisnosti potrošačkog izbora o spolu.
+
+```{r, echo = FALSE, message=FALSE}
+library(lsr)
+library(plyr)
+load(file.path(("C:/Users/msagovac/Dropbox/Kolegij_statistika/KOLEGIJ_Materijali/SOCIOLOGIJA/Predavanja/PRIMJENA_STATISTIKE_U_DRUSTVENIM_ISTRAZIVANJIMA/chapek9.Rdata")))
+
+#str(chapek9)
+#head(chapek9,5)
+levels(chapek9$species) <- c("zene", "muskarci")
+levels(chapek9$choice)  <- c("automobil", "odjeca", "putovanje")
+
+associationTest( formula = ~choice+species, data = chapek9 )
+
+```
+
+
+4. Prikupljeni su podatci o krvnim nalazima 20 pacijenata nakon dvije terapije novim generičkim lijekom za smanjenje prisutnosti željeza u organizmu. Na osnovi tih podataka je provedeno testiranje efikasnosti lijeka izmedju prve i druge primjene. Interpretirajte rezultate.
+
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+
+load( file.path("C:/Users/msagovac/Dropbox/Kolegij_statistika/KOLEGIJ_Materijali/SOCIOLOGIJA/Predavanja/PRIMJENA_STATISTIKE_U_DRUSTVENIM_ISTRAZIVANJIMA/chico.Rdata" ))
+#str(chico)  # Pogledaj podatke   
+
+
+#chico$poboljsanje <- chico$grade_test2 - chico$grade_test1
+chico <- chico %>% 
+  dplyr::rename(terapija_1 = grade_test1,
+                terapija_2 = grade_test2)
+
+
+pairedSamplesTTest( 
+     formula = ~ terapija_1 + terapija_2, # Formula za definiranje zavisnih i nezavisnih varijabli
+     data = chico                           # Podatci 
+  )
+
+```
