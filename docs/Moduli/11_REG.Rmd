@@ -160,15 +160,23 @@ layout: true
 # PREGLED PREDAVANJA
 ---
 <br>
-
+<br>
 ## CILJEVI 
+<br>
+<br>
 
 - Linearna regresija
+<br>
 - Multivarijatna linearna regresija
+<br>
 - Karakteristike procijenjenog modela
+<br>
 - Testiranje hipoteza
+<br>
 - Pretpostavke modela
+<br>
 - Provjera modela
+<br>
 - Izbor parametara modela
 
 
@@ -230,15 +238,22 @@ colour <- TRUE
 	width <- 6
 	height <- 6
 	
-  load(file.path("../Podatci/parenthood.Rdata"))
-	
-  
-  drawBasicScatterplot <- function(dotcol,title) {
+load(file.path("../Podatci/parenthood.Rdata"))
+head(parenthood,15)
+```
+
+---
+
+.hi[**Pregled podataka**]
+
+```{r regr0, fig.cap="", echo=FALSE, fig.height=6}
+
+drawBasicScatterplot <- function(dotcol,title) {
   
     plot( parenthood$dan.sleep,
           parenthood$dan.grump,
           xlab = "Sati spavanja",
-          ylab = "Raspoloženje (0-100)",
+          ylab = "Neraspoloženje (0-100)",
           col= dotcol,
           main = title,
           font.main=1,
@@ -249,9 +264,11 @@ colour <- TRUE
   
   # scatterplot only
 	drawBasicScatterplot( "black", "")
+	
 ```
-
-.footnote[[*]Dijagram rasipanja koji pokazuje raspolozenje kao funkciju sati spavanja.]
+<br>
+<br>
+.footnote[[*]Dijagram rasipanja koji pokazuje neraspolozenje kao funkciju sati spavanja.]
 
 ---
 
@@ -264,16 +281,19 @@ colour <- TRUE
 	abline( good.coef, col=ifelse(colour,emphCol,"black"), lwd=3 )
 ```
 
-.footnote[[*]Regresijski pravac koji prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
+
+.hi[**Napravi (loš) regresijski pravac**]
+
 ```{r regression1b, fig.cap="", echo=FALSE, fig.height=6}
 	drawBasicScatterplot( emphGrey, "Loš regresijski pravac!" )
 	bad.coef <- c(80,-3)
 	abline( bad.coef, col=ifelse(colour,emphCol,"black"), lwd=3 )
 ```
 
-.footnote[[*]Regresijski pravac koji loše prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji loše prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
 
@@ -282,7 +302,7 @@ colour <- TRUE
 
 $$\hat{Y_i} = b_1 X_i + b_0$$
 
-.hi[**Pogreška regresijkog modela**]  
+.hi[**Pogreška regresijskog modela**]  
 
 $$\epsilon_i = Y_i - \hat{Y}_i$$
 
@@ -374,7 +394,7 @@ $$Y_i = b_2 X_{i2} + b_1 X_{i1} + b_0 + \epsilon_i$$
 
 .hi[**Grafički prikaz**] 
 
-```{r echo= F, out.width = "120"}
+```{r echo= F, out.width = "420"}
 
 knitr::include_graphics(file.path("../Foto/scatter3d.png"))
 
@@ -413,7 +433,6 @@ layout:true
 
 .hi[**Izračun kvadrata odstupanja**]
 
-
 - Rezidualna odstupanja
 
 $$\mbox{SS}_{res} = \sum_i (Y_i - \hat{Y}_i)^2$$
@@ -442,15 +461,13 @@ Y.pred <- -8.94 * X  +  125.97
 # Izračunaj sumu rezidualnih odstupanja
 SS.resid <- sum((Y - Y.pred)^2)
 print(SS.resid) # Prikaži
-
 ```
 
 
 ```{r}
 # Izračunaj sumu ukupnih odstupanja
-SS.tot <- sum((Y - mean(Y)^2))
+SS.tot <- sum((Y - mean(Y))^2)
 print(SS.tot) # Prikaži
-
 ```
 
 ---

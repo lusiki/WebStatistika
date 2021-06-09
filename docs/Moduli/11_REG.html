@@ -31,15 +31,23 @@ layout: true
 # PREGLED PREDAVANJA
 ---
 &lt;br&gt;
-
+&lt;br&gt;
 ## CILJEVI 
+&lt;br&gt;
+&lt;br&gt;
 
 - Linearna regresija
+&lt;br&gt;
 - Multivarijatna linearna regresija
+&lt;br&gt;
 - Karakteristike procijenjenog modela
+&lt;br&gt;
 - Testiranje hipoteza
+&lt;br&gt;
 - Pretpostavke modela
+&lt;br&gt;
 - Provjera modela
+&lt;br&gt;
 - Izbor parametara modela
 
 
@@ -89,9 +97,34 @@ remark-slide-content {
 
 .hi[**Pregled podataka**]
 
-&lt;img src="11_REG_files/figure-html/regression0-1.svg" style="display: block; margin: auto;" /&gt;
 
-.footnote[[*]Dijagram rasipanja koji pokazuje raspolozenje kao funkciju sati spavanja.]
+```
+#&gt;    dan.sleep baby.sleep dan.grump day
+#&gt; 1       7.59      10.18        56   1
+#&gt; 2       7.91      11.66        60   2
+#&gt; 3       5.14       7.92        82   3
+#&gt; 4       7.71       9.61        55   4
+#&gt; 5       6.68       9.75        67   5
+#&gt; 6       5.99       5.04        72   6
+#&gt; 7       8.19      10.45        53   7
+#&gt; 8       7.19       8.27        60   8
+#&gt; 9       7.40       6.06        60   9
+#&gt; 10      6.58       7.09        71  10
+#&gt; 11      6.49      11.68        72  11
+#&gt; 12      6.27       6.13        65  12
+#&gt; 13      5.95       7.83        74  13
+#&gt; 14      6.65       5.60        67  14
+#&gt; 15      6.41       6.03        66  15
+```
+
+---
+
+.hi[**Pregled podataka**]
+
+&lt;img src="11_REG_files/figure-html/regr0-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+&lt;br&gt;
+.footnote[[*]Dijagram rasipanja koji pokazuje neraspolozenje kao funkciju sati spavanja.]
 
 ---
 
@@ -99,12 +132,15 @@ remark-slide-content {
 
 &lt;img src="11_REG_files/figure-html/regression1a-1.svg" style="display: block; margin: auto;" /&gt;
 
-.footnote[[*]Regresijski pravac koji prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
+
+.hi[**Napravi (loš) regresijski pravac**]
+
 &lt;img src="11_REG_files/figure-html/regression1b-1.svg" style="display: block; margin: auto;" /&gt;
 
-.footnote[[*]Regresijski pravac koji loše prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji loše prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
 
@@ -113,7 +149,7 @@ remark-slide-content {
 
 `$$\hat{Y_i} = b_1 X_i + b_0$$`
 
-.hi[**Pogreška regresijkog modela**]  
+.hi[**Pogreška regresijskog modela**]  
 
 `$$\epsilon_i = Y_i - \hat{Y}_i$$`
 
@@ -200,7 +236,7 @@ layout:true
 
 .hi[**Grafički prikaz**] 
 
-&lt;img src="../Foto/scatter3d.png" width="120" style="display: block; margin: auto;" /&gt;
+&lt;img src="../Foto/scatter3d.png" width="420" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -245,7 +281,6 @@ layout:true
 
 .hi[**Izračun kvadrata odstupanja**]
 
-
 - Rezidualna odstupanja
 
 `$$\mbox{SS}_{res} = \sum_i (Y_i - \hat{Y}_i)^2$$`
@@ -287,12 +322,12 @@ print(SS.resid) # Prikaži
 
 ```r
 # Izračunaj sumu ukupnih odstupanja
-SS.tot &lt;- sum((Y - mean(Y)^2))
+SS.tot &lt;- sum((Y - mean(Y))^2)
 print(SS.tot) # Prikaži
 ```
 
 ```
-#&gt; [1] -399525.4
+#&gt; [1] 9998.59
 ```
 
 ---
@@ -310,7 +345,7 @@ print(R.squared) # Prikaži
 ```
 
 ```
-#&gt; [1] 1.004602
+#&gt; [1] 0.8161018
 ```
 
 - Usporedi sa korelacijom
