@@ -394,7 +394,7 @@ $$Y_i = b_2 X_{i2} + b_1 X_{i1} + b_0 + \epsilon_i$$
 
 .hi[**Grafički prikaz**] 
 
-```{r echo= F, out.width = "120"}
+```{r echo= F, out.width = "420"}
 
 knitr::include_graphics(file.path("../Foto/scatter3d.png"))
 
