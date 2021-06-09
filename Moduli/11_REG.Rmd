@@ -238,7 +238,7 @@ colour <- TRUE
     plot( parenthood$dan.sleep,
           parenthood$dan.grump,
           xlab = "Sati spavanja",
-          ylab = "Raspoloženje (0-100)",
+          ylab = "Neraspoloženje (0-100)",
           col= dotcol,
           main = title,
           font.main=1,
@@ -251,7 +251,7 @@ colour <- TRUE
 	drawBasicScatterplot( "black", "")
 ```
 
-.footnote[[*]Dijagram rasipanja koji pokazuje raspolozenje kao funkciju sati spavanja.]
+.footnote[[*]Dijagram rasipanja koji pokazuje neraspolozenje kao funkciju sati spavanja.]
 
 ---
 
@@ -264,7 +264,7 @@ colour <- TRUE
 	abline( good.coef, col=ifelse(colour,emphCol,"black"), lwd=3 )
 ```
 
-.footnote[[*]Regresijski pravac koji prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
 ```{r regression1b, fig.cap="", echo=FALSE, fig.height=6}
@@ -273,7 +273,7 @@ colour <- TRUE
 	abline( bad.coef, col=ifelse(colour,emphCol,"black"), lwd=3 )
 ```
 
-.footnote[[*]Regresijski pravac koji loše prikazuje odnos raspolozenja i sati spavanja.]
+.footnote[[*]Regresijski pravac koji loše prikazuje odnos neraspolozenja i sati spavanja.]
 
 ---
 
@@ -282,7 +282,7 @@ colour <- TRUE
 
 $$\hat{Y_i} = b_1 X_i + b_0$$
 
-.hi[**Pogreška regresijkog modela**]  
+.hi[**Pogreška regresijskog modela**]  
 
 $$\epsilon_i = Y_i - \hat{Y}_i$$
 
