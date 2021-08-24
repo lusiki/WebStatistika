@@ -45,7 +45,15 @@ Koristiti ćemo tri knjige.
 <br><i>od David Dalpiaz.</i> 
 <br>Ovo je dodatna literatura za one koji žele znati više. Dostupna je i <a href="http://daviddalpiaz.github.io/appliedstats/">bookdown</a> verzija.
 
+Za one koji žele znati više postoji još nekoliko (novih) izvrsnih udžbenika iz statistike u R.
+
+<a href="http://modernstatisticswithr.com/">Modern Statistics with R</a>
+<br><i>od Måns Thulin.</i> 
+<br>Ovo je sveobuhvatan udžbenik sa dodatnim i naprednijim temama. Dostupna je u bookdown verziji.
+
 <br>
+
+
 
 ## Polaganje ispita i kolokvija
 
