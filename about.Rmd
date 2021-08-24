@@ -45,7 +45,12 @@ Koristiti ćemo tri knjige.
 <br><i>od David Dalpiaz.</i> 
 <br>Ovo je dodatna literatura za one koji žele znati više. Dostupna je i <a href="http://daviddalpiaz.github.io/appliedstats/">bookdown</a> verzija.
 
-Za one koji žele znati više postoji nekoliko (novih) izvrsnih udžbenika iz statistike u R.
+**Za one koji žele znati više postoji nekoliko (novih) izvrsnih udžbenika iz statistike u R:**
+
+<a href="https://www.openintro.org/book/ims/">Introduction to Modern Statistics</a>
+<br><i>od Mine Çetinkaya-Rundel i Johanna Hardin.</i> 
+<br>Ovo je moderan udžbenik iz statistike za jezik R. Dostupan je u i u <a href="https://openintro-ims.netlify.app/">bookdown</a> verziji.
+
 
 <a href="https://www.barnesandnoble.com/w/modern-statistics-with-r-m-ns-thulin/1139979246">Modern Statistics with R</a>
 <br><i>od Måns Thulin.</i> 
@@ -54,6 +59,7 @@ Za one koji žele znati više postoji nekoliko (novih) izvrsnih udžbenika iz st
 <a href="https://www.routledge.com/Statistical-Inference-via-Data-Science-A-ModernDive-into-R-and-the-Tidyverse/Ismay-Kim/p/book/9780367409821">Statistical Inference via Data Science: A ModernDive into R and the Tidyverse</a>
 <br><i>od Chester Ismay i Albert Y. Kim.</i> 
 <br>Ovo je iznimno koristan udžbenik sa koji pristupa statistici iz perspektive podatkovnih znanosti. Dostupan je u i u <a href="https://moderndive.com/index.html">bookdown</a> verziji.
+
 
 <br>
 
