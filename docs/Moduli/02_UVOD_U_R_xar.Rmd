@@ -191,7 +191,9 @@ class: middle, inverse
 layout: true
 # OSNOVNE RAČUNSKE OPERACIJE
 ---
-
+<br>
+<br>
+<br>
 ```{r aritmetika, echo=FALSE}
 knitr::kable(rbind(
               c("zbrajanje", "`+`", "10 + 2", 12),
@@ -200,17 +202,20 @@ knitr::kable(rbind(
               c("dijeljenje", "`/`", "10 / 3", 3),
               c("eksponencija", "`^`", "5 ^ 2", 25)
 ),
-caption = "Osnovne računske operacije u R-u. Ove naredbe ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti.",
+caption = "",
 col.names = c("Operacija", "Operator", " Input" , "Output"),
 align = "rccc",
   booktabs = TRUE)
 ```
-
+<br>
+<br>
+<br>
+.footer[*Ove naredbe ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti!]
 ---
 layout: true
 # PRIMJERI
 ---
-
+<br>
 ```{r eval=FALSE }
 # Zbrajanje
 > 20 + 30
@@ -244,28 +249,40 @@ class: middle, inverse
 layout: true
 # OSNOVE RADA S VARIJABLAMA
 ---
-
+<br>
+<br>
 ```{r}
 # Pripisivanje vrijednosti varijabli
 placa <- 5500
 mjeseci <- 12
+```
+<br>
+```{r}
 # Pregled varijable
 placa
+```
+<br>
+```{r}
 # Kalukulacije sa varijablama
-placa*mjeseci # Jednako kao 5550*12!
+placa * mjeseci # Jednako kao 5550*12!
 ```
 
 ---
 layout: true
 # DODATNE MOGUĆNOSTI S VARIJABLAMA
 ---
-
+<br>
+<br>
 
 ```{r}
 # Stvori novu varijablu pomoću postojećih
 godisnja_placa <- placa*mjeseci
-# Pregled varijable
+# Pregled varijable<br>
 godisnja_placa
+```
+<br>
+<br>
+```{r}
 # 13ta placa
 godisnja_zarada <- godisnja_placa + 5500
 # Pregled varijable
@@ -276,14 +293,27 @@ godisnja_zarada
 layout: true
 # KONVENCIJE ZA VARIJABLE
 ---
-
-- sva slova u nazivu varijable su *mala* ili *velika*
-- rijeci ne smiju sadržavati razmak
-- **godisnja_zarada** i **Godisnja_zarada** su različite varijable
-- naziv varijable može imati točku na početku ali (**.godisnja_zarada**) se ne preporuča   
-- naziv varijable ne može biti (REZERVIRANO!): `if`, `else`, `repeat`, `while`, `function`, `for`, `in`, `next`, `break`, `TRUE`, `FALSE`, `NULL`, `Inf`, `NaN`, `NA`, `NA_integer_`, `NA_real_`, `NA_complex_` niti `NA_character_`
-- naziv varijable treba biti informativan, kratak i prepoznatljiv
-- preporučene opcije za naziv varijable sa više riječi: **godisnja_zarada** ili **godisnja.zarada**
+<br>
+<br>
+* sva slova u nazivu varijable su *mala* ili *velika*
+<br>
+<br>
+* rijeci ne smiju sadržavati razmak
+<br>
+<br>
+* **godisnja_zarada** i **Godisnja_zarada** su različite varijable
+<br>
+<br>
+* naziv varijable može imati točku na početku ali (**.godisnja_zarada**) se ne preporuča
+<br>
+<br>
+* naziv varijable ne može biti (REZERVIRANO!): `if`, `else`, `repeat`, `while`, `function`, `for`, `in`, `next`, `break`, `TRUE`, `FALSE`, `NULL`, `Inf`, `NaN`, `NA`, `NA_integer_`, `NA_real_`, `NA_complex_` niti `NA_character_`
+<br>
+<br>
+* naziv varijable treba biti informativan, kratak i prepoznatljiv
+<br>
+<br>
+* preporučene opcije za naziv varijable sa više riječi: **godisnja_zarada** ili **godisnja.zarada**
 
 ---
 layout: false
@@ -293,7 +323,6 @@ class: middle, inverse
 ---
 layout: true
 # KORIŠTENJE FUNKCIJA ZA RAČUNSKE OPERACIJE 
-
 ---
 
 ```{r}
@@ -314,10 +343,15 @@ sqrt(1 + abs(-8))
 layout: true
 # FUNKCIJSKI ARGUMENTI
 ---
-
+<br>
+<br>
 ```{r}
 # Zaokruži vrijednost;pi
 round(3.1415)
+```
+<br>
+<br>
+```{r}
 # Dodatni funkcijski argumenti;broj decimala
 round(3.1415,2)#Jednako kao round(x = 3.1415, digits = 2)
              
@@ -339,14 +373,17 @@ layout: true
 <br>
 
 - vektor se sastoji od (jedng ili) više elemenata 
-- svi elementi vektora *imaju* istu klasu
-- klase mogu biti brojevi, riječi, logičke tvrdnje
-- za stvaranje vektora se koristi `combine()` funkcija;skraćeno `c()`
+- svi elementi vektora imaju istu klasu
+- klase mogu biti brojevi, riječi (*string*,*character*), logičke tvrdnje, faktori
+- za stvaranje vektora se koristi  funkcija `combine()`; skraćeno `c()`
 
 ```{r}
 # NUMERIČKI VEKTOR 
 # Stvori vektor mjesečnih plaća za prvi kvartal u godini
 kvartalna_placa <- c("5400", "5300", "5500")
+```
+
+```{r}
 # Pregled varijable
 kvartalna_placa
 
@@ -354,13 +391,18 @@ kvartalna_placa
 
 ---
 layout: true
-# IZVLAČENJE INFORMACIJA IZ VEKTORA 
+# PRISTUPANJE ELEMENTU VEKTORA 
 ---
 
-
+<br>
+<br>
 ```{r}
 # Plaća u veljači
 kvartalna_placa[2]
+```
+<br>
+<br>
+```{r}
 # Stvori varijablu iz (jednog elementa) vektora
 placa_u_sijecnju <- kvartalna_placa[2]
 
@@ -370,12 +412,17 @@ placa_u_sijecnju <- kvartalna_placa[2]
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA I 
 ---
-
+<br>
+<br>
 ```{r}
 # Koliko ima elemenata u vektoru? length()
 length(kvartalna_placa)
-# Pomnoži sve elemente vektora brojem
-# konverzija iz "chr" u "numeric"
+```
+<br>
+<br>
+```{r}
+# Podijeli sve elemente vektora brojem
+# 1. konverzija iz "chr" u "numeric"
 as.numeric(kvartalna_placa) / 7.5
 ```
 
@@ -383,10 +430,15 @@ as.numeric(kvartalna_placa) / 7.5
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA II
 ---
-
+<br>
+<br>
 ```{r}
 # Definiraj tečaj
 eur <- 7.5
+```
+<br>
+<br>
+```{r}
 # Plaća u eurima
 godisnja_placa_eur <- godisnja_placa / eur 
 #Pregled varijable
@@ -394,16 +446,21 @@ godisnja_placa_eur
 
 ```
 
---
+---
 layout: true
 # VEKTORI S TEKSTUALNIM VARIJABLAMA
 ---
-
+<br>
+<br>
 ```{r}
 # Stvori tekstualnu varijablu
 pozdrav <- "ciao"
 # Pregled varijable
 pozdrav
+```
+<br>
+<br>
+```{r}
 # Stvori vektor tekstualnih elemenata 
 prvi_kvartal_mj <- c("sijecanj", "veljaca", "ozujak")
 # Pregled vektora
@@ -412,14 +469,19 @@ prvi_kvartal_mj
 ```
 
 
---
+---
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA III
 ---
-
+<br>
+<br>
 ```{r}
 # Drugi mjesec 
 veljaca <- prvi_kvartal_mj[2]
+```
+<br>
+<br>
+```{r}
 # Pregled varijable
 nchar(veljaca) # Jenako: nchar(x = prvi_kvartal[2])!
 # Pregled duljine elemenata(riječi) u vektoru
@@ -436,10 +498,12 @@ class: middle, inverse
 layout: true
 # OSNOVE RADA S LOGIČKIM VARIJABLAMA 
 ---
-
+<br>
+<br>
 ```{r}
 2 + 2
 ```
+<br>
 
 ```{r}
 # Logička istina: TRUE
@@ -452,8 +516,8 @@ layout: true
 layout: true
 # LOGIČKI OPERATORI I 
 ---
-
-
+<br>
+<br>
 ```{r logicki_operatori, echo=FALSE}
 knitr::kable(rbind(
                     c("manje", "<", "2 < 3", "`TRUE`"),
@@ -462,18 +526,21 @@ knitr::kable(rbind(
                     c("vece ili jednako", ">=", "2 >= 2" , "`TRUE`"), 
                     c("jednako", "==", "2 == 3" , "`FALSE`"),
                     c("nije jednako", "!=", "2 != 3" , "`TRUE`")),
-              caption = "Osnovni operatori",
+              caption = "",
               col.names = c("Operacija", "Operator", "Input", "Odgovor"),
             align = "rccc",
   booktabs = TRUE)
 
 ```
 
+.footer[*Ovo logičke operatore ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti!]
+
 ---
 layout: true
 # LOGIČKI OPERATORI II 
 ---
-
+<br>
+<br>
 ```{r}
 # Primjeri
 99 < 100
@@ -487,24 +554,30 @@ layout: true
 # LOGIČKI OPERATORI III 
 ---
 
-
+<br>
+<br>
+<br>
+<br>
 ```{r logicals2, echo=FALSE}
 knitr::kable(rbind(
                     c("ne", "!", "!(1==1)", "`FALSE`"),
                     c("ili", "|", "(1==1) | (2==3)", "`TRUE`"),
                     c("i", "&", "(1==1) & (2==3)", "`FALSE`")),
-              caption = 'Jos neki vazni logicki operatori.',
+              caption = '',
               col.names = c("Operacija", "Operator", "Input", "Odgovor"),
               align = c("c", "c", "c", "c"),
               booktabs = TRUE)
   
 ```
 
+
+.footer[*Ovo logičke operatore ćemo koristiti kroz cijeli kolegij i također ih je korisno  zapamtiti!]
 ---
 layout: true
 # LOGIČKI OPERATORI IV
 ---
-
+<br>
+<br>
 ```{r}
 # Primjeri
 (2 + 2 == 4) | (2 + 2 == 5)
@@ -516,7 +589,8 @@ layout: true
 layout: true
 # LOGIČKI OPERATORI V
 ---
-
+<br>
+<br>
 ```{r}
 # Jedna mogucnost
 da_li_je_ovo_tocno <- 2 + 2 == 5
@@ -550,10 +624,10 @@ iznadprosjecna_placa
 
 ---
 layout: true
-# RISTUPANJE ELEMENTIMA VEKTORA I
+# PRISTUPANJE ELEMENTIMA VEKTORA I
 ---
 
-
+<br>
 ```{r}
 # Izaberi 2. i 3. mjesec iz kvartala
 kvartalna_placa[ c(2,3) ]
@@ -565,9 +639,10 @@ kvartalna_placa[ 1:3 ]
 
 ---
 layout: true
-# RISTUPANJE ELEMENTIMA VEKTORA II
+# PRISTUPANJE ELEMENTIMA VEKTORA II
 ---
-
+<br>
+<br>
 ```{r}
 # Poveži tekstualni i logički vektor 
 prvi_kvartal_mj[kvartalna_placa > 5400]
