@@ -4,6 +4,7 @@
     <title>PRIMJENJENA STATISTIKA</title>
     <meta charset="utf-8" />
     <meta name="author" content="Luka Sikic, PhD" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -57,9 +58,11 @@ class: middle, inverse
 layout: true
 # OSNOVNE RAČUNSKE OPERACIJE
 ---
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;table&gt;
-&lt;caption&gt;Osnovne računske operacije u R-u. Ove naredbe ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti.&lt;/caption&gt;
+&lt;caption&gt;&lt;/caption&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:right;"&gt; Operacija &lt;/th&gt;
@@ -101,12 +104,15 @@ layout: true
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+.footer[*Ove naredbe ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti!]
 ---
 layout: true
 # PRIMJERI
 ---
-
+&lt;br&gt;
 
 ```r
 # Zbrajanje
@@ -144,12 +150,17 @@ class: middle, inverse
 layout: true
 # OSNOVE RADA S VARIJABLAMA
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Pripisivanje vrijednosti varijabli
 placa &lt;- 5500
 mjeseci &lt;- 12
+```
+&lt;br&gt;
+
+```r
 # Pregled varijable
 placa
 ```
@@ -157,10 +168,11 @@ placa
 ```
 #&gt; [1] 5500
 ```
+&lt;br&gt;
 
 ```r
 # Kalukulacije sa varijablama
-placa*mjeseci # Jednako kao 5550*12!
+placa * mjeseci # Jednako kao 5550*12!
 ```
 
 ```
@@ -171,19 +183,22 @@ placa*mjeseci # Jednako kao 5550*12!
 layout: true
 # DODATNE MOGUĆNOSTI S VARIJABLAMA
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 
 ```r
 # Stvori novu varijablu pomoću postojećih
 godisnja_placa &lt;- placa*mjeseci
-# Pregled varijable
+# Pregled varijable&lt;br&gt;
 godisnja_placa
 ```
 
 ```
 #&gt; [1] 66000
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # 13ta placa
@@ -200,14 +215,27 @@ godisnja_zarada
 layout: true
 # KONVENCIJE ZA VARIJABLE
 ---
-
-- sva slova u nazivu varijable su *mala* ili *velika*
-- rijeci ne smiju sadržavati razmak
-- **godisnja_zarada** i **Godisnja_zarada** su različite varijable
-- naziv varijable može imati točku na početku ali (**.godisnja_zarada**) se ne preporuča   
-- naziv varijable ne može biti (REZERVIRANO!): `if`, `else`, `repeat`, `while`, `function`, `for`, `in`, `next`, `break`, `TRUE`, `FALSE`, `NULL`, `Inf`, `NaN`, `NA`, `NA_integer_`, `NA_real_`, `NA_complex_` niti `NA_character_`
-- naziv varijable treba biti informativan, kratak i prepoznatljiv
-- preporučene opcije za naziv varijable sa više riječi: **godisnja_zarada** ili **godisnja.zarada**
+&lt;br&gt;
+&lt;br&gt;
+* sva slova u nazivu varijable su *mala* ili *velika*
+&lt;br&gt;
+&lt;br&gt;
+* rijeci ne smiju sadržavati razmak
+&lt;br&gt;
+&lt;br&gt;
+* **godisnja_zarada** i **Godisnja_zarada** su različite varijable
+&lt;br&gt;
+&lt;br&gt;
+* naziv varijable može imati točku na početku ali (**.godisnja_zarada**) se ne preporuča
+&lt;br&gt;
+&lt;br&gt;
+* naziv varijable ne može biti (REZERVIRANO!): `if`, `else`, `repeat`, `while`, `function`, `for`, `in`, `next`, `break`, `TRUE`, `FALSE`, `NULL`, `Inf`, `NaN`, `NA`, `NA_integer_`, `NA_real_`, `NA_complex_` niti `NA_character_`
+&lt;br&gt;
+&lt;br&gt;
+* naziv varijable treba biti informativan, kratak i prepoznatljiv
+&lt;br&gt;
+&lt;br&gt;
+* preporučene opcije za naziv varijable sa više riječi: **godisnja_zarada** ili **godisnja.zarada**
 
 ---
 layout: false
@@ -217,7 +245,6 @@ class: middle, inverse
 ---
 layout: true
 # KORIŠTENJE FUNKCIJA ZA RAČUNSKE OPERACIJE 
-
 ---
 
 
@@ -262,7 +289,8 @@ sqrt(1 + abs(-8))
 layout: true
 # FUNKCIJSKI ARGUMENTI
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Zaokruži vrijednost;pi
@@ -272,6 +300,8 @@ round(3.1415)
 ```
 #&gt; [1] 3
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Dodatni funkcijski argumenti;broj decimala
@@ -297,15 +327,19 @@ layout: true
 &lt;br&gt;
 
 - vektor se sastoji od (jedng ili) više elemenata 
-- svi elementi vektora *imaju* istu klasu
-- klase mogu biti brojevi, riječi, logičke tvrdnje
-- za stvaranje vektora se koristi `combine()` funkcija;skraćeno `c()`
+- svi elementi vektora imaju istu klasu
+- klase mogu biti brojevi, riječi (*string*,*character*), logičke tvrdnje, faktori
+- za stvaranje vektora se koristi  funkcija `combine()`; skraćeno `c()`
 
 
 ```r
 # NUMERIČKI VEKTOR 
 # Stvori vektor mjesečnih plaća za prvi kvartal u godini
 kvartalna_placa &lt;- c("5400", "5300", "5500")
+```
+
+
+```r
 # Pregled varijable
 kvartalna_placa
 ```
@@ -316,10 +350,11 @@ kvartalna_placa
 
 ---
 layout: true
-# IZVLAČENJE INFORMACIJA IZ VEKTORA 
+# PRISTUPANJE ELEMENTU VEKTORA 
 ---
 
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Plaća u veljači
@@ -329,6 +364,8 @@ kvartalna_placa[2]
 ```
 #&gt; [1] "5300"
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Stvori varijablu iz (jednog elementa) vektora
@@ -339,7 +376,8 @@ placa_u_sijecnju &lt;- kvartalna_placa[2]
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA I 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Koliko ima elemenata u vektoru? length()
@@ -349,10 +387,12 @@ length(kvartalna_placa)
 ```
 #&gt; [1] 3
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
-# Pomnoži sve elemente vektora brojem
-# konverzija iz "chr" u "numeric"
+# Podijeli sve elemente vektora brojem
+# 1. konverzija iz "chr" u "numeric"
 as.numeric(kvartalna_placa) / 7.5
 ```
 
@@ -364,11 +404,17 @@ as.numeric(kvartalna_placa) / 7.5
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA II
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Definiraj tečaj
 eur &lt;- 7.5
+```
+&lt;br&gt;
+&lt;br&gt;
+
+```r
 # Plaća u eurima
 godisnja_placa_eur &lt;- godisnja_placa / eur 
 #Pregled varijable
@@ -379,11 +425,12 @@ godisnja_placa_eur
 #&gt; [1] 8800
 ```
 
---
+---
 layout: true
 # VEKTORI S TEKSTUALNIM VARIJABLAMA
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Stvori tekstualnu varijablu
@@ -395,6 +442,8 @@ pozdrav
 ```
 #&gt; [1] "ciao"
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Stvori vektor tekstualnih elemenata 
@@ -408,15 +457,21 @@ prvi_kvartal_mj
 ```
 
 
---
+---
 layout: true
 # DODATNE MOGUĆNOSTI S VEKTORIMA III
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Drugi mjesec 
 veljaca &lt;- prvi_kvartal_mj[2]
+```
+&lt;br&gt;
+&lt;br&gt;
+
+```r
 # Pregled varijable
 nchar(veljaca) # Jenako: nchar(x = prvi_kvartal[2])!
 ```
@@ -444,7 +499,8 @@ class: middle, inverse
 layout: true
 # OSNOVE RADA S LOGIČKIM VARIJABLAMA 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 2 + 2
@@ -453,6 +509,7 @@ layout: true
 ```
 #&gt; [1] 4
 ```
+&lt;br&gt;
 
 
 ```r
@@ -477,10 +534,10 @@ layout: true
 layout: true
 # LOGIČKI OPERATORI I 
 ---
-
-
+&lt;br&gt;
+&lt;br&gt;
 &lt;table&gt;
-&lt;caption&gt;Osnovni operatori&lt;/caption&gt;
+&lt;caption&gt;&lt;/caption&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:right;"&gt; Operacija &lt;/th&gt;
@@ -529,11 +586,14 @@ layout: true
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+.footer[*Ovo logičke operatore ćemo koristiti kroz cijeli kolegij i korisno ih je zapamtiti!]
+
 ---
 layout: true
 # LOGIČKI OPERATORI II 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Primjeri
@@ -565,9 +625,12 @@ layout: true
 # LOGIČKI OPERATORI III 
 ---
 
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;table&gt;
-&lt;caption&gt;Jos neki vazni logicki operatori.&lt;/caption&gt;
+&lt;caption&gt;&lt;/caption&gt;
  &lt;thead&gt;
   &lt;tr&gt;
    &lt;th style="text-align:center;"&gt; Operacija &lt;/th&gt;
@@ -598,11 +661,14 @@ layout: true
 &lt;/tbody&gt;
 &lt;/table&gt;
 
+
+.footer[*Ovo logičke operatore ćemo koristiti kroz cijeli kolegij i također ih je korisno  zapamtiti!]
 ---
 layout: true
 # LOGIČKI OPERATORI IV
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Primjeri
@@ -633,7 +699,8 @@ layout: true
 layout: true
 # LOGIČKI OPERATORI V
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Jedna mogucnost
@@ -695,10 +762,10 @@ iznadprosjecna_placa
 
 ---
 layout: true
-# RISTUPANJE ELEMENTIMA VEKTORA I
+# PRISTUPANJE ELEMENTIMA VEKTORA I
 ---
 
-
+&lt;br&gt;
 
 ```r
 # Izaberi 2. i 3. mjesec iz kvartala
@@ -729,9 +796,10 @@ kvartalna_placa[ 1:3 ]
 
 ---
 layout: true
-# RISTUPANJE ELEMENTIMA VEKTORA II
+# PRISTUPANJE ELEMENTIMA VEKTORA II
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Poveži tekstualni i logički vektor 
@@ -761,6 +829,22 @@ class: middle, inverse
 # HVALA NA PAŽNJI! 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 (Sljedeće predavanje: Dodatni koncepti R)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
