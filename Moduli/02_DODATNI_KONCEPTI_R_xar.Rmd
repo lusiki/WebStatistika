@@ -168,15 +168,19 @@ layout: true
 # PREGLED PREDAVANJA
 ---
 
-## Ciljevi
+
 <br>
 <br>
 <br>
 <br>
 - Što su paketi
+<br>
 - Radni prostor
+<br>
 - Učitavanje i spremanje podataka
+<br>
 - Specijalne vrijednosti, nazivi i klase varijabli
+<br>
 - Slozeniji tipovi varijabli: faktori,podatkovni okviri, liste 
 ---
 
