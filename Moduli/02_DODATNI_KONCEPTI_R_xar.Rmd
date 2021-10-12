@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 2: Dodatni koncepti R"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/index.html)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
@@ -194,9 +194,24 @@ layout: true
 ---
 <br>
 <br>
-- paket(knjižnica) je skup funkcija(podataka i sl.) koje je netko napisao i ponudio  na korištenje
-- paketi su javno dostupni (Open Source)
-- paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije - u okviru kolegija ćemo uglavnom koristiti nekoliko paketa: [*base R*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html), [*lsr*](https://cran.r-project.org/web/packages/lsr/index.html), [*ggplot2*](https://www.statmethods.net/advgraphs/ggplot2.html), [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf), [*car*](https://cran.r-project.org/web/packages/car/index.html) i dr. 
+<br>
+- paket (*library*) je skup funkcija (podataka i/ili drugih funkcionalnosti) koje je netko napisao i ponudiona korištenje
+<br>
+- paketi su (uglavnom) javno dostupni (OpenSource)
+<br>
+- paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije
+<br>
+- u okviru ovog kolegija ćemo najviše koristiti nekoliko paketa: 
+<br>
+- [*base R*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html)
+<br>
+- [*lsr*](https://cran.r-project.org/web/packages/lsr/index.html)
+<br>
+- [*ggplot2*](https://www.statmethods.net/advgraphs/ggplot2.html)
+<br> 
+- [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf)
+<br>
+- [*car*](https://cran.r-project.org/web/packages/car/index.html) i dr. 
 
 ---
 layout: true
@@ -207,8 +222,17 @@ layout: true
 ```{r eval=FALSE}
 # Instaliraj paket
 install.packages("lsr")
+
+```
+<br>
+<br>
+```{r}
 # Učitaj paket
 library(lsr) # Također require()
+```
+<br>
+<br>
+```{r}
 # Makni paket
 detach("package:lsr", unload=TRUE)
 
@@ -226,11 +250,15 @@ layout: true
 ---
 <br>
 <br>
-
+<br>
 ```{r eval = FALSE}
 # Gdje se nalazi radni folder
 getwd()
 [1] "C:/Users/Dropbox/Kolegij_statistika"
+```
+<br>
+<br>
+```{r eval = FALSE}
 # Postavi radni folder
 setwd("C:/Users/Luka/Statistika/...")
 # Obrati pažnju na "/" vs "\\"
@@ -249,12 +277,16 @@ layout: true
 ---
 <br>
 <br>
-
-- *workspace files* imaju .Rdata ekstenziju i sadržavaju objekte iz radnog prostora
+<br>
+- *workspace files* imaju `.Rdata` ekstenziju i sadržavaju objekte iz radnog prostora
+<br>
 - *.csv*, *.txt*, *.spss* sadržavaju podatke koje je potrebno učitati u radni prostor
+<br>
 - *script files* sadržavaju napisani kod
+<br>
 - postoje i brojni drugi objekti! (npr. RMarkdown)
-
+<br>
+<br>
 ```{r eval = FALSE}
 # učitaj u radni prostor
 load( file = "~/datoteka.Rmd" )
@@ -265,11 +297,26 @@ load( file = "~/datoteka.Rmd" )
 layout: true
 # UČITAVANJE U R II
 ---
-
+<br>
+<br>
 ```{r eval=FALSE}
 # Učitaj podatke iz excela 
 podatci_statistika <- read.csv( file = "statistika.csv" )
 # U praksi je potrebno prilagoditi funkcijske argumente!
+# Učitaj tablične podatke 
+read.table(file, header = FALSE, sep = "", dec = ".")
+# Učitaj txt podatke
+read.delim(file, header = TRUE, sep = "\t", dec = ".", ...)
+# Učitaj podatke sa interneta
+podatciInternet <- read.delim("http://www.sthda.com/upload/boxplot_format.txt")
+# Učitaj .rdata podatke
+load("survey.rdata")
+# Učitaj .rds podatke
+dataRDS <- readRDS("survey.rds")
+# Učitaj spss podatke
+dataSPSS <- read.spss("../survey.save", to.data.frame=TRUE)
+# Učitaj stata podatke
+dataStata <- read.dta("survey.dta")
 ```
 
 ---
@@ -279,10 +326,15 @@ layout: true
 <br>
 <br>
 - obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*
-
+<br>
+<br>
 ```{r eval=FALSE}
 # Pohrani radni prostor
 save.image("~/Desktop/radni_prostor.RData")
+```
+<br>
+<br>
+```{r eval=FALSE}
 # Pohrani podatke
 save(neki_podatci, file = "neki_podatci.Rdata")
 # Output je moguće pohraniti pomoću funkcije sink()
@@ -298,17 +350,20 @@ class: middle, inverse
 layout: true
 # SPECIJALNE VRIJEDNOSTI 
 ---
-
+<br>
+<br>
 ```{r}
 # Beskonačno
 1 / 0
 ```
-
+<br>
 ```{r}
 # Nije broj
  0 / 0
 ```
+<br>
 -  *nije dostupno* `NA`
+<br>
 - *nema vrijednosti* `NULL` 
 
 ---
@@ -331,11 +386,16 @@ layout: true
 #  DAVANJE NAZIVA ELEMENTIMA VEKTORA II 
 ---
 <br>
-<br>
 ```{r}
 # Stvori numerički vektor sa nazivima v2.0
 ocjena <- c("nedovoljan" = 1,"dovoljan" = 2,"dobar" = 3)
+```
+<br>
+```{r}
 ocjena # Pregledaj objekt
+```
+<br>
+```{r}
 # Indeksiranje pomoću naziva
 ocjena["dobar"] # Pregledaj objekt
 
