@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 2: Dodatni koncepti R"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
@@ -168,15 +168,19 @@ layout: true
 # PREGLED PREDAVANJA
 ---
 
-## Ciljevi
+
 <br>
 <br>
 <br>
 <br>
 - Što su paketi
+<br>
 - Radni prostor
+<br>
 - Učitavanje i spremanje podataka
+<br>
 - Specijalne vrijednosti, nazivi i klase varijabli
+<br>
 - Slozeniji tipovi varijabli: faktori,podatkovni okviri, liste 
 ---
 
@@ -190,9 +194,24 @@ layout: true
 ---
 <br>
 <br>
-- paket(knjižnica) je skup funkcija(podataka i sl.) koje je netko napisao i ponudio  na korištenje
-- paketi su javno dostupni (Open Source)
-- paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije - u okviru kolegija ćemo uglavnom koristiti nekoliko paketa: [*base R*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html), [*lsr*](https://cran.r-project.org/web/packages/lsr/index.html), [*ggplot2*](https://www.statmethods.net/advgraphs/ggplot2.html), [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf), [*car*](https://cran.r-project.org/web/packages/car/index.html) i dr. 
+<br>
+- paket (*library*) je skup funkcija (podataka i/ili drugih funkcionalnosti) koje je netko napisao i ponudio na korištenje
+<br>
+- paketi su javno dostupni (OpenSource)
+<br>
+- paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije
+<br>
+- u okviru ovog kolegija ćemo najviše koristiti nekoliko paketa: 
+<br>
+- [*base R*](https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html)
+<br>
+- [*lsr*](https://cran.r-project.org/web/packages/lsr/index.html)
+<br>
+- [*ggplot2*](https://www.statmethods.net/advgraphs/ggplot2.html)
+<br> 
+- [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf)
+<br>
+- [*car*](https://cran.r-project.org/web/packages/car/index.html)  
 
 ---
 layout: true
@@ -203,8 +222,17 @@ layout: true
 ```{r eval=FALSE}
 # Instaliraj paket
 install.packages("lsr")
+
+```
+<br>
+<br>
+```{r}
 # Učitaj paket
 library(lsr) # Također require()
+```
+<br>
+<br>
+```{r}
 # Makni paket
 detach("package:lsr", unload=TRUE)
 
@@ -222,11 +250,15 @@ layout: true
 ---
 <br>
 <br>
-
+<br>
 ```{r eval = FALSE}
 # Gdje se nalazi radni folder
 getwd()
 [1] "C:/Users/Dropbox/Kolegij_statistika"
+```
+<br>
+<br>
+```{r eval = FALSE}
 # Postavi radni folder
 setwd("C:/Users/Luka/Statistika/...")
 # Obrati pažnju na "/" vs "\\"
@@ -241,16 +273,20 @@ class: middle, inverse
 # UČITAVANJE I SPREMANJE PODATAKA
 ---
 layout: true
-# UČITAVANJE U R I
+# UČITAVANJE U R 
 ---
 <br>
 <br>
-
-- *workspace files* imaju .Rdata ekstenziju i sadržavaju objekte iz radnog prostora
-- *.csv*, *.txt*, *.spss* sadržavaju podatke koje je potrebno učitati u radni prostor
-- *script files* sadržavaju napisani kod
+<br>
+- *workspace files* imaju `.Rdata` ekstenziju i sadržavaju objekte iz radnog prostora
+<br>
+- *.csv*, *.txt*, *.spss* dokumenti sadržavaju podatke koje je potrebno učitati u radni prostor
+<br>
+- *script* datoteke sadržavaju napisani kod
+<br>
 - postoje i brojni drugi objekti! (npr. RMarkdown)
-
+<br>
+<br>
 ```{r eval = FALSE}
 # učitaj u radni prostor
 load( file = "~/datoteka.Rmd" )
@@ -259,13 +295,28 @@ load( file = "~/datoteka.Rmd" )
 
 ---
 layout: true
-# UČITAVANJE U R II
+# UČITAVANJE U R
 ---
-
+<br>
+<br>
 ```{r eval=FALSE}
 # Učitaj podatke iz excela 
 podatci_statistika <- read.csv( file = "statistika.csv" )
 # U praksi je potrebno prilagoditi funkcijske argumente!
+# Učitaj tablične podatke 
+read.table(file, header = FALSE, sep = "", dec = ".")
+# Učitaj txt podatke
+read.delim(file, header = TRUE, sep = "\t", dec = ".", ...)
+# Učitaj podatke sa interneta
+podatciInternet <- read.delim("http://www.sthda.com/upload/boxplot_format.txt")
+# Učitaj .rdata podatke
+load("survey.rdata")
+# Učitaj .rds podatke
+dataRDS <- readRDS("survey.rds")
+# Učitaj spss podatke
+dataSPSS <- read.spss("../survey.save", to.data.frame=TRUE)
+# Učitaj stata podatke
+dataStata <- read.dta("survey.dta")
 ```
 
 ---
@@ -274,11 +325,16 @@ layout: true
 ---
 <br>
 <br>
-- obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*
-
+- obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*, *markdown*
+<br>
+<br>
 ```{r eval=FALSE}
 # Pohrani radni prostor
 save.image("~/Desktop/radni_prostor.RData")
+```
+<br>
+<br>
+```{r eval=FALSE}
 # Pohrani podatke
 save(neki_podatci, file = "neki_podatci.Rdata")
 # Output je moguće pohraniti pomoću funkcije sink()
@@ -294,22 +350,25 @@ class: middle, inverse
 layout: true
 # SPECIJALNE VRIJEDNOSTI 
 ---
-
+<br>
+<br>
 ```{r}
 # Beskonačno
 1 / 0
 ```
-
+<br>
 ```{r}
 # Nije broj
  0 / 0
 ```
+<br>
 -  *nije dostupno* `NA`
+<br>
 - *nema vrijednosti* `NULL` 
 
 ---
 layout: true
-#  DAVANJE NAZIVA ELEMENTIMA VEKTORA I 
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA  
 ---
 <br>
 <br>
@@ -324,14 +383,19 @@ ocjena # Pregledaj objekt
 
 ---
 layout: true
-#  DAVANJE NAZIVA ELEMENTIMA VEKTORA II 
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA 
 ---
 <br>
+```{r}
+# Stvori numerički vektor sa nazivima; sve u jednoj naredbi
+ocjena <- c("nedovoljan" = 1,"dovoljan" = 2,"dobar" = 3)
+```
 <br>
 ```{r}
-# Stvori numerički vektor sa nazivima v2.0
-ocjena <- c("nedovoljan" = 1,"dovoljan" = 2,"dobar" = 3)
 ocjena # Pregledaj objekt
+```
+<br>
+```{r}
 # Indeksiranje pomoću naziva
 ocjena["dobar"] # Pregledaj objekt
 
@@ -360,8 +424,14 @@ layout: true
 ```{r}
 x <- "tekst"  # x je tekst
 class(x)      # Pregledaj klasu
+```
+<br>
+```{r}
 x <- TRUE     # x je logička klasa 
 class(x)      # Pregledaj klasu
+```
+<br>
+```{r}
 x <- 100      # x je broj
 class(x)      # Pregledaj klasu
 ```
@@ -376,6 +446,10 @@ layout: true
 # Stvori numerički vektor
 grupa <- c(1,1,1,2,2,3,3)
 grupa # Pogledaj objekt
+```
+<br>
+<br>
+```{r}
 # Pretvori numerički vektor u faktor
 grupa <- as.factor(grupa)
 grupa # Pogledaj objekt
@@ -383,14 +457,16 @@ grupa # Pogledaj objekt
 
 ---
 layout: true
-#  FAKTORI II
+#  FAKTORI 
 ---
 <br>
 <br>
 
 - računske operacije sa faktorima nisu iste kao sa numeričkim vektorima
-
+<br>
+<br>
 ```{r}
+# zbrajanje faktora i broja ne funkcionira
 grupa + 2
 ```
 
@@ -404,6 +480,10 @@ layout: true
 # Stvori faktoraku varijablu;spol ispitanika 
 spol <- as.factor(c(1,1,1,1,2,2,2))
 spol # Pogledaj objekt
+```
+<br>
+
+```{r}
 # Pripiši nazive faktorima
 levels(spol) <- c("muški", "ženski")
 print(spol) # Prikaži objekt
@@ -415,7 +495,7 @@ print(spol) # Prikaži objekt
 layout: false
 class: middle, inverse
 
-# PODATKOVNI OKVIRI (*data frame*) 
+# PODATKOVNI OKVIRI (*data frame*;*df*) 
 ---
 layout: true
 # PODATKOVNI OKVIRI 
@@ -434,7 +514,7 @@ head(df, 5) # Pogledaj prvih 5 redova df-a
 
 ---
 layout: true
-#  IZVLAČENJE PODATAKA IZ DFa 
+# IZVLAČENJE PODATAKA IZ DF-a 
 ---
 <br>
 <br>
@@ -442,12 +522,37 @@ layout: true
 ```{r}
 # Pogledaj seriju bodova
 df$bodovi 
+```
+<br>
+<br>
+```{r}
 # Pogledaj nazive varijabli (kolona)
 names(df)
 ```
 
 ---
+layout: true
+#  IZVLAČENJE PODATAKA IZ DF-a 
+---
+<br>
+<br>
+```{r}
+# izvuci prvi red
+df[1,]
+```
 
+```{r}
+# izvuci prvu kolonu
+df[,1]
+```
+
+```{r}
+# izvuci drugi red u trećoj koloni
+df[2,3]
+```
+
+
+---
 layout: false
 class: middle, inverse
 
@@ -460,15 +565,15 @@ layout: true
 <br>
 ```{r}
 # Stvori listu
-ana <- list(godine = 26,
-            student = TRUE,
-            roditelji = c("Marko","Mia"))
+ana <- list(godine = 26,                  # numerička varijabla
+            student = TRUE,               # logička varijabla
+            roditelji = c("Marko","Mia")) # character varijabla
 ana # Pogledaj objekt
 ```
 
 ---
 layout: true
-# LISTE I
+# LISTE 
 ---
 <br>
 <br>
@@ -476,12 +581,14 @@ layout: true
 # Pristupi elementima liste
 ana$student
 ana$roditelji
+ana[2]
+ana$roditelji[2]
 ```
 
 
 ---
 layout: true
-# LISTE I
+# LISTE 
 ---
 <br>
 <br>
@@ -490,6 +597,19 @@ layout: true
 ana$mjesto_stanovanja <- "Zagreb"
 ana # Pogledaj objekt 
 ```
+
+---
+layout: true
+# LISTE 
+---
+<br>
+<br>
+```{r}
+# Dodaj element u listu
+ana$aplikacije <- c("Facebook","Instagram","TikTok","Gmail")
+ana # Pogledaj objekt 
+```
+
 ---
 
 layout:false
