@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # PRIMJENJENA STATISTIKA
 ## Predavanje 2: Dodatni koncepti R
 ### Luka Sikic, PhD
-### Fakultet hrvatskih studija | <a href="https://lusiki.github.io/WebStatistika/index.html">Github PS</a>
+### Fakultet hrvatskih studija | <a href="https://lusiki.github.io/WebStatistika/">Github PS</a>
 
 ---
 
@@ -62,9 +62,9 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
-- paket (*library*) je skup funkcija (podataka i/ili drugih funkcionalnosti) koje je netko napisao i ponudiona korištenje
+- paket (*library*) je skup funkcija (podataka i/ili drugih funkcionalnosti) koje je netko napisao i ponudio na korištenje
 &lt;br&gt;
-- paketi su (uglavnom) javno dostupni (OpenSource)
+- paketi su javno dostupni (OpenSource)
 &lt;br&gt;
 - paket je potrebno jednom instalirati, a učitati se mora pri svakom otvaranju sesije
 &lt;br&gt;
@@ -78,7 +78,7 @@ layout: true
 &lt;br&gt; 
 - [*psych*](https://cran.r-project.org/web/packages/psych/psych.pdf)
 &lt;br&gt;
-- [*car*](https://cran.r-project.org/web/packages/car/index.html) i dr. 
+- [*car*](https://cran.r-project.org/web/packages/car/index.html)  
 
 ---
 layout: true
@@ -142,16 +142,16 @@ class: middle, inverse
 # UČITAVANJE I SPREMANJE PODATAKA
 ---
 layout: true
-# UČITAVANJE U R I
+# UČITAVANJE U R 
 ---
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
 - *workspace files* imaju `.Rdata` ekstenziju i sadržavaju objekte iz radnog prostora
 &lt;br&gt;
-- *.csv*, *.txt*, *.spss* sadržavaju podatke koje je potrebno učitati u radni prostor
+- *.csv*, *.txt*, *.spss* dokumenti sadržavaju podatke koje je potrebno učitati u radni prostor
 &lt;br&gt;
-- *script files* sadržavaju napisani kod
+- *script* datoteke sadržavaju napisani kod
 &lt;br&gt;
 - postoje i brojni drugi objekti! (npr. RMarkdown)
 &lt;br&gt;
@@ -165,7 +165,7 @@ load( file = "~/datoteka.Rmd" )
 
 ---
 layout: true
-# UČITAVANJE U R II
+# UČITAVANJE U R
 ---
 &lt;br&gt;
 &lt;br&gt;
@@ -196,7 +196,7 @@ layout: true
 ---
 &lt;br&gt;
 &lt;br&gt;
-- obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*
+- obično žellimo pohraniti: *radni prostor*, *output*, *skriptu*, *markdown*
 &lt;br&gt;
 &lt;br&gt;
 
@@ -251,7 +251,7 @@ layout: true
 
 ---
 layout: true
-#  DAVANJE NAZIVA ELEMENTIMA VEKTORA I 
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA  
 ---
 &lt;br&gt;
 &lt;br&gt;
@@ -279,12 +279,12 @@ ocjena # Pregledaj objekt
 
 ---
 layout: true
-#  DAVANJE NAZIVA ELEMENTIMA VEKTORA II 
+#  DAVANJE NAZIVA ELEMENTIMA VEKTORA 
 ---
 &lt;br&gt;
 
 ```r
-# Stvori numerički vektor sa nazivima v2.0
+# Stvori numerički vektor sa nazivima; sve u jednoj naredbi
 ocjena &lt;- c("nedovoljan" = 1,"dovoljan" = 2,"dobar" = 3)
 ```
 &lt;br&gt;
@@ -343,6 +343,7 @@ class(x)      # Pregledaj klasu
 ```
 #&gt; [1] "character"
 ```
+&lt;br&gt;
 
 ```r
 x &lt;- TRUE     # x je logička klasa 
@@ -352,6 +353,7 @@ class(x)      # Pregledaj klasu
 ```
 #&gt; [1] "logical"
 ```
+&lt;br&gt;
 
 ```r
 x &lt;- 100      # x je broj
@@ -378,6 +380,8 @@ grupa # Pogledaj objekt
 ```
 #&gt; [1] 1 1 1 2 2 3 3
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Pretvori numerički vektor u faktor
@@ -392,15 +396,17 @@ grupa # Pogledaj objekt
 
 ---
 layout: true
-#  FAKTORI II
+#  FAKTORI 
 ---
 &lt;br&gt;
 &lt;br&gt;
 
 - računske operacije sa faktorima nisu iste kao sa numeričkim vektorima
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
+# zbrajanje faktora i broja ne funkcionira
 grupa + 2
 ```
 
@@ -425,6 +431,8 @@ spol # Pogledaj objekt
 #&gt; [1] 1 1 1 1 2 2 2
 #&gt; Levels: 1 2
 ```
+&lt;br&gt;
+
 
 ```r
 # Pripiši nazive faktorima
@@ -443,7 +451,7 @@ print(spol) # Prikaži objekt
 layout: false
 class: middle, inverse
 
-# PODATKOVNI OKVIRI (*data frame*) 
+# PODATKOVNI OKVIRI (*data frame*;*df*) 
 ---
 layout: true
 # PODATKOVNI OKVIRI 
@@ -472,7 +480,7 @@ head(df, 5) # Pogledaj prvih 5 redova df-a
 
 ---
 layout: true
-#  IZVLAČENJE PODATAKA IZ DFa 
+# IZVLAČENJE PODATAKA IZ DF-a 
 ---
 &lt;br&gt;
 &lt;br&gt;
@@ -486,6 +494,8 @@ df$bodovi
 ```
 #&gt; [1] 12 15 16 14 25 21 29
 ```
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Pogledaj nazive varijabli (kolona)
@@ -497,7 +507,45 @@ names(df)
 ```
 
 ---
+layout: true
+#  IZVLAČENJE PODATAKA IZ DF-a 
+---
+&lt;br&gt;
+&lt;br&gt;
 
+```r
+# izvuci prvi red
+df[1,]
+```
+
+```
+#&gt;   grupa  spol starost bodovi
+#&gt; 1     1 muški      17     12
+```
+
+
+```r
+# izvuci prvu kolonu
+df[,1]
+```
+
+```
+#&gt; [1] 1 1 1 2 2 3 3
+#&gt; Levels: 1 2 3
+```
+
+
+```r
+# izvuci drugi red u trećoj koloni
+df[2,3]
+```
+
+```
+#&gt; [1] 19
+```
+
+
+---
 layout: false
 class: middle, inverse
 
@@ -511,9 +559,9 @@ layout: true
 
 ```r
 # Stvori listu
-ana &lt;- list(godine = 26,
-            student = TRUE,
-            roditelji = c("Marko","Mia"))
+ana &lt;- list(godine = 26,                  # numerička varijabla
+            student = TRUE,               # logička varijabla
+            roditelji = c("Marko","Mia")) # character varijabla
 ana # Pogledaj objekt
 ```
 
@@ -530,7 +578,7 @@ ana # Pogledaj objekt
 
 ---
 layout: true
-# LISTE I
+# LISTE 
 ---
 &lt;br&gt;
 &lt;br&gt;
@@ -552,10 +600,27 @@ ana$roditelji
 #&gt; [1] "Marko" "Mia"
 ```
 
+```r
+ana[2]
+```
+
+```
+#&gt; $student
+#&gt; [1] TRUE
+```
+
+```r
+ana$roditelji[2]
+```
+
+```
+#&gt; [1] "Mia"
+```
+
 
 ---
 layout: true
-# LISTE I
+# LISTE 
 ---
 &lt;br&gt;
 &lt;br&gt;
@@ -579,6 +644,37 @@ ana # Pogledaj objekt
 #&gt; $mjesto_stanovanja
 #&gt; [1] "Zagreb"
 ```
+
+---
+layout: true
+# LISTE 
+---
+&lt;br&gt;
+&lt;br&gt;
+
+```r
+# Dodaj element u listu
+ana$aplikacije &lt;- c("Facebook","Instagram","TikTok","Gmail")
+ana # Pogledaj objekt 
+```
+
+```
+#&gt; $godine
+#&gt; [1] 26
+#&gt; 
+#&gt; $student
+#&gt; [1] TRUE
+#&gt; 
+#&gt; $roditelji
+#&gt; [1] "Marko" "Mia"  
+#&gt; 
+#&gt; $mjesto_stanovanja
+#&gt; [1] "Zagreb"
+#&gt; 
+#&gt; $aplikacije
+#&gt; [1] "Facebook"  "Instagram" "TikTok"    "Gmail"
+```
+
 ---
 
 layout:false
