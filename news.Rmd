@@ -7,6 +7,5 @@ title: " "
 <br>
 <br>
 
-
-
-**20/01/2021**- Nova stranica kolegija!
+- **13/10/2021** - Osvježena predavanja *Uvod u R* + *Dodatni koncepti R*
+- **20/01/2021** - Nova stranica kolegija!
