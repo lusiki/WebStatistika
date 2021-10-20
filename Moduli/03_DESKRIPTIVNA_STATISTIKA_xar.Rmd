@@ -288,7 +288,8 @@ $$
 \frac{56 + 31 + 56 + 8 + 32}{5} = \frac{183}{5} = 36.60
 $$
 ---
-
+<br>
+<br>
 .hi[Kalkulator]
 
 ```{r}
@@ -296,7 +297,8 @@ $$
 ```
 
 --
-
+<br>
+<br>
 .hi[Funkcija]
 
 ```{r}
@@ -307,7 +309,8 @@ sum( afl.margins[1:5]) / 5
 layout: true
 # MEDIJAN
 ---
-
+<br>
+<br>
 .hi[Za neparni niz]
 $$
 8, 31, \mathbf{32}, 56, 56
@@ -362,7 +365,8 @@ mean( x = afl.margins, trim = .05)
 layout: true
 # MOD
 ---
-
+<br>
+<br>
 ```{r, fig.width= 8}
 # Pogledaj frekvenciju podataka
 table(afl.finalists)
@@ -402,10 +406,15 @@ layout: true
 <br>
 <br>
 - Raspon/Min-Max
+<br>
 - Kvartili
+<br>
 - Prosječno apsolutno odstupanje
+<br>
 - Varijanca
+<br>
 - Standardna devijacija 
+<br>
 - Srednje apsolutno odstupanje
 
 ---
@@ -589,7 +598,8 @@ sd( afl.margins )
 layout:true
 # APSOLUTNO ODSTUPANJE OD MEDIJANA 
 ---
-
+<br>
+<br>
 ```{r}
 # Prosječno apsolutno odstupanje od prosjeka
 mean( abs(afl.margins - mean(afl.margins)) )
@@ -608,6 +618,7 @@ mad( x = afl.margins, constant = 1 )
 layout:true
 # KOEFICIJENT ASIMETRIJE 
 ---
+<br>
 <br>
 <br>
 ```{r skewness, fig.cap="", echo=FALSE,warning=FALSE, fig.height=5}
@@ -654,6 +665,8 @@ layout:true
 ---
 <br>
 <br>
+<br>
+<br>
 ```{r kurtosis, fig.cap="", echo=FALSE, fig.height = 4}
 	#x1 <- c(rexp(n = 5000, rate =2), -rexp(n = 5000, rate =2) )
 	x3 <- c(rnorm(n = 50000, mean =0, sd = 1), (runif(n = 50000)-.5)+rnorm(50000,0,.1) )*1.6
@@ -685,12 +698,11 @@ layout:true
 	par( old )
 ```
 ---
-
+<br>
+<br>
 .hi[Formula]
 <br>
 <br>
-
-
 $$
 \mbox{kurtosis}(X) = \frac{1}{N \hat\sigma^4} \sum_{i=1}^N \left( X_i - \bar{X} \right)^4  - 3
 $$
@@ -742,7 +754,10 @@ summary( object = txt ) # Deskriptivna stat
 layout:true
 # NOVI PODATKOVNI SKUP 
 ---
-.hi[Pdatci]
+<br>
+<br>
+.hi[Podatci]
+<br>
 ```{r}
 rm(list = ls()) # Očisti radni prostor
 load("../Podatci/clinicaltrial.Rdata") # Učitaj podatke
@@ -753,17 +768,19 @@ who(TRUE) # Pregled podataka
 layout:true
 # DESKRIPTIVNA STATISTIKA DF 
 ---
-
+<br>
+<br>
 .hi[Obični pregled]
-
+<br>
 ```{r}
 # Deksriptivna statistika na podatkovnom okviru
 summary(clin.trial) # Desktiptivna stat
 ```
 ---
-
+<br>
+<br>
 .hi[Alternativna funkcija]
-
+<br>
 ```{r}
 # Deksriptivna statistika na podatkovnom okviru
 describe(clin.trial) # Desktiptivna stat/ druga funkcija
@@ -771,7 +788,6 @@ describe(clin.trial) # Desktiptivna stat/ druga funkcija
 ---
 
 .hi[Grupirani pregled]
-<br>
 
 ```{r}
 # Pregledaj grupirano prema terapiji
@@ -795,7 +811,7 @@ aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
 ---
 
 .hi[Grupirani pregled]
-
+<br>
 ```{r}
 # Pregledaj grupirano prema razlici u raspoloženju
 aggregate(mood.gain ~ drug + therapy,  # Prikaz
@@ -829,6 +845,7 @@ $$
 z = \frac{35 - 17}{5} = 3.6
 $$
 --
+
 .[Distribucija]
 ```{r}
 # Vidi dio u distribuciji
@@ -886,8 +903,9 @@ par(mfcol = c(1, 3)) # Create a 2 x 2 plotting matrix
 layout:true
 # KORELACIJA 
 ---
-.hi[Grafički prikaz korelacije]
 
+.hi[Grafički prikaz korelacije]
+<br>
 ```{r scatterparent1a, fig.cap="", echo=FALSE, fig.height=5}
 oneCorPlot <- function(x,y,...) {
 		
@@ -930,7 +948,8 @@ $$
 --
 <br
 <br>
-.hi[Personov korelacijski koeficijent;standardizacija kovarijance]
+<br>
+.hi[Personov korelacijski koeficijent; standardizacija kovarijance]
 
 $$
 r_{XY}  = \frac{\mbox{Cov}(X,Y)}{ \hat{\sigma}_X \ \hat{\sigma}_Y}
@@ -994,7 +1013,7 @@ layout:true
 # IZRAČUN KORELACIJE U R
 ---
 
-.hi[Funkcijski izračun;pojedinačno]
+.hi[Funkcijski izračun; pojedinačno]
 
 ```{r}
 # Izračunaj korelaciju između spavanja i raspoloženja
@@ -1002,7 +1021,7 @@ cor(x = parenthood$dan.sleep, y = parenthood$dan.grump)
 ```
 --
 
-.hi[Funkcijski izračun;cijeli df]
+.hi[Funkcijski izračun; cijeli df]
 
 ```{r}
 # Izračunaj korelacijsku tablicu
@@ -1103,7 +1122,8 @@ ocjena <- rank( effort$grade ) # Rang ocjena
 |student | 10 | 9| 9
 
 ---
-
+<br>
+<br>
 .hi[Funkcijski izračun]
 
 ```{r}

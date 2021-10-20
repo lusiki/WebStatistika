@@ -173,7 +173,8 @@ $$
 \frac{56 + 31 + 56 + 8 + 32}{5} = \frac{183}{5} = 36.60
 $$
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Kalkulator]
 
 
@@ -186,7 +187,8 @@ $$
 ```
 
 --
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Funkcija]
 
 
@@ -202,7 +204,8 @@ sum( afl.margins[1:5]) / 5
 layout: true
 # MEDIJAN
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Za neparni niz]
 $$
 8, 31, \mathbf{32}, 56, 56
@@ -283,7 +286,8 @@ mean( x = afl.margins, trim = .05)
 layout: true
 # MOD
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Pogledaj frekvenciju podataka
@@ -357,10 +361,15 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 - Raspon/Min-Max
+&lt;br&gt;
 - Kvartili
+&lt;br&gt;
 - Prosječno apsolutno odstupanje
+&lt;br&gt;
 - Varijanca
+&lt;br&gt;
 - Standardna devijacija 
+&lt;br&gt;
 - Srednje apsolutno odstupanje
 
 ---
@@ -672,7 +681,8 @@ sd( afl.margins )
 layout:true
 # APSOLUTNO ODSTUPANJE OD MEDIJANA 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Prosječno apsolutno odstupanje od prosjeka
@@ -708,6 +718,7 @@ layout:true
 ---
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/skewness-1.svg" style="display: block; margin: auto;" /&gt;
 ---
 
@@ -733,14 +744,15 @@ layout:true
 ---
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/kurtosis-1.svg" style="display: block; margin: auto;" /&gt;
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Formula]
 &lt;br&gt;
 &lt;br&gt;
-
-
 $$
 \mbox{kurtosis}(X) = \frac{1}{N \hat\sigma^4} \sum_{i=1}^N \left( X_i - \bar{X} \right)^4  - 3
 $$
@@ -837,7 +849,10 @@ summary( object = txt ) # Deskriptivna stat
 layout:true
 # NOVI PODATKOVNI SKUP 
 ---
-.hi[Pdatci]
+&lt;br&gt;
+&lt;br&gt;
+.hi[Podatci]
+&lt;br&gt;
 
 ```r
 rm(list = ls()) # Očisti radni prostor
@@ -857,9 +872,10 @@ who(TRUE) # Pregled podataka
 layout:true
 # DESKRIPTIVNA STATISTIKA DF 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Obični pregled]
-
+&lt;br&gt;
 
 ```r
 # Deksriptivna statistika na podatkovnom okviru
@@ -876,9 +892,10 @@ summary(clin.trial) # Desktiptivna stat
 #&gt;                              Max.   :1.8000
 ```
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Alternativna funkcija]
-
+&lt;br&gt;
 
 ```r
 # Deksriptivna statistika na podatkovnom okviru
@@ -898,7 +915,6 @@ describe(clin.trial) # Desktiptivna stat/ druga funkcija
 ---
 
 .hi[Grupirani pregled]
-&lt;br&gt;
 
 
 ```r
@@ -953,7 +969,7 @@ aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
 ---
 
 .hi[Grupirani pregled]
-
+&lt;br&gt;
 
 ```r
 # Pregledaj grupirano prema razlici u raspoloženju
@@ -997,6 +1013,7 @@ $$
 z = \frac{35 - 17}{5} = 3.6
 $$
 --
+
 .[Distribucija]
 
 ```r
@@ -1080,8 +1097,9 @@ describe(parenthood)
 layout:true
 # KORELACIJA 
 ---
-.hi[Grafički prikaz korelacije]
 
+.hi[Grafički prikaz korelacije]
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/scatterparent1a-1.svg" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/roditelj` i `Raspoloženje`.]
@@ -1105,7 +1123,8 @@ $$
 --
 &lt;br
 &lt;br&gt;
-.hi[Personov korelacijski koeficijent;standardizacija kovarijance]
+&lt;br&gt;
+.hi[Personov korelacijski koeficijent; standardizacija kovarijance]
 
 $$
 r_{XY}  = \frac{\mbox{Cov}(X,Y)}{ \hat{\sigma}_X \ \hat{\sigma}_Y}
@@ -1124,7 +1143,7 @@ layout:true
 # IZRAČUN KORELACIJE U R
 ---
 
-.hi[Funkcijski izračun;pojedinačno]
+.hi[Funkcijski izračun; pojedinačno]
 
 
 ```r
@@ -1137,7 +1156,7 @@ cor(x = parenthood$dan.sleep, y = parenthood$dan.grump)
 ```
 --
 
-.hi[Funkcijski izračun;cijeli df]
+.hi[Funkcijski izračun; cijeli df]
 
 
 ```r
@@ -1295,7 +1314,8 @@ ocjena &lt;- rank( effort$grade ) # Rang ocjena
 |student | 10 | 9| 9
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Funkcijski izračun]
 
 
