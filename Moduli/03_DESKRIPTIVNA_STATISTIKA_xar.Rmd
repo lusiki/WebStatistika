@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 3: Deskriptivna statistika"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
@@ -167,23 +167,24 @@ tidy_table <- function(x, terms, highlight_row = 1, highlight_color = "black", h
 layout: true
 # PREGLED PREDAVANJA
 ---
-
-## Ciljevi
 <br>
 <br>
 <br>
-<br>
-
 - Upoznavanje sa podatcima
+<br>
 - Mjere centralne tendencije
+<br>
 - Mjere varijabilnosti
+<br>
 - Mjere asimetrije i zaobljenosti
+<br>
 - Pregled varijabli i podatkovnih okvira
+<br>
 - Standardizirane vrijednosti
+<br>
 - Korelacija
 
 ---
-
 layout: true
 # PODATCI
 ---
@@ -224,6 +225,7 @@ print(afl.finalists[1:5])
 ---
 
 .hi[Vizualizacija]
+<br>
 ```{r histogram1, fig.cap="", fig.height=4, echo=FALSE}
 # prikaži podatke
 	hist( afl.margins, breaks=  seq(0,120,10), border="white", col= "grey",
@@ -246,7 +248,9 @@ layout: true
 <br>
 <br>
 - Aritmetička sredina
+<br>
 - Medijan
+<br>
 - Mod
 
 ---
@@ -258,9 +262,7 @@ layout: true
 .hi[Definicija]
 
 
-$$
-\bar{X} = \frac{X_1+X_2 +...+ X_{N-1}+X_N} {N}
-$$
+$$\bar{X} = \frac {X_{1}+X_{2}+\cdots +X_{N}}{N}$$
 
 --
 
