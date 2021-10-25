@@ -46,14 +46,17 @@ name: ggplot2
 ---
 
 # Instaliraj i učitaj
-
+<br>
+<br>
+<br>
 Isprobajte [ggplot2](https://ggplot2.tidyverse.org/) (i.e. livecoding).
 <br>
 <br>
-Ako već niste, instalirajte `ggplot2` i `gapminder` pakete via:
+Ako već niste, instalirajte `ggplot2` i `gapminder` pakete:
 <br>
 <br>
 - **Konzola:** Unesite `install.packages(c("ggplot2", "gapminder"), dependencies=T)`.
+<br>
 - **RStudio:** Kliknite"Packages" tab u donjem desnom prozoru. Potom kliknite "Install" i potražite ova dva paketa.
   
 ![](pics/install.gif)
@@ -61,12 +64,14 @@ Ako već niste, instalirajte `ggplot2` i `gapminder` pakete via:
 ---
 
 # Instaliraj i učitaj (dalje)
+<br>
 
 Kada su paketi instalirani, učitajte ih u  R sesiju sa `library()` funkcijom
 ```{r pkg_load}
 library(ggplot2)
 library(gapminder) ## Za gapminder podatke
 ```
+<br>
 
 Nisu potrebni navodnici za učitavanje. Razlog: R sada prepoznaje ove pakete kao definirane objekte sa danim imenima. ("Sve je objekt i sve ima naziv!")
 
@@ -90,9 +95,10 @@ gapminder
 ---
 
 # Elementi ggplot2
-
+<br>
+<br>
 [Hadley Wickham-ov](http://hadley.nz/) ggplot2 je vjerojatno najpoznatiji R paket. 
-- Paket je napravljen na vizualizacijskoj teoriji: i.e. Leland Wilkinson [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
+- Paket je napravljen na vizualizacijskoj teoriji od Lelanda Wilkinsona [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
 
 Ključni elementi ggplot2 pristupa su:
 
@@ -121,7 +127,8 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 ---
 
 # 1. Estetska mapiranja (dalje)
-
+<br>
+<br>
 ```{r aesthetics1, eval=FALSE}
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
   geom_point()
@@ -146,7 +153,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = conti
 ```
 
 --
-
+<br>
 .footnote[[*]Primjetite da smo maknuli "mapping =" dio. Najčešće se koristi "aes(...)" jer `ggplot2` zna redosljed funkcijskih argumenata.]
 
 ---
@@ -171,7 +178,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 --
 
-**Odgovor:**Estetike moraju biti mapirane na varijablem, ne na opise!
+**Odgovor:** Estetike moraju biti mapirane na varijable, ne na opise!
 
 ---
 
@@ -188,9 +195,9 @@ p
 
 # 2. Geomi
 
-Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geome.
+Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geom-e.
 
-```{r geoms1, dev='svg'}
+```{r geoms1, dev='svg', message=FALSE,warning=FALSE}
 p + 
   geom_point(alpha = 0.3)  +
   geom_smooth(method = "loess") 
@@ -202,7 +209,7 @@ p +
 
 Estetike mogu biti primjenjene u različitim geomima.
 
-```{r geoms2, dev='svg'}
+```{r geoms2, dev='svg', message=FALSE,warning=FALSE}
 p + 
   geom_point(aes(size = pop, col = continent), alpha = 0.3)  +
   geom_smooth(method = "loess") 
@@ -267,7 +274,7 @@ p2 =
 
 # 3. Napravi grafikon u slojevima (dalje)
 
-```{r layers2, dependson=p2, echo=FALSE, dev='svg'}
+```{r layers2, dependson=p2, echo=TRUE, dev='svg'}
 p2
 ```
 
@@ -282,7 +289,7 @@ Prethodni primjeri su samo uvod u punu funkcionalnost ggplot2...nismo ni spomenu
 
 Za sljedeće grafikone je potrebno instalirati neke dodatne pakete. To možete napraviti na ovaj način:
 
-```{r pacinstall}
+```{r pacinstall, message=FALSE,warning=FALSE}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(hrbrthemes, gganimate)
 ```
@@ -344,7 +351,9 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
 
 ---
 # Kako dalje? (cont.)
-
+<br>
+<br>
+<br>
 Za kraj važno spomenuti da je ggplot2' u odnosu sa "tidy" data principom.
   - Riječ je o nizu paketa pod nazivom [tidyverse](https://www.tidyverse.org/). 
 

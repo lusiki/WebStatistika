@@ -40,14 +40,17 @@ name: ggplot2
 ---
 
 # Instaliraj i učitaj
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 Isprobajte [ggplot2](https://ggplot2.tidyverse.org/) (i.e. livecoding).
 &lt;br&gt;
 &lt;br&gt;
-Ako već niste, instalirajte `ggplot2` i `gapminder` pakete via:
+Ako već niste, instalirajte `ggplot2` i `gapminder` pakete:
 &lt;br&gt;
 &lt;br&gt;
 - **Konzola:** Unesite `install.packages(c("ggplot2", "gapminder"), dependencies=T)`.
+&lt;br&gt;
 - **RStudio:** Kliknite"Packages" tab u donjem desnom prozoru. Potom kliknite "Install" i potražite ova dva paketa.
   
 ![](pics/install.gif)
@@ -55,6 +58,7 @@ Ako već niste, instalirajte `ggplot2` i `gapminder` pakete via:
 ---
 
 # Instaliraj i učitaj (dalje)
+&lt;br&gt;
 
 Kada su paketi instalirani, učitajte ih u  R sesiju sa `library()` funkcijom
 
@@ -66,6 +70,7 @@ library(gapminder) ## Za gapminder podatke
 ```
 ## Warning: package 'gapminder' was built under R version 4.0.3
 ```
+&lt;br&gt;
 
 Nisu potrebni navodnici za učitavanje. Razlog: R sada prepoznaje ove pakete kao definirane objekte sa danim imenima. ("Sve je objekt i sve ima naziv!")
 
@@ -107,9 +112,10 @@ gapminder
 ---
 
 # Elementi ggplot2
-
+&lt;br&gt;
+&lt;br&gt;
 [Hadley Wickham-ov](http://hadley.nz/) ggplot2 je vjerojatno najpoznatiji R paket. 
-- Paket je napravljen na vizualizacijskoj teoriji: i.e. Leland Wilkinson [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
+- Paket je napravljen na vizualizacijskoj teoriji od Lelanda Wilkinsona [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
 
 Ključni elementi ggplot2 pristupa su:
 
@@ -141,7 +147,8 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 ---
 
 # 1. Estetska mapiranja (dalje)
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
@@ -170,7 +177,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = conti
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_DODATNO_xar_files/figure-html/aesthetics2-1.svg" style="display: block; margin: auto;" /&gt;
 
 --
-
+&lt;br&gt;
 .footnote[[*]Primjetite da smo maknuli "mapping =" dio. Najčešće se koristi "aes(...)" jer `ggplot2` zna redosljed funkcijskih argumenata.]
 
 ---
@@ -201,7 +208,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 --
 
-**Odgovor:**Estetike moraju biti mapirane na varijablem, ne na opise!
+**Odgovor:** Estetike moraju biti mapirane na varijable, ne na opise!
 
 ---
 
@@ -221,17 +228,13 @@ p
 
 # 2. Geomi
 
-Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geome.
+Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geom-e.
 
 
 ```r
 p + 
   geom_point(alpha = 0.3)  +
   geom_smooth(method = "loess") 
-```
-
-```
-## `geom_smooth()` using formula 'y ~ x'
 ```
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_DODATNO_xar_files/figure-html/geoms1-1.svg" style="display: block; margin: auto;" /&gt;
@@ -247,10 +250,6 @@ Estetike mogu biti primjenjene u različitim geomima.
 p + 
   geom_point(aes(size = pop, col = continent), alpha = 0.3)  +
   geom_smooth(method = "loess") 
-```
-
-```
-## `geom_smooth()` using formula 'y ~ x'
 ```
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_DODATNO_xar_files/figure-html/geoms2-1.svg" style="display: block; margin: auto;" /&gt;
@@ -326,6 +325,11 @@ p2 =
 
 # 3. Napravi grafikon u slojevima (dalje)
 
+
+```r
+p2
+```
+
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_DODATNO_xar_files/figure-html/layers2-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -342,17 +346,6 @@ Za sljedeće grafikone je potrebno instalirati neke dodatne pakete. To možete n
 
 ```r
 if (!require("pacman")) install.packages("pacman")
-```
-
-```
-## Loading required package: pacman
-```
-
-```
-## Warning: package 'pacman' was built under R version 4.0.3
-```
-
-```r
 pacman::p_load(hrbrthemes, gganimate)
 ```
 
@@ -403,7 +396,9 @@ Animirani grafikon je izvrstan za intuitivno razumijevanje podataka. Baš kao š
 
 ---
 # Kako dalje? (cont.)
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 Za kraj važno spomenuti da je ggplot2' u odnosu sa "tidy" data principom.
   - Riječ je o nizu paketa pod nazivom [tidyverse](https://www.tidyverse.org/). 
 
@@ -412,13 +407,15 @@ Korisni resursi vezani uz današnje predavanje:
 - [*Data Visualization: A Practical Guide*](https://socviz.co/makeplot.html) od Kieran Healy.
 - [Designing ggplots](https://designing-ggplots.netlify.com) od Malcom Barrett.
 
-
 ---
-class: inverse, center, middle
 
-
-# HVALA NA PAŽNJI!
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+(Sljedeće predavanje:Statističke distribucije)
+
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
