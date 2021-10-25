@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 3 (dodatno): Vizualizacija podataka"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/))" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
@@ -30,208 +30,11 @@ library(hrbrthemes)
 ```
 
 # PREGLED PREDAVANJA
-
-1. [Instalacija](#instalacija)
-
-2. [Zašto R?](#zakaj)
-
-3. [ggplot2](#ggplot2)
-
-
-
-
-
-
----
-class: inverse, center, middle
-name: instalacija
-
-# Instalacija
-
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-
----
-
-# Instalacija software-a i registracija
-
-1. Preuzmi [R](https://www.r-project.org/).
-
-2. Preuzmi [RStudio](https://www.rstudio.com/products/rstudio/download/preview/).
-
-3. Preuzmi [Git](https://git-scm.com/downloads).
-
-4. Napravi račun na [GitHub](https://github.com/) 
-
---
-
-- U slučaju problema sa instalacijom Git-a pogledaj http://happygitwithr.com.
-
----
-
-# Detalji
-
-Za bolje snalaženje:
-
-- **Windows:** Instaliraj [Rtools](https://cran.r-project.org/bin/windows/Rtools/). Također korisno [Chocolately](https://chocolatey.org/).
-- **Mac:** Instaliraj [Homebrew](https://brew.sh/). Potrebno konfigurirati C++ toolchain (pogledaj [ovdje](https://github.com/stan-dev/rstan/wiki/Installing-RStan-from-source-on-a-Mac#prerequisite--c-toolchain-and-configuration).)
-- **Linux:** Već znate što radite!
-
----
-
-# Checklist
-
-☑ Da li imate najnoviju verziju R?
-  ```{r}
-  version$version.string
-  ```
-
-
-☑ Da li imate najnoviju verziju RStudio-a? (Pogledaj [verziju](https://www.rstudio.com/products/rstudio/download/preview/) )
-  ```{r eval=FALSE}
-  RStudio.Version()$version
-  ## Requires an interactive session but should return something like "[1] ‘1.2.5001’"
-  ```
-
-☑ Da li su svi R paket osvježeni? 
-  ```{r eval=FALSE}
-  update.packages(ask = FALSE, checkBuilt = TRUE)
-  ```
-  
----
-
-# Checklist (dalje)
-
-Otvorite [shell](http://happygitwithr.com/shell.html#shell).Ako ste instalirali [Git for Windows](https://gitforwindows.org), sve je u redu.
-
-☑ Koju verziju Git-a ste instalirali?
-  ```
-  git --version
-  ```
-
-☑ Da li ste se upoznali sa Git-om? (Upiši svoje podatke.)
-  ```
-  git config --global user.name 'Luka Sikic'
-  git config --global user.email 'lsikic.gmail@gmail.com'
-  git config --global --list
-  ```
-
-☑  Da li ste napravili račun na GitHub-u? 
-
-
----
-class: inverse, center, middle
-name: zakaj
-
-# Zašto R?
-<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-
----
-
-# Zašto R i RStudio? 
-```{R, indeeddotcom, echo = F, fig.height = 6, fig.width = 9, dev = "svg"}
-# The popularity data
-pop_df <- 
-  data.frame(
-  lang = c("SQL", "Python", "R", "SAS", "Matlab", "SPSS", "Stata"),
-  n_jobs = c(107130, 66976, 48772, 25644, 11464, 3717, 1624),
-  free = c(T, T, T, F, F, F, F)
-  )
-## Plot it
-pop_df %>% 
-  mutate(lang = lang %>% factor(ordered = T)) %>%
-  ggplot(aes(x = lang, y = n_jobs, fill = free)) +
-  geom_col() +
-  geom_hline(yintercept = 0) +
-  aes(x = reorder(lang, -n_jobs), fill = reorder(free, -free)) +
-  xlab("Statistički jezik") +
-  scale_y_continuous(label = scales::comma) +
-  ylab("Broj poslova") +
-  labs(
-    title = "Usporedba statističkih jezika",
-    subtitle = "Broj poslova na Indeed.com, 2019/01/06"
-    ) +
-  scale_fill_manual(
-    "OpenSource?",
-    labels = c("True", "False"),
-    values = c("#f92672", "darkslategray")
-    ) +
-  ggthemes::theme_pander(base_size = 17) +
-  # theme_ipsum() +
-  theme(legend.position = "bottom")
-```
-
----
-
-# Zašto R i RStudio? 
-
-### Data science pozitivizam
-
-- Uz Python, R je postao *de facto* jezik za data science.
-  - Pogledaj: [*The Impressive Growth of R*](https://stackoverflow.blog/2017/10/10/impressive-growth-r/), [*The Popularity of Data Science Software*](http://r4stats.com/articles/popularity/)
-- Open-source (besplatno!) sa ogromnom bazom korisnika u akademiji i biznisu.
- 
-
-### Alat za primjenjene društvene znanosti
-
-- Puna podrška za statistiku i ekonometriju sa visokom primjenjivosti u drugim jezicima i API-jima
-
-- RStudio IDE i ekosustav omogućuju jednostavno skaliranje.
-
-### Path dependency
-
-- Jezik sa kojim imam najviše iskustva.
---
-
-- (Učenje više jezika je preporučljivo, nužno štoviše!)
-
----
-
-# R osnove
-
-1. Sve je objekt.
-
-2. Sve ima naziv.
-
-3. Stvari se rade preko funkcija.
-
-4. Funkcije dolaze u paketima (i.e. "libraries"), a moguće je i napraviti vlastite funkcije.
-
---
-
-</br>
-
-Točke 1. and 2. se odnose na [object-orientated programming](https://en.wikipedia.org/wiki/Object-oriented_programming) (OOP) pristup.
-  - Iako ovo sada možda djeluje apstraktno, stvari će postati jasnije kroz kolegij.
-
----
-
-# R primjer (linearna regresija)
-
-```{r fit}
-fit = lm(mpg ~ wt, data = mtcars)
-summary(fit)
-```
-
----
-
-# Osnovni R grafikon
-
-```{r mtcars_baseplot, dev="svg"}
-par(mar = c(4, 4, 1, .1)) ## Ljepše margine
-plot(mtcars$wt, mtcars$mpg)
-abline(fit, col = "red")
-```
-
----
-
-# ggplot2 (micro primjer)
-
-```{r mtcars_ggplot, dev="svg"}
-library(ggplot2)
-ggplot(data = mtcars, aes(x = wt, y = mpg)) + 
-  geom_smooth(method = "lm", col = "red") + 
-  geom_point() 
-```
+<br>
+<br>
+<br>
+<br>
+1. [ggplot2](#ggplot2)
 
 ---
 class: inverse, center, middle
@@ -239,14 +42,17 @@ name: ggplot2
 
 # ggplot2
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
-
+(Najbolji sustav za vizualizaciju podataka na svijetu!)
 ---
 
 # Instaliraj i učitaj
 
 Isprobajte [ggplot2](https://ggplot2.tidyverse.org/) (i.e. livecoding).
-
+<br>
+<br>
 Ako već niste, instalirajte `ggplot2` i `gapminder` pakete via:
+<br>
+<br>
 - **Konzola:** Unesite `install.packages(c("ggplot2", "gapminder"), dependencies=T)`.
 - **RStudio:** Kliknite"Packages" tab u donjem desnom prozoru. Potom kliknite "Install" i potražite ova dva paketa.
   
@@ -262,7 +68,7 @@ library(ggplot2)
 library(gapminder) ## Za gapminder podatke
 ```
 
-Nisu potrebni navodnici za učitavanje. Razlpog: R sada prepoznaje ove pakete kao definirane objekte sa danim imenima. ("Sve je objekt i sve ima naziv!")
+Nisu potrebni navodnici za učitavanje. Razlog: R sada prepoznaje ove pakete kao definirane objekte sa danim imenima. ("Sve je objekt i sve ima naziv!")
 
 --
 
@@ -328,13 +134,13 @@ Pogledajte gornji red koji sadrži `ggplot()` funkcijski poziv. Ova funkcija pri
 --
 
 Estetska mapiranja su ovdje jednostavna: ona samo definiraju x-os (GDP per capita) i a y-os (life expecancy).
-- Za stjecanje osjeća moći i fleksibilnosti kod ovog pristupa, razmislite samo što je moguće vizualizirati kada se dodaju dodatna estetska mapiranja...
+- Za stjecanje dojma o fleksibilnosti ovog pristupa, razmislite kakve viualizacije su moguće kada se dodaju dodatna estetska mapiranja...
 
 ---
 
 # 1. Estetska mapiranja (dalje)
 
-```{r aesthetics2, dev='svg'}
+```{r aesthetics2, dev='svg', fig.height= 4}
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) + 
   geom_point(alpha = 0.3) ## "alpha" kontrolira transparentnost. Vrijednost izmedju 0 i 1.
 ```
@@ -371,7 +177,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 # 1. Estetska mapiranja (dalje)
 
-Umjesto ponavljanja iste ggplot2 funkcije, moguće je stvriti objekt za recikliranje (čuvajmo okoliš!).
+Umjesto ponavljanja iste ggplot2 funkcije, moguće je stvoriti objekt za recikliranje (čuvajmo okoliš!).
 
 ```{r p, dev='svg'}
 p = ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
@@ -382,7 +188,7 @@ p
 
 # 2. Geomi
 
-Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geome u cilju stvaranja različitih vizualizacija.
+Kada su odonosi varijabli definirani kroz estetska mapiranja, moguće je pozivati i kombinbirati različite geome.
 
 ```{r geoms1, dev='svg'}
 p + 
@@ -428,10 +234,10 @@ p + geom_density()
 
 #  2.Geomi (dalje)
 
-Ovo je moguće popraviti uz malo opreza.
+Ovo je moguće izbjeći uz malo opreza.
 
 ```{r geoms5, dev='svg'}
-ggplot(data = gapminder) + ## i.e. No "global" aesthetic mappings"
+ggplot(data = gapminder) + ## i.e. Bez "globalnih" estetskih mapiranja
   geom_density(aes(x = gdpPercap, fill = continent), alpha=0.3)
 ```
 
@@ -440,7 +246,7 @@ ggplot(data = gapminder) + ## i.e. No "global" aesthetic mappings"
 # 3. Napravi grafikon u slojevima
 
 Već smo vidjeli kao se mogu lančano ("u slojevima") kombinirati elementi grafikona koristeći `+` spojnicu.
-- Recikliranje grafikona stvorenih u međukoracima je dokaz tome.
+- npr. recikliranje grafikona stvorenih u međukoracima.
 
 Na osnovi ovog principa je moguće napraviti uistinu fascinantne vizualizacije! 
 - Nije potrebno transformirati početne podatke; ggplot2 to radi sam.
@@ -470,7 +276,7 @@ p2
 # Kako dalje
 
 Prethodni primjeri su samo uvod u punu funkcionalnost ggplot2...nismo ni spomenuli druge pakete koji omogućavaju različite ekstenzije.
-- Nekoliko dodantih primjera...
+- Nekoliko dodatnih primjera...
 
 --
 
@@ -485,7 +291,7 @@ pacman::p_load(hrbrthemes, gganimate)
 
 # Kako dalje? (cont.)
 
-Jednostavno poboljšanje: eksterna tema
+Jednostavno poboljšanje: eksterna tema!
 ```{r modern_rc_theme, dependson=p2, dev='svg'}
 # library(hrbrthemes)
 p2 + theme_modern_rc() + geom_point(aes(size = pop, col = continent), alpha = 0.2)
@@ -547,12 +353,13 @@ Korisni resursi vezani uz današnje predavanje:
 - [*Data Visualization: A Practical Guide*](https://socviz.co/makeplot.html) od Kieran Healy.
 - [Designing ggplots](https://designing-ggplots.netlify.com) od Malcom Barrett.
 
-
 ---
-class: inverse, center, middle
 
-
-# HVALA NA PAŽNJI!
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
 <html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje:Statističke distribucije)
 
----
+
+
