@@ -41,34 +41,41 @@ layout: true
 
 ---
 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
-## Ciljevi
-
-- Vizualizacija, alati i podrška
+- Podrška za vizualizaciju 
+&lt;br&gt;
 - Izrada jednostavnog grafikona
+&lt;br&gt;
 - Histogram
+&lt;br&gt;
 - Box-plot
+&lt;br&gt;
 - Prikaz korelacije
+&lt;br&gt;
 - Dijagram rasipanja
+&lt;br&gt;
 - Stupčasti grafikon
 
 ---
 
 layout:false
 class: middle, inverse
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 layout:true
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/snowmap1-1.svg" style="display: block; margin: auto;" /&gt;
 
-.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na Broad St bunaru.  Prikaz koristi podatke iz paketa `HistData`.]
+.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na bunaru Broad St. Prikaz koristi podatke iz paketa `HistData`.]
 
 
 ---
@@ -417,39 +424,12 @@ boxplot(formula = margin ~ year,
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-8-1.svg" style="display: block; margin: auto;" /&gt;
 
----
-
-.hi[Prikaži više Box Plotova]
-
-
-```
-#&gt;    -- Name --   -- Class --   -- Size --
-#&gt;    afl2         data.frame    4296 x 2  
-#&gt;     $margin     numeric       4296      
-#&gt;     $year       numeric       4296
-```
----
-
-.hi[Prikaži više Box Plotova]
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-
-```
-#&gt;   margin year
-#&gt; 1     33 1987
-#&gt; 2     59 1987
-#&gt; 3     45 1987
-#&gt; 4     91 1987
-#&gt; 5     39 1987
-#&gt; 6      1 1987
-```
 
 ---
 
 .hi[Prikaži više Box Plotova]
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-11-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-9-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -582,7 +562,7 @@ pairs( formula = ~ dan.sleep + baby.sleep + dan.grump, # Definiraj varijable
 )
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-13-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-11-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 layout:false
@@ -595,7 +575,9 @@ layout:true
 ---
 
 .hi[Pregled podataka za izradu stupčastog grafikona]
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 load(file.path("../Podatci/aflsmall.Rdata")) # Učitaj podatke
@@ -608,9 +590,13 @@ print( freq )                       # Pregled podataka
 ```
  
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Pregled podataka za izradu stupčastog grafikona]
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Dodavanje naziva stupcima
@@ -635,7 +621,7 @@ print( teams )                      # Pregled podataka
 barplot( height = freq )  # Alternativno samo `barplot( freq )` 
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-16-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-14-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
  
@@ -647,7 +633,7 @@ barplot( height = freq )  # Alternativno samo `barplot( freq )`
 barplot( height = freq, names.arg = teams ) # Dodatni argument
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-17-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-15-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -661,7 +647,7 @@ barplot(height = freq,    # Izaberi podatke
 			las = 2)            # Zakreni nazive
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-18-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-16-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -686,15 +672,15 @@ barplot( height = freq,      # Izaberi podatke
 
 .hi[Napravi stupčasti grafikon]
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-20-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-18-1.svg" style="display: block; margin: auto;" /&gt;
 
+---
 
-
-
-
-
-
-
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+(Sljedeće predavanje: Statističke distribucije)
 
 
 

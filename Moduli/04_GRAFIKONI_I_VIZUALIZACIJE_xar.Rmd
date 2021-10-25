@@ -174,27 +174,34 @@ layout: true
 
 ---
 
+<br>
+<br>
+<br>
 
-## Ciljevi
-
-- Vizualizacija, alati i podrška
+- Podrška za vizualizaciju 
+<br>
 - Izrada jednostavnog grafikona
+<br>
 - Histogram
+<br>
 - Box-plot
+<br>
 - Prikaz korelacije
+<br>
 - Dijagram rasipanja
+<br>
 - Stupčasti grafikon
 
 ---
 
 layout:false
 class: middle, inverse
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 layout:true
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
@@ -217,7 +224,7 @@ SnowMap(xlim = c(3, 20), ylim = c(3, 20),
 
 ```
 
-.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na Broad St bunaru.  Prikaz koristi podatke iz paketa `HistData`.]
+.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na bunaru Broad St. Prikaz koristi podatke iz paketa `HistData`.]
 
 
 ---
@@ -556,26 +563,6 @@ boxplot(formula = margin ~ year,
 
 ```
 
----
-
-.hi[Prikaži više Box Plotova]
-
-```{r echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6 }
-library(lsr) # Učitaj paket
-rm(list = ls()) # Očisti radni prostor
-load(file.path("../Podatci/aflsmall2.Rdata")) # Učitaj podatke
-who( TRUE ) # Prvi pregled učitanih objekata
-```
----
-
-.hi[Prikaži više Box Plotova]
-<br>
-<br>
-<br>
-```{r  echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
-head( afl2 ) # Pogledaj podatke
-
-```
 
 ---
 
@@ -750,7 +737,9 @@ layout:true
 ---
 
 .hi[Pregled podataka za izradu stupčastog grafikona]
-
+<br>
+<br>
+<br>
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 load(file.path("../Podatci/aflsmall.Rdata")) # Učitaj podatke
 freq <- tabulate( afl.finalists )   # Tabuliraj podatke
@@ -759,9 +748,13 @@ print( freq )                       # Pregled podataka
 ```
  
 ---
-
+<br>
+<br>
 .hi[Pregled podataka za izradu stupčastog grafikona]
-
+<br>
+<br>
+<br>
+<br>
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 # Dodavanje naziva stupcima
 teams <- levels( afl.finalists )    # Stvori razine(nazive)
@@ -835,13 +828,13 @@ barplot( height = freq,      # Izaberi podatke
 
 ```
 
+---
 
-
-
-
-
-
-
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje: Statističke distribucije)
 
 
 
