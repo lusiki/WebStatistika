@@ -564,16 +564,6 @@ boxplot(formula = margin ~ year,
 ```
 
 
----
-
-.hi[Prikaži više Box Plotova]
-
-```{r echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
-# Napravi Box Plot za svaku godinu
-boxplot(formula = margin ~ year,
-         data = afl2)
-
-```
 
 ---
 
