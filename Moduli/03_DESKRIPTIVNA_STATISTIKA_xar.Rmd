@@ -846,7 +846,8 @@ z = \frac{35 - 17}{5} = 3.6
 $$
 --
 
-.[Distribucija]
+.hi[Distribucija]
+
 ```{r}
 # Vidi dio u distribuciji
 pnorm( 3.6 ) 
@@ -904,6 +905,14 @@ layout:true
 # KORELACIJA 
 ---
 
+.hi[Prikaz podataka (*još jednom*)]
+
+```{r}
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
+```
+
+---
+
 .hi[Grafički prikaz korelacije]
 <br>
 ```{r scatterparent1a, fig.cap="", echo=FALSE, fig.height=5}
@@ -938,6 +947,8 @@ oneCorPlot <- function(x,y,...) {
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
+<br
+<br>
 <br
 <br>
 .hi[Kovarijanca]
@@ -1054,16 +1065,20 @@ c("0.9 to 1.0", "Izrazito jaka", "Pozitivna")), col.names=c("Korelacija", "Snaga
 layout:true
 # NOVI PODATKOVNI SKUP
 ---
+<br>
+<br>
+<br>
 ```{r}
 rm(list=ls()) # Očisti radni prostor
 load("../Podatci/effort.Rdata") # Učitaj podatke
 who(TRUE) # Pregledaj podatke
 ```
---
+---
+
 .hi[Pregled podataka]
 
 ```{r}
-head(effort, 3) #Pregledaj podatke
+head(effort, 10) #Pregledaj podatke
 ```
 --
 ```{r}
@@ -1104,35 +1119,33 @@ layout:true
 ---
 
 ```{r}
-sati_studiranja <- rank( effort$hours ) # Rang sati
-ocjena <- rank( effort$grade ) # Rang ocjena
-```
+korelacije <- data.frame(
+  sati = effort$hours,
+  ocjena = effort$grade,
+  satiRang = rank(effort$hours), # Rang sati
+  ocjenaRang = rank(effort$grade)) # Rang ocjena
 
-| | Rang sati rada | Rang visine ocjene |
-|-|---------------------|-----------------------|
-|student | 1 |   1 |   1 |
-|student | 2  | 10   |10 |
-|student | 3 |   6  |  6 |
-|student | 4 |   2 |   2 |
-|student | 5 |   3 |   3 |
-|student | 6  |  5  |  5 |
-|student | 7  |  4  |  4 |
-|student | 8  |  8  |  8 |
-|student | 9   | 7  |  7 |
-|student | 10 | 9| 9
+korelacije # Pregledaj podatke (+ rang varijable)
+```
 
 ---
 <br>
 <br>
 .hi[Funkcijski izračun]
 
+
 ```{r}
-cor(sati_studiranja,ocjena) # Izračunaj korelaciju
+cor(korelacije$sati,korelacije$ocjena, method = "pearson") # Izračunaj korelaciju
+```
+--
+
+```{r}
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "pearson") # Izračunaj korelaciju
 ```
 --
 ```{r}
 # Dodaj argument "spearman"
-cor(effort$hours, effort$grade, method = "spearman")
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
 
 ---

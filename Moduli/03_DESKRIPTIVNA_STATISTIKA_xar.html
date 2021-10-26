@@ -1014,7 +1014,8 @@ z = \frac{35 - 17}{5} = 3.6
 $$
 --
 
-.[Distribucija]
+.hi[Distribucija]
+
 
 ```r
 # Vidi dio u distribuciji
@@ -1098,6 +1099,34 @@ layout:true
 # KORELACIJA 
 ---
 
+.hi[Prikaz podataka (*još jednom*)]
+
+
+```r
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
+```
+
+```
+#&gt;    dan.sleep baby.sleep dan.grump
+#&gt; 1       7.59      10.18        56
+#&gt; 2       7.91      11.66        60
+#&gt; 3       5.14       7.92        82
+#&gt; 4       7.71       9.61        55
+#&gt; 5       6.68       9.75        67
+#&gt; 6       5.99       5.04        72
+#&gt; 7       8.19      10.45        53
+#&gt; 8       7.19       8.27        60
+#&gt; 9       7.40       6.06        60
+#&gt; 10      6.58       7.09        71
+#&gt; 11      6.49      11.68        72
+#&gt; 12      6.27       6.13        65
+#&gt; 13      5.95       7.83        74
+#&gt; 14      6.65       5.60        67
+#&gt; 15      6.41       6.03        66
+```
+
+---
+
 .hi[Grafički prikaz korelacije]
 &lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/scatterparent1a-1.svg" style="display: block; margin: auto;" /&gt;
@@ -1113,6 +1142,8 @@ layout:true
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
+&lt;br
+&lt;br&gt;
 &lt;br
 &lt;br&gt;
 .hi[Kovarijanca]
@@ -1245,6 +1276,9 @@ layout:true
 layout:true
 # NOVI PODATKOVNI SKUP
 ---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 rm(list=ls()) # Očisti radni prostor
@@ -1258,19 +1292,27 @@ who(TRUE) # Pregledaj podatke
 #&gt;     $hours      numeric       10        
 #&gt;     $grade      numeric       10
 ```
---
+---
+
 .hi[Pregled podataka]
 
 
 ```r
-head(effort, 3) #Pregledaj podatke
+head(effort, 10) #Pregledaj podatke
 ```
 
 ```
-#&gt;   hours grade
-#&gt; 1     2    13
-#&gt; 2    76    91
-#&gt; 3    40    79
+#&gt;    hours grade
+#&gt; 1      2    13
+#&gt; 2     76    91
+#&gt; 3     40    79
+#&gt; 4      6    14
+#&gt; 5     16    21
+#&gt; 6     28    74
+#&gt; 7     27    47
+#&gt; 8     59    85
+#&gt; 9     46    84
+#&gt; 10    68    88
 ```
 --
 
@@ -1296,22 +1338,28 @@ layout:true
 
 
 ```r
-sati_studiranja &lt;- rank( effort$hours ) # Rang sati
-ocjena &lt;- rank( effort$grade ) # Rang ocjena
+korelacije &lt;- data.frame(
+  sati = effort$hours,
+  ocjena = effort$grade,
+  satiRang = rank(effort$hours), # Rang sati
+  ocjenaRang = rank(effort$grade)) # Rang ocjena
+
+korelacije # Pregledaj podatke (+ rang varijable)
 ```
 
-| | Rang sati rada | Rang visine ocjene |
-|-|---------------------|-----------------------|
-|student | 1 |   1 |   1 |
-|student | 2  | 10   |10 |
-|student | 3 |   6  |  6 |
-|student | 4 |   2 |   2 |
-|student | 5 |   3 |   3 |
-|student | 6  |  5  |  5 |
-|student | 7  |  4  |  4 |
-|student | 8  |  8  |  8 |
-|student | 9   | 7  |  7 |
-|student | 10 | 9| 9
+```
+#&gt;    sati ocjena satiRang ocjenaRang
+#&gt; 1     2     13        1          1
+#&gt; 2     6     14        2          2
+#&gt; 3    16     21        3          3
+#&gt; 4    27     47        4          4
+#&gt; 5    28     74        5          5
+#&gt; 6    40     79        6          6
+#&gt; 7    46     84        7          7
+#&gt; 8    59     85        8          8
+#&gt; 9    68     88        9          9
+#&gt; 10   76     91       10         10
+```
 
 ---
 &lt;br&gt;
@@ -1319,8 +1367,19 @@ ocjena &lt;- rank( effort$grade ) # Rang ocjena
 .hi[Funkcijski izračun]
 
 
+
 ```r
-cor(sati_studiranja,ocjena) # Izračunaj korelaciju
+cor(korelacije$sati,korelacije$ocjena, method = "pearson") # Izračunaj korelaciju
+```
+
+```
+#&gt; [1] 0.909402
+```
+--
+
+
+```r
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "pearson") # Izračunaj korelaciju
 ```
 
 ```
@@ -1330,7 +1389,7 @@ cor(sati_studiranja,ocjena) # Izračunaj korelaciju
 
 ```r
 # Dodaj argument "spearman"
-cor(effort$hours, effort$grade, method = "spearman")
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
 
 ```
