@@ -81,7 +81,6 @@ layout:true
 ---
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt;
 .hi[Sustavi za vizualizaciju podataka u R]
 
 1. Tradicionalni pristup (paket `graphics`)
@@ -112,9 +111,6 @@ layout:true
 ---
 
 
-.hi[Jednostavni grafikon]
-
-
 ```r
 Fibonacci &lt;- c( 1,1,2,3,5,8,13 ) # Stvori fibonacijev niz
 plot( Fibonacci ) # Prikaži niz grafički
@@ -123,8 +119,6 @@ plot( Fibonacci ) # Prikaži niz grafički
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-2-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Grafikon sa proširenim specifikacijama]
 
 
 ```r
@@ -140,8 +134,6 @@ plot( x = Fibonacci,
 
 
 ---
-
-.hi[Prilagodi izgled naslova i naziva]
 
 
 ```r
@@ -159,7 +151,7 @@ plot( x = Fibonacci,                              # Podatkovni skup
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 
 ```r
@@ -183,13 +175,11 @@ plot(Fibonacci, # Podatci
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-3-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Dodatne prilagodbe]
 
 
 ```r
@@ -207,8 +197,6 @@ plot(x = Fibonacci, # Podatci
 
 
 ---
-
-.hi[Još neke prilagodbe]
 
 
 ```r
@@ -232,24 +220,20 @@ layout:true
 
 ---
 
-.hi[Osnovni R histogram]
-
 
 ```r
 # Učitaj podatke
 load( "../Podatci/aflsmall.Rdata")
-hist(afl.margins) # Napravi histogram
+hist(afl.margins) # Napravi osnovni histogram
 ```
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/hist1a-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Smanji broj binova]
-
 
 ```r
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; manje binova
 hist( x = afl.margins, breaks = 3 )
 ```
 
@@ -257,11 +241,9 @@ hist( x = afl.margins, breaks = 3 )
 
 ---
 
-.hi[Povećaj broj binova]
-
 
 ```r
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; više binova
 hist( x = afl.margins, breaks = 0:116 )
 ```
 
@@ -269,13 +251,12 @@ hist( x = afl.margins, breaks = 0:116 )
 
 ---
 &lt;br&gt;
-
-.hi[Uređeni histogram]
 &lt;br&gt;
 &lt;br&gt;
 
 
 ```r
+# Uređeni histogram
 hist( x = afl.margins, 
       main = "2010 AFL bodovi", # Naslov
       xlab = "Margin",           # Naziv x-osi
@@ -289,8 +270,6 @@ hist( x = afl.margins,
 ```
 
 ---
-
-.hi[Uređeni histogram]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/hist2d-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -306,7 +285,6 @@ layout:true
 ---
 &lt;br&gt;
 
-.hi[Pregledaj deskriptivnu statistiku]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -324,8 +302,6 @@ summary( afl.margins )
 
 ---
 
-.hi[Izradi osnovni Box Plot pobjedničkih bodova]
-
 
 ```r
 load( "../Podatci/aflsmall.Rdata") #U čitaj podatke
@@ -337,13 +313,11 @@ boxplot( x = afl.margins )
 
 ---
 
-.hi[Označeni Box Plot]
 
 &lt;img src="../Foto/boxplot1_annotated.png" width="800" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -364,13 +338,11 @@ boxplot( x = afl.margins,           # Podatci
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/boxplot3b-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Prikaži više Box Plotova]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -393,7 +365,6 @@ who( TRUE ) # Prvi pregled učitanih objekata
 
 ---
 
-.hi[Prikaži više Box Plotova]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -414,8 +385,6 @@ head( afl2 ) # Pogledaj podatke
 
 ---
 
-.hi[Prikaži više Box Plotova]
-
 ```r
 # Napravi Box Plot za svaku godinu
 boxplot(formula = margin ~ year,
@@ -424,11 +393,7 @@ boxplot(formula = margin ~ year,
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-8-1.svg" style="display: block; margin: auto;" /&gt;
 
-
-
 ---
-
-.hi[Prilagodi i uredi Box Plot]
 
 
 ```r
@@ -455,8 +420,6 @@ boxplot( formula =  margin ~ year,   # the formula
 
 ---
 
-.hi[Prilagodi i uredi Box Plot]
-
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/multipleboxplots3-1.svg" style="display: block; margin: auto;" /&gt;
 
 
@@ -470,8 +433,6 @@ layout:true
 # DIJAGRAM RASIPANJA
 ---
 
-.hi[Osnovni dijagram rasipanja u R-u]
-
 
 ```r
 load(file.path("../Podatci/parenthood.Rdata")) # Učitaj podatke
@@ -483,8 +444,6 @@ plot( x = parenthood$dan.sleep,     # Podatci za x-os
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scattera-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Prilagodbe na dijagramu rasipanja]
 
 
 ```r
@@ -509,8 +468,6 @@ plot( x = parenthood$dan.sleep,         # Podatci za x-os
 
 ---
 
-.hi[Prilagodbe na dijagramu rasipanja]
-
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scatterba-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -529,8 +486,6 @@ scatterplot( dan.grump ~ dan.sleep, # Definiraj varijable
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scb-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Više dijagrama rasipanja] 
 
 
 ```r
@@ -569,7 +524,6 @@ layout:true
 # STUPČASTI GRAFIKONI
 ---
 
-.hi[Pregled podataka za izradu stupčastog grafikona]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -585,9 +539,7 @@ print( freq )                       # Pregled podataka
 ```
  
 ---
-&lt;br&gt;
-&lt;br&gt;
-.hi[Pregled podataka za izradu stupčastog grafikona]
+
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -609,8 +561,6 @@ print( teams )                      # Pregled podataka
 
 ---
 
-.hi[Napravi stupčasti grafikon]
-
 
 ```r
 barplot( height = freq )  # Alternativno samo `barplot( freq )` 
@@ -620,8 +570,6 @@ barplot( height = freq )  # Alternativno samo `barplot( freq )`
 
 ---
  
-.hi[Napravi stupčasti grafikon]
-
 
 ```r
 # Dodaj nazive
@@ -631,8 +579,6 @@ barplot( height = freq, names.arg = teams ) # Dodatni argument
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-14-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 
 ```r
@@ -645,8 +591,6 @@ barplot(height = freq,    # Izaberi podatke
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-15-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 
 ```r
@@ -664,8 +608,6 @@ barplot( height = freq,      # Izaberi podatke
 ```
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-17-1.svg" style="display: block; margin: auto;" /&gt;
 
