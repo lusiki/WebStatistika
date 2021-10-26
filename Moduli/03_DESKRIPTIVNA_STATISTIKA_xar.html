@@ -1358,7 +1358,7 @@ korelacije # Pregledaj podatke (+ rang varijable)
 #&gt; 10   76     91       10         10
 ```
 
-.footnote[[*]Spearmanova korelacijska metoda računa korelaciju izmeu ranga varijable x i y.]
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju između ranga dvije varijable.]
 
 ---
 &lt;br&gt;
@@ -1394,6 +1394,164 @@ cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
 #&gt; [1] 1
 ```
+
+---
+layout:true
+# KENDALLOVA KORELACIJA 
+---
+
+
+```r
+# Dodaj argument "spearman"
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "kendall")
+```
+
+```
+#&gt; [1] 1
+```
+.footnote[[*]Kendallova korelacijska metoda računa korespondenciju između rangiranja dvije varijable.]
+
+---
+layout:true
+# KORELACIJA (još jedan primjer) 
+---
+
+.hi[Podatci]
+
+
+```
+#&gt;                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+#&gt; Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+#&gt; Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+```
+
+---
+
+.hi[Vizualizacija]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-66-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Testovi distribucije]
+
+
+```r
+# Shapiro-Wilk test normalnosti za mpg
+shapiro.test(my_data$mpg) # =&gt; p = 0.1229
+```
+
+```
+#&gt; 
+#&gt; 	Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  my_data$mpg
+#&gt; W = 0.94756, p-value = 0.1229
+```
+
+```r
+# Shapiro-Wilk test normalnosti za wt
+shapiro.test(my_data$wt) # =&gt; p = 0.09
+```
+
+```
+#&gt; 
+#&gt; 	Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  my_data$wt
+#&gt; W = 0.94326, p-value = 0.09265
+```
+
+---
+
+.hi[Testovi distribucije]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-68-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Testovi distribucije]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-69-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Korelacijski test]
+
+
+```r
+pers &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "pearson")
+pers
+```
+
+```
+#&gt; 
+#&gt; 	Pearson's product-moment correlation
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; t = -9.559, df = 30, p-value = 1.294e-10
+#&gt; alternative hypothesis: true correlation is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  -0.9338264 -0.7440872
+#&gt; sample estimates:
+#&gt;        cor 
+#&gt; -0.8676594
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+```r
+sper &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "spearman")
+sper
+```
+
+```
+#&gt; 
+#&gt; 	Spearman's rank correlation rho
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; S = 10292, p-value = 1.488e-11
+#&gt; alternative hypothesis: true rho is not equal to 0
+#&gt; sample estimates:
+#&gt;       rho 
+#&gt; -0.886422
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+
+```r
+kend &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "kendall")
+kend
+```
+
+```
+#&gt; 
+#&gt; 	Kendall's rank correlation tau
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; z = -5.7981, p-value = 6.706e-09
+#&gt; alternative hypothesis: true tau is not equal to 0
+#&gt; sample estimates:
+#&gt;        tau 
+#&gt; -0.7278321
+```
+
 
 ---
 

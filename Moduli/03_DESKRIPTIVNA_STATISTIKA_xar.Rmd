@@ -1130,7 +1130,7 @@ korelacije <- data.frame(
 korelacije # Pregledaj podatke (+ rang varijable)
 ```
 
-.footnote[[*]Spearmanova korelacijska metoda računa korelaciju izmeu ranga varijable x i y.]
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju između ranga dvije varijable.]
 
 ---
 <br>
@@ -1151,6 +1151,105 @@ cor(korelacije$satiRang,korelacije$ocjenaRang, method = "pearson") # Izračunaj 
 # Dodaj argument "spearman"
 cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
+
+---
+layout:true
+# KENDALLOVA KORELACIJA 
+---
+
+```{r}
+# Dodaj argument "spearman"
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "kendall")
+```
+.footnote[[*]Kendallova korelacijska metoda računa korespondenciju između rangiranja dvije varijable.]
+
+---
+layout:true
+# KORELACIJA (još jedan primjer) 
+---
+
+.hi[Podatci]
+
+```{r , fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE}
+# Učitaj mtcars podatke
+my_data <- mtcars
+# Pregledaj podatke
+head(my_data, 8)
+```
+
+---
+
+.hi[Vizualizacija]
+
+```{r , fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+library(ggpubr) # Učitaj paket
+# Vizualiziraj
+ggscatter(my_data, x = "mpg", y = "wt", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Porošnja u galonima", ylab = "Težina (1000 lbs)")
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r}
+# Shapiro-Wilk test normalnosti za mpg
+shapiro.test(my_data$mpg) # => p = 0.1229
+# Shapiro-Wilk test normalnosti za wt
+shapiro.test(my_data$wt) # => p = 0.09
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r, fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+# mpg QQ plot
+ggqqplot(my_data$mpg, ylab = "MPG")
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r, fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+# wt QQ plot
+ggqqplot(my_data$wt, ylab = "WT")
+```
+
+---
+
+.hi[Korelacijski test]
+
+```{r}
+pers <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "pearson")
+pers
+```
+
+---
+
+.hi[Korelacijski test]
+
+```{r}
+sper <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "spearman")
+sper
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+```{r}
+kend <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "kendall")
+kend
+```
+
 
 ---
 
