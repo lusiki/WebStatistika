@@ -908,8 +908,10 @@ layout:true
 .hi[Prikaz podataka (*još jednom*)]
 
 ```{r}
-head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],10)
 ```
+
+.footnote[[*]Pogledaj [tutorial](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r) o korelacijama!]
 
 ---
 
@@ -947,9 +949,9 @@ oneCorPlot <- function(x,y,...) {
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
-<br
 <br>
-<br
+<br>
+<br>
 <br>
 .hi[Kovarijanca]
 
@@ -957,7 +959,7 @@ $$
 \mbox{Cov}(X,Y) = \frac{1}{N-1} \sum_{i=1}^N \left( X_i - \bar{X} \right) \left( Y_i - \bar{Y} \right)
 $$
 --
-<br
+<br>
 <br>
 <br>
 .hi[Personov korelacijski koeficijent; standardizacija kovarijance]
@@ -1127,6 +1129,8 @@ korelacije <- data.frame(
 
 korelacije # Pregledaj podatke (+ rang varijable)
 ```
+
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju izmeu ranga varijable x i y.]
 
 ---
 <br>

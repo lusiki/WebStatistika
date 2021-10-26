@@ -1103,7 +1103,7 @@ layout:true
 
 
 ```r
-head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],10)
 ```
 
 ```
@@ -1118,12 +1118,9 @@ head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
 #&gt; 8       7.19       8.27        60
 #&gt; 9       7.40       6.06        60
 #&gt; 10      6.58       7.09        71
-#&gt; 11      6.49      11.68        72
-#&gt; 12      6.27       6.13        65
-#&gt; 13      5.95       7.83        74
-#&gt; 14      6.65       5.60        67
-#&gt; 15      6.41       6.03        66
 ```
+
+.footnote[[*]Pogledaj [tutorial](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r) o korelacijama!]
 
 ---
 
@@ -1142,9 +1139,9 @@ head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],15)
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
-&lt;br
 &lt;br&gt;
-&lt;br
+&lt;br&gt;
+&lt;br&gt;
 &lt;br&gt;
 .hi[Kovarijanca]
 
@@ -1152,7 +1149,7 @@ $$
 \mbox{Cov}(X,Y) = \frac{1}{N-1} \sum_{i=1}^N \left( X_i - \bar{X} \right) \left( Y_i - \bar{Y} \right)
 $$
 --
-&lt;br
+&lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
 .hi[Personov korelacijski koeficijent; standardizacija kovarijance]
@@ -1360,6 +1357,8 @@ korelacije # Pregledaj podatke (+ rang varijable)
 #&gt; 9    68     88        9          9
 #&gt; 10   76     91       10         10
 ```
+
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju izmeu ranga varijable x i y.]
 
 ---
 &lt;br&gt;
