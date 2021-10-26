@@ -77,7 +77,7 @@ Nisu potrebni navodnici za učitavanje. Razlog: R sada prepoznaje ove pakete kao
 
 --
 
-PS — Prigodno je moguće instalirati pakete sa [pacman](https://github.com/trinker/pacman) `p_load()` funkcijom. Ako izvršite `pacman::p_load(ggplot, gapminder)` funkcija će prvo pogledati da li paketi postoje i da li ih treba instalirati prije učitavanja. Pametno!.
+PS — Prigodno je moguće instalirati pakete sa [pacman](https://github.com/trinker/pacman) `p_load()` funkcijom. Ako izvršite `pacman::p_load(ggplot, gapminder)` funkcija će prvo pogledati da li paketi postoje i da li ih treba instalirati prije učitavanja.
 - Također je moguće koristiti paket bez učitavanja kroz naredbu `PACKAGE::package_function()`.
 
 ---
@@ -97,16 +97,16 @@ gapminder
 # Elementi ggplot2
 <br>
 <br>
-[Hadley Wickham-ov](http://hadley.nz/) ggplot2 je vjerojatno najpoznatiji R paket. 
+[Hadley Wickham](http://hadley.nz/)-ov ggplot2 je vjerojatno najpoznatiji R paket. 
 - Paket je napravljen na vizualizacijskoj teoriji od Lelanda Wilkinsona [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
 
 Ključni elementi ggplot2 pristupa su:
 
-1. Grafikon ("vizualizacija") je vezana uz varijable ("podatke") kroz **aesthetic mappings**.
+1. Grafikon ("vizualizacija") je vezana uz varijable ("podatke") kroz estetska mapiranja (*aesthetic mappings*).
 
-2. Kada se definiraju estetska mapiranja, podatci se mogu prikazati preko **geoms** (i.e. "geometrijskih objekata" kao što su točke, linije, stupci).
+2. Kada se definiraju estetska mapiranja, podatci se mogu prikazati preko geoma (*geoms*) (i.e. "geometrijskih objekata" kao što su točke, linije, stupci).
 
-3. Grafikon se izrađuje kroz **layers** ("slojeve").
+3. Grafikon se izrađuje kroz slojeve (*layers*).
 
 --
 
@@ -128,41 +128,45 @@ ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
 
 # 1. Estetska mapiranja (dalje)
 <br>
-<br>
 ```{r aesthetics1, eval=FALSE}
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
   geom_point()
 ```
-
+<br>
 Pogledajte gornji red koji sadrži `ggplot()` funkcijski poziv. Ova funkcija prihvaća različite argumente, uključujući:
+<br>
 - Odakle dolaze podatci (i.e. `data = gapminder`).
+<br>
 - Koja su estetska mapiranja(i.e. `mapping = aes(x = gdpPercap, y = lifeExp)`).
 
 --
 
 Estetska mapiranja su ovdje jednostavna: ona samo definiraju x-os (GDP per capita) i a y-os (life expecancy).
-- Za stjecanje dojma o fleksibilnosti ovog pristupa, razmislite kakve viualizacije su moguće kada se dodaju dodatna estetska mapiranja...
+- Za stjecanje dojma o fleksibilnosti ovog pristupa, razmislite kakve vizualizacije su moguće kada se dodaju (kreativna) estetska mapiranja...
 
 ---
 
 # 1. Estetska mapiranja (dalje)
 
 ```{r aesthetics2, dev='svg', fig.height= 4}
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) + 
-  geom_point(alpha = 0.3) ## "alpha" kontrolira transparentnost. Vrijednost izmedju 0 i 1.
+ggplot(data = gapminder,
+       aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) + 
+  geom_point(alpha = 0.3) ## "alpha" kontrolira transparentnost
 ```
 
 --
 <br>
-.footnote[[*]Primjetite da smo maknuli "mapping =" dio. Najčešće se koristi "aes(...)" jer `ggplot2` zna redosljed funkcijskih argumenata.]
+.footnote[[*]Uočite da smo maknuli "mapping =" dio. Najčešće se koristi "aes(...)" jer `ggplot2` zna redosljed funkcijskih argumenata.]
 
 ---
 
 # 1. Estetska mapiranja (dalje)
 
-Estetska mapiranja se mogu specificirati u u `geom layer-u` također.
+Estetska mapiranja se također mogu specificirati u u `geom layer-u`.
+
 ```{r aesthetics3, dev='svg'}
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + ## Primjenjivo za sve geom-e
+ggplot(data = gapminder,
+       aes(x = gdpPercap, y = lifeExp)) + ## Primjenjivo za sve geom-e
   geom_point(aes(size = pop, col = continent), alpha = 0.3) ## Primjenjivo samo za ovaj geom 
 ```
 
@@ -170,12 +174,12 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + ## Primjenjivo za sv
 
 # 1. Estetska mapiranja (dalje)
 
-Oops. Što se dogodilo?
 ```{r aesthetics_mistake, warning=FALSE,dev='svg'}
 ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + 
   geom_point(aes(size = "big", col="black"), alpha = 0.3)
 ```
 
+Oops. Što se dogodilo?
 --
 
 **Odgovor:** Estetike moraju biti mapirane na varijable, ne na opise!
@@ -184,7 +188,7 @@ ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) +
 
 # 1. Estetska mapiranja (dalje)
 
-Umjesto ponavljanja iste ggplot2 funkcije, moguće je stvoriti objekt za recikliranje (čuvajmo okoliš!).
+Umjesto ponavljanja iste `ggplot2` funkcije, moguće je stvoriti objekt za recikliranje (čuvajmo okoliš!).
 
 ```{r p, dev='svg'}
 p = ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
@@ -218,11 +222,16 @@ p +
 ---
 # 2. Geomi (dalje)
 
-Prethodni primjer dobro prikazuje potencijal pripisivanja estetskih mapiranja "globalno" vs u individualnim geom layer-ima ("slojevi").
+Prethodni primjer dobro prikazuje potencijal pripisivanja estetskih mapiranja "globalno" vs u individualnim geom layer-ima.
+<br>
+<br>
 - Usporedi: Izvrši donji kod?
+<br>
+<br>
 
 ```{r geoms3, eval=FALSE}
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) +
+ggplot(data = gapminder,
+       aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) +
   geom_point(alpha = 0.3)  +
   geom_smooth(method = "loess") 
 ```
@@ -255,7 +264,7 @@ ggplot(data = gapminder) + ## i.e. Bez "globalnih" estetskih mapiranja
 Već smo vidjeli kao se mogu lančano ("u slojevima") kombinirati elementi grafikona koristeći `+` spojnicu.
 - npr. recikliranje grafikona stvorenih u međukoracima.
 
-Na osnovi ovog principa je moguće napraviti uistinu fascinantne vizualizacije! 
+Na osnovi ovog principa je moguće napraviti fenomenalne vizualizacije! 
 - Nije potrebno transformirati početne podatke; ggplot2 to radi sam.
 - Pogledajte primjere na sljedećim slajdovima.
 
@@ -273,7 +282,8 @@ p2 =
 ---
 
 # 3. Napravi grafikon u slojevima (dalje)
-
+<br>
+<br>
 ```{r layers2, dependson=p2, echo=TRUE, dev='svg'}
 p2
 ```
@@ -282,13 +292,17 @@ p2
 
 # Kako dalje
 
-Prethodni primjeri su samo uvod u punu funkcionalnost ggplot2...nismo ni spomenuli druge pakete koji omogućavaju različite ekstenzije.
-- Nekoliko dodatnih primjera...
+Prethodni primjeri su samo uvod u punu funkcionalnost ggplot2-a...nismo ni spomenuli druge pakete koji omogućavaju različite ekstenzije.
+<br>
+<br>
+- Nekoliko dodatnih primjera sa dodatnim mogućnostima...
 
 --
-
+<br>
+<br>
 Za sljedeće grafikone je potrebno instalirati neke dodatne pakete. To možete napraviti na ovaj način:
-
+<br>
+<br>
 ```{r pacinstall, message=FALSE,warning=FALSE}
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load(hrbrthemes, gganimate)
@@ -354,12 +368,15 @@ ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
 <br>
 <br>
 <br>
-Za kraj važno spomenuti da je ggplot2' u odnosu sa "tidy" data principom.
+Za kraj važno spomenuti da je ggplot2' u odnosu sa "tidy" data principima.
   - Riječ je o nizu paketa pod nazivom [tidyverse](https://www.tidyverse.org/). 
 
 Korisni resursi vezani uz današnje predavanje:
+<br>
 - [Poglavlje 3](https://r4ds.had.co.nz/data-visualisation.html) knjige *R for Data Science* od Hadley Wickham i Garett Grolemund.
+<br>
 - [*Data Visualization: A Practical Guide*](https://socviz.co/makeplot.html) od Kieran Healy.
+<br>
 - [Designing ggplots](https://designing-ggplots.netlify.com) od Malcom Barrett.
 
 ---
