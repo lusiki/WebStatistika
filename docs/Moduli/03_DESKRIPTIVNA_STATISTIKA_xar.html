@@ -4,6 +4,7 @@
     <title>PRIMJENJENA STATISTIKA</title>
     <meta charset="utf-8" />
     <meta name="author" content="Luka Sikic, PhD" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -15,7 +16,7 @@ class: center, middle, inverse, title-slide
 # PRIMJENJENA STATISTIKA
 ## Predavanje 3: Deskriptivna statistika
 ### Luka Sikic, PhD
-### Fakultet hrvatskih studija | <a href="https://github.com/BrbanMiro/WebStatistika">Github PS</a>
+### Fakultet hrvatskih studija | <a href="https://lusiki.github.io/WebStatistika/">Github PS</a>
 
 ---
 
@@ -33,23 +34,24 @@ class: inverse, middle
 layout: true
 # PREGLED PREDAVANJA
 ---
-
-## Ciljevi
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
-&lt;br&gt;
-
 - Upoznavanje sa podatcima
+&lt;br&gt;
 - Mjere centralne tendencije
+&lt;br&gt;
 - Mjere varijabilnosti
+&lt;br&gt;
 - Mjere asimetrije i zaobljenosti
+&lt;br&gt;
 - Pregled varijabli i podatkovnih okvira
+&lt;br&gt;
 - Standardizirane vrijednosti
+&lt;br&gt;
 - Korelacija
 
 ---
-
 layout: true
 # PODATCI
 ---
@@ -113,6 +115,7 @@ print(afl.finalists[1:5])
 ---
 
 .hi[Vizualizacija]
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/histogram1-1.svg" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*]Histogram pobjedničkih bodova(`afl.margins`) iz AFL 2010 lige američkog nogometa. Grafikon prikazuje da se broj pobjeda uz veću razliku rijeđe pojavljuje.]
@@ -130,7 +133,9 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 - Aritmetička sredina
+&lt;br&gt;
 - Medijan
+&lt;br&gt;
 - Mod
 
 ---
@@ -142,9 +147,7 @@ layout: true
 .hi[Definicija]
 
 
-$$
-\bar{X} = \frac{X_1+X_2 +...+ X_{N-1}+X_N} {N}
-$$
+`$$\bar{X} = \frac {X_{1}+X_{2}+\cdots +X_{N}}{N}$$`
 
 --
 
@@ -170,7 +173,8 @@ $$
 \frac{56 + 31 + 56 + 8 + 32}{5} = \frac{183}{5} = 36.60
 $$
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Kalkulator]
 
 
@@ -183,7 +187,8 @@ $$
 ```
 
 --
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Funkcija]
 
 
@@ -199,7 +204,8 @@ sum( afl.margins[1:5]) / 5
 layout: true
 # MEDIJAN
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Za neparni niz]
 $$
 8, 31, \mathbf{32}, 56, 56
@@ -280,7 +286,8 @@ mean( x = afl.margins, trim = .05)
 layout: true
 # MOD
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Pogledaj frekvenciju podataka
@@ -354,10 +361,15 @@ layout: true
 &lt;br&gt;
 &lt;br&gt;
 - Raspon/Min-Max
+&lt;br&gt;
 - Kvartili
+&lt;br&gt;
 - Prosječno apsolutno odstupanje
+&lt;br&gt;
 - Varijanca
+&lt;br&gt;
 - Standardna devijacija 
+&lt;br&gt;
 - Srednje apsolutno odstupanje
 
 ---
@@ -669,7 +681,8 @@ sd( afl.margins )
 layout:true
 # APSOLUTNO ODSTUPANJE OD MEDIJANA 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Prosječno apsolutno odstupanje od prosjeka
@@ -705,6 +718,7 @@ layout:true
 ---
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/skewness-1.svg" style="display: block; margin: auto;" /&gt;
 ---
 
@@ -730,14 +744,15 @@ layout:true
 ---
 &lt;br&gt;
 &lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/kurtosis-1.svg" style="display: block; margin: auto;" /&gt;
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Formula]
 &lt;br&gt;
 &lt;br&gt;
-
-
 $$
 \mbox{kurtosis}(X) = \frac{1}{N \hat\sigma^4} \sum_{i=1}^N \left( X_i - \bar{X} \right)^4  - 3
 $$
@@ -834,7 +849,10 @@ summary( object = txt ) # Deskriptivna stat
 layout:true
 # NOVI PODATKOVNI SKUP 
 ---
-.hi[Pdatci]
+&lt;br&gt;
+&lt;br&gt;
+.hi[Podatci]
+&lt;br&gt;
 
 ```r
 rm(list = ls()) # Očisti radni prostor
@@ -854,9 +872,10 @@ who(TRUE) # Pregled podataka
 layout:true
 # DESKRIPTIVNA STATISTIKA DF 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Obični pregled]
-
+&lt;br&gt;
 
 ```r
 # Deksriptivna statistika na podatkovnom okviru
@@ -873,9 +892,10 @@ summary(clin.trial) # Desktiptivna stat
 #&gt;                              Max.   :1.8000
 ```
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Alternativna funkcija]
-
+&lt;br&gt;
 
 ```r
 # Deksriptivna statistika na podatkovnom okviru
@@ -895,7 +915,6 @@ describe(clin.trial) # Desktiptivna stat/ druga funkcija
 ---
 
 .hi[Grupirani pregled]
-&lt;br&gt;
 
 
 ```r
@@ -950,7 +969,7 @@ aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
 ---
 
 .hi[Grupirani pregled]
-
+&lt;br&gt;
 
 ```r
 # Pregledaj grupirano prema razlici u raspoloženju
@@ -994,7 +1013,9 @@ $$
 z = \frac{35 - 17}{5} = 3.6
 $$
 --
-.[Distribucija]
+
+.hi[Distribucija]
+
 
 ```r
 # Vidi dio u distribuciji
@@ -1077,8 +1098,34 @@ describe(parenthood)
 layout:true
 # KORELACIJA 
 ---
-.hi[Grafički prikaz korelacije]
 
+.hi[Prikaz podataka (*još jednom*)]
+
+
+```r
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],10)
+```
+
+```
+#&gt;    dan.sleep baby.sleep dan.grump
+#&gt; 1       7.59      10.18        56
+#&gt; 2       7.91      11.66        60
+#&gt; 3       5.14       7.92        82
+#&gt; 4       7.71       9.61        55
+#&gt; 5       6.68       9.75        67
+#&gt; 6       5.99       5.04        72
+#&gt; 7       8.19      10.45        53
+#&gt; 8       7.19       8.27        60
+#&gt; 9       7.40       6.06        60
+#&gt; 10      6.58       7.09        71
+```
+
+.footnote[[*]Pogledaj [tutorial](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r) o korelacijama!]
+
+---
+
+.hi[Grafički prikaz korelacije]
+&lt;br&gt;
 &lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/scatterparent1a-1.svg" style="display: block; margin: auto;" /&gt;
 
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/roditelj` i `Raspoloženje`.]
@@ -1092,7 +1139,9 @@ layout:true
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
-&lt;br
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;br&gt;
 .hi[Kovarijanca]
 
@@ -1100,14 +1149,15 @@ $$
 \mbox{Cov}(X,Y) = \frac{1}{N-1} \sum_{i=1}^N \left( X_i - \bar{X} \right) \left( Y_i - \bar{Y} \right)
 $$
 --
-&lt;br
 &lt;br&gt;
-.hi[Personov korelacijski koeficijent;standardizacija kovarijance]
+&lt;br&gt;
+&lt;br&gt;
+.hi[Personov korelacijski koeficijent; standardizacija kovarijance]
 
 $$
 r_{XY}  = \frac{\mbox{Cov}(X,Y)}{ \hat{\sigma}_X \ \hat{\sigma}_Y}
 $$
-
+.footnote[[*] [Pogledaj](https://datascience.stackexchange.com/questions/64260/pearson-vs-spearman-vs-kendall/64261) za raspravu: Pearson vs Spearman vs Kendall.]
 ---
 layout:true
 # SMJER I INTENZITET KORELACIJE 
@@ -1121,7 +1171,7 @@ layout:true
 # IZRAČUN KORELACIJE U R
 ---
 
-.hi[Funkcijski izračun;pojedinačno]
+.hi[Funkcijski izračun; pojedinačno]
 
 
 ```r
@@ -1134,7 +1184,7 @@ cor(x = parenthood$dan.sleep, y = parenthood$dan.grump)
 ```
 --
 
-.hi[Funkcijski izračun;cijeli df]
+.hi[Funkcijski izračun; cijeli df]
 
 
 ```r
@@ -1223,6 +1273,9 @@ layout:true
 layout:true
 # NOVI PODATKOVNI SKUP
 ---
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 rm(list=ls()) # Očisti radni prostor
@@ -1236,19 +1289,27 @@ who(TRUE) # Pregledaj podatke
 #&gt;     $hours      numeric       10        
 #&gt;     $grade      numeric       10
 ```
---
+---
+
 .hi[Pregled podataka]
 
 
 ```r
-head(effort, 3) #Pregledaj podatke
+head(effort, 10) #Pregledaj podatke
 ```
 
 ```
-#&gt;   hours grade
-#&gt; 1     2    13
-#&gt; 2    76    91
-#&gt; 3    40    79
+#&gt;    hours grade
+#&gt; 1      2    13
+#&gt; 2     76    91
+#&gt; 3     40    79
+#&gt; 4      6    14
+#&gt; 5     16    21
+#&gt; 6     28    74
+#&gt; 7     27    47
+#&gt; 8     59    85
+#&gt; 9     46    84
+#&gt; 10    68    88
 ```
 --
 
@@ -1274,30 +1335,50 @@ layout:true
 
 
 ```r
-sati_studiranja &lt;- rank( effort$hours ) # Rang sati
-ocjena &lt;- rank( effort$grade ) # Rang ocjena
+korelacije &lt;- data.frame(
+  sati = effort$hours,
+  ocjena = effort$grade,
+  satiRang = rank(effort$hours), # Rang sati
+  ocjenaRang = rank(effort$grade)) # Rang ocjena
+
+korelacije # Pregledaj podatke (+ rang varijable)
 ```
 
-| | Rang sati rada | Rang visine ocjene |
-|-|---------------------|-----------------------|
-|student | 1 |   1 |   1 |
-|student | 2  | 10   |10 |
-|student | 3 |   6  |  6 |
-|student | 4 |   2 |   2 |
-|student | 5 |   3 |   3 |
-|student | 6  |  5  |  5 |
-|student | 7  |  4  |  4 |
-|student | 8  |  8  |  8 |
-|student | 9   | 7  |  7 |
-|student | 10 | 9| 9
+```
+#&gt;    sati ocjena satiRang ocjenaRang
+#&gt; 1     2     13        1          1
+#&gt; 2     6     14        2          2
+#&gt; 3    16     21        3          3
+#&gt; 4    27     47        4          4
+#&gt; 5    28     74        5          5
+#&gt; 6    40     79        6          6
+#&gt; 7    46     84        7          7
+#&gt; 8    59     85        8          8
+#&gt; 9    68     88        9          9
+#&gt; 10   76     91       10         10
+```
+
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju između ranga dvije varijable.]
 
 ---
-
+&lt;br&gt;
+&lt;br&gt;
 .hi[Funkcijski izračun]
 
 
+
 ```r
-cor(sati_studiranja,ocjena) # Izračunaj korelaciju
+cor(korelacije$sati,korelacije$ocjena, method = "pearson") # Izračunaj korelaciju
+```
+
+```
+#&gt; [1] 0.909402
+```
+--
+
+
+```r
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "pearson") # Izračunaj korelaciju
 ```
 
 ```
@@ -1307,12 +1388,170 @@ cor(sati_studiranja,ocjena) # Izračunaj korelaciju
 
 ```r
 # Dodaj argument "spearman"
-cor(effort$hours, effort$grade, method = "spearman")
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
 
 ```
 #&gt; [1] 1
 ```
+
+---
+layout:true
+# KENDALLOVA KORELACIJA 
+---
+
+
+```r
+# Dodaj argument "spearman"
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "kendall")
+```
+
+```
+#&gt; [1] 1
+```
+.footnote[[*]Kendallova korelacijska metoda računa korespondenciju između rangiranja dvije varijable.]
+
+---
+layout:true
+# KORELACIJA (još jedan primjer) 
+---
+
+.hi[Podatci]
+
+
+```
+#&gt;                    mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+#&gt; Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+#&gt; Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+#&gt; Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+#&gt; Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+#&gt; Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+#&gt; Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+#&gt; Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+#&gt; Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+```
+
+---
+
+.hi[Vizualizacija]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-66-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Testovi distribucije]
+
+
+```r
+# Shapiro-Wilk test normalnosti za mpg
+shapiro.test(my_data$mpg) # =&gt; p = 0.1229
+```
+
+```
+#&gt; 
+#&gt; 	Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  my_data$mpg
+#&gt; W = 0.94756, p-value = 0.1229
+```
+
+```r
+# Shapiro-Wilk test normalnosti za wt
+shapiro.test(my_data$wt) # =&gt; p = 0.09
+```
+
+```
+#&gt; 
+#&gt; 	Shapiro-Wilk normality test
+#&gt; 
+#&gt; data:  my_data$wt
+#&gt; W = 0.94326, p-value = 0.09265
+```
+
+---
+
+.hi[Testovi distribucije]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-68-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Testovi distribucije]
+
+&lt;img src="03_DESKRIPTIVNA_STATISTIKA_xar_files/figure-html/unnamed-chunk-69-1.svg" style="display: block; margin: auto;" /&gt;
+
+---
+
+.hi[Korelacijski test]
+
+
+```r
+pers &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "pearson")
+pers
+```
+
+```
+#&gt; 
+#&gt; 	Pearson's product-moment correlation
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; t = -9.559, df = 30, p-value = 1.294e-10
+#&gt; alternative hypothesis: true correlation is not equal to 0
+#&gt; 95 percent confidence interval:
+#&gt;  -0.9338264 -0.7440872
+#&gt; sample estimates:
+#&gt;        cor 
+#&gt; -0.8676594
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+```r
+sper &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "spearman")
+sper
+```
+
+```
+#&gt; 
+#&gt; 	Spearman's rank correlation rho
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; S = 10292, p-value = 1.488e-11
+#&gt; alternative hypothesis: true rho is not equal to 0
+#&gt; sample estimates:
+#&gt;       rho 
+#&gt; -0.886422
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+
+```r
+kend &lt;- cor.test(my_data$wt, my_data$mpg, 
+                    method = "kendall")
+kend
+```
+
+```
+#&gt; 
+#&gt; 	Kendall's rank correlation tau
+#&gt; 
+#&gt; data:  my_data$wt and my_data$mpg
+#&gt; z = -5.7981, p-value = 6.706e-09
+#&gt; alternative hypothesis: true tau is not equal to 0
+#&gt; sample estimates:
+#&gt;        tau 
+#&gt; -0.7278321
+```
+
 
 ---
 
@@ -1321,6 +1560,16 @@ class: middle, inverse
 # HVALA NA PAŽNJI! 
 &lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
 (Sljedeće predavanje: Grafikoni i vizualizacije)
+
+
+
+
+
+
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

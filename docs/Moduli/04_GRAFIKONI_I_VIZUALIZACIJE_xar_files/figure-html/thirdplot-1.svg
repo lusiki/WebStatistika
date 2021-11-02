@@ -209,7 +209,7 @@
   <use xlink:href="#glyph1-3" x="41.761719" y="88.136719"/>
   <use xlink:href="#glyph1-4" x="41.761719" y="81.462891"/>
 </g>
-<path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 59.039063 142.558594 L 329.761719 142.558594 L 329.761719 59.039063 L 59.039063 59.039063 L 59.039063 142.558594 "/>
+<path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 59.039063 142.558594 L 329.761719 142.558594 L 329.761719 59.039063 L 59.039063 59.039063 Z M 59.039063 142.558594 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph2-1" x="112.359375" y="33.816406"/>
   <use xlink:href="#glyph2-2" x="120.363281" y="33.816406"/>

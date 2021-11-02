@@ -130,7 +130,7 @@
 </symbol>
 </g>
 </defs>
-<g id="surface324">
+<g id="surface329">
 <rect x="0" y="0" width="756" height="360" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <path style="fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 571.480469 138.871094 C 571.480469 142.46875 566.082031 142.46875 566.082031 138.871094 C 566.082031 135.269531 571.480469 135.269531 571.480469 138.871094 "/>
 <path style="fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 675.070313 122.664063 C 675.070313 126.265625 669.667969 126.265625 669.667969 122.664063 C 669.667969 119.066406 675.070313 119.066406 675.070313 122.664063 "/>
@@ -276,7 +276,7 @@
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph1-5" x="41.761719" y="70.800781"/>
 </g>
-<path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 59.039063 286.558594 L 725.761719 286.558594 L 725.761719 59.039063 L 59.039063 59.039063 L 59.039063 286.558594 "/>
+<path style="fill:none;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 59.039063 286.558594 L 725.761719 286.558594 L 725.761719 59.039063 L 59.039063 59.039063 Z M 59.039063 286.558594 "/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-7" x="340.363281" y="341.28125"/>
   <use xlink:href="#glyph0-8" x="348.367188" y="341.28125"/>

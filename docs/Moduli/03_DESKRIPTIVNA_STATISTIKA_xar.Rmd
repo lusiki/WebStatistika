@@ -3,7 +3,7 @@ title: "PRIMJENJENA STATISTIKA"
 # subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
 subtitle: "Predavanje 3: Deskriptivna statistika"
 author: "Luka Sikic, PhD"
-date: "Fakultet hrvatskih studija | [Github PS](https://github.com/BrbanMiro/WebStatistika)" #"`r format(Sys.time(), '%d %B %Y')`"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/)" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
     css: [default, metropolis, metropolis-fonts] 
@@ -167,23 +167,24 @@ tidy_table <- function(x, terms, highlight_row = 1, highlight_color = "black", h
 layout: true
 # PREGLED PREDAVANJA
 ---
-
-## Ciljevi
 <br>
 <br>
 <br>
-<br>
-
 - Upoznavanje sa podatcima
+<br>
 - Mjere centralne tendencije
+<br>
 - Mjere varijabilnosti
+<br>
 - Mjere asimetrije i zaobljenosti
+<br>
 - Pregled varijabli i podatkovnih okvira
+<br>
 - Standardizirane vrijednosti
+<br>
 - Korelacija
 
 ---
-
 layout: true
 # PODATCI
 ---
@@ -224,6 +225,7 @@ print(afl.finalists[1:5])
 ---
 
 .hi[Vizualizacija]
+<br>
 ```{r histogram1, fig.cap="", fig.height=4, echo=FALSE}
 # prikaži podatke
 	hist( afl.margins, breaks=  seq(0,120,10), border="white", col= "grey",
@@ -246,7 +248,9 @@ layout: true
 <br>
 <br>
 - Aritmetička sredina
+<br>
 - Medijan
+<br>
 - Mod
 
 ---
@@ -258,9 +262,7 @@ layout: true
 .hi[Definicija]
 
 
-$$
-\bar{X} = \frac{X_1+X_2 +...+ X_{N-1}+X_N} {N}
-$$
+$$\bar{X} = \frac {X_{1}+X_{2}+\cdots +X_{N}}{N}$$
 
 --
 
@@ -286,7 +288,8 @@ $$
 \frac{56 + 31 + 56 + 8 + 32}{5} = \frac{183}{5} = 36.60
 $$
 ---
-
+<br>
+<br>
 .hi[Kalkulator]
 
 ```{r}
@@ -294,7 +297,8 @@ $$
 ```
 
 --
-
+<br>
+<br>
 .hi[Funkcija]
 
 ```{r}
@@ -305,7 +309,8 @@ sum( afl.margins[1:5]) / 5
 layout: true
 # MEDIJAN
 ---
-
+<br>
+<br>
 .hi[Za neparni niz]
 $$
 8, 31, \mathbf{32}, 56, 56
@@ -360,7 +365,8 @@ mean( x = afl.margins, trim = .05)
 layout: true
 # MOD
 ---
-
+<br>
+<br>
 ```{r, fig.width= 8}
 # Pogledaj frekvenciju podataka
 table(afl.finalists)
@@ -400,10 +406,15 @@ layout: true
 <br>
 <br>
 - Raspon/Min-Max
+<br>
 - Kvartili
+<br>
 - Prosječno apsolutno odstupanje
+<br>
 - Varijanca
+<br>
 - Standardna devijacija 
+<br>
 - Srednje apsolutno odstupanje
 
 ---
@@ -587,7 +598,8 @@ sd( afl.margins )
 layout:true
 # APSOLUTNO ODSTUPANJE OD MEDIJANA 
 ---
-
+<br>
+<br>
 ```{r}
 # Prosječno apsolutno odstupanje od prosjeka
 mean( abs(afl.margins - mean(afl.margins)) )
@@ -606,6 +618,7 @@ mad( x = afl.margins, constant = 1 )
 layout:true
 # KOEFICIJENT ASIMETRIJE 
 ---
+<br>
 <br>
 <br>
 ```{r skewness, fig.cap="", echo=FALSE,warning=FALSE, fig.height=5}
@@ -652,6 +665,8 @@ layout:true
 ---
 <br>
 <br>
+<br>
+<br>
 ```{r kurtosis, fig.cap="", echo=FALSE, fig.height = 4}
 	#x1 <- c(rexp(n = 5000, rate =2), -rexp(n = 5000, rate =2) )
 	x3 <- c(rnorm(n = 50000, mean =0, sd = 1), (runif(n = 50000)-.5)+rnorm(50000,0,.1) )*1.6
@@ -683,12 +698,11 @@ layout:true
 	par( old )
 ```
 ---
-
+<br>
+<br>
 .hi[Formula]
 <br>
 <br>
-
-
 $$
 \mbox{kurtosis}(X) = \frac{1}{N \hat\sigma^4} \sum_{i=1}^N \left( X_i - \bar{X} \right)^4  - 3
 $$
@@ -740,7 +754,10 @@ summary( object = txt ) # Deskriptivna stat
 layout:true
 # NOVI PODATKOVNI SKUP 
 ---
-.hi[Pdatci]
+<br>
+<br>
+.hi[Podatci]
+<br>
 ```{r}
 rm(list = ls()) # Očisti radni prostor
 load("../Podatci/clinicaltrial.Rdata") # Učitaj podatke
@@ -751,17 +768,19 @@ who(TRUE) # Pregled podataka
 layout:true
 # DESKRIPTIVNA STATISTIKA DF 
 ---
-
+<br>
+<br>
 .hi[Obični pregled]
-
+<br>
 ```{r}
 # Deksriptivna statistika na podatkovnom okviru
 summary(clin.trial) # Desktiptivna stat
 ```
 ---
-
+<br>
+<br>
 .hi[Alternativna funkcija]
-
+<br>
 ```{r}
 # Deksriptivna statistika na podatkovnom okviru
 describe(clin.trial) # Desktiptivna stat/ druga funkcija
@@ -769,7 +788,6 @@ describe(clin.trial) # Desktiptivna stat/ druga funkcija
 ---
 
 .hi[Grupirani pregled]
-<br>
 
 ```{r}
 # Pregledaj grupirano prema terapiji
@@ -793,7 +811,7 @@ aggregate(formula = mood.gain ~ drug + therapy, # Prikaz
 ---
 
 .hi[Grupirani pregled]
-
+<br>
 ```{r}
 # Pregledaj grupirano prema razlici u raspoloženju
 aggregate(mood.gain ~ drug + therapy,  # Prikaz
@@ -827,7 +845,9 @@ $$
 z = \frac{35 - 17}{5} = 3.6
 $$
 --
-.[Distribucija]
+
+.hi[Distribucija]
+
 ```{r}
 # Vidi dio u distribuciji
 pnorm( 3.6 ) 
@@ -884,8 +904,19 @@ par(mfcol = c(1, 3)) # Create a 2 x 2 plotting matrix
 layout:true
 # KORELACIJA 
 ---
-.hi[Grafički prikaz korelacije]
 
+.hi[Prikaz podataka (*još jednom*)]
+
+```{r}
+head(parenthood[,c("dan.sleep", "baby.sleep", "dan.grump")],10)
+```
+
+.footnote[[*]Pogledaj [tutorial](http://www.sthda.com/english/wiki/correlation-test-between-two-variables-in-r) o korelacijama!]
+
+---
+
+.hi[Grafički prikaz korelacije]
+<br>
 ```{r scatterparent1a, fig.cap="", echo=FALSE, fig.height=5}
 oneCorPlot <- function(x,y,...) {
 		
@@ -918,7 +949,9 @@ oneCorPlot <- function(x,y,...) {
 .footnote[[*]Dijagram rasipanja za varijable `Sati spavanja/dijete` i `Sati spavanja/roditelj`.]
 
 ---
-<br
+<br>
+<br>
+<br>
 <br>
 .hi[Kovarijanca]
 
@@ -926,14 +959,15 @@ $$
 \mbox{Cov}(X,Y) = \frac{1}{N-1} \sum_{i=1}^N \left( X_i - \bar{X} \right) \left( Y_i - \bar{Y} \right)
 $$
 --
-<br
 <br>
-.hi[Personov korelacijski koeficijent;standardizacija kovarijance]
+<br>
+<br>
+.hi[Personov korelacijski koeficijent; standardizacija kovarijance]
 
 $$
 r_{XY}  = \frac{\mbox{Cov}(X,Y)}{ \hat{\sigma}_X \ \hat{\sigma}_Y}
 $$
-
+.footnote[[*] [Pogledaj](https://datascience.stackexchange.com/questions/64260/pearson-vs-spearman-vs-kendall/64261) za raspravu: Pearson vs Spearman vs Kendall.]
 ---
 layout:true
 # SMJER I INTENZITET KORELACIJE 
@@ -992,7 +1026,7 @@ layout:true
 # IZRAČUN KORELACIJE U R
 ---
 
-.hi[Funkcijski izračun;pojedinačno]
+.hi[Funkcijski izračun; pojedinačno]
 
 ```{r}
 # Izračunaj korelaciju između spavanja i raspoloženja
@@ -1000,7 +1034,7 @@ cor(x = parenthood$dan.sleep, y = parenthood$dan.grump)
 ```
 --
 
-.hi[Funkcijski izračun;cijeli df]
+.hi[Funkcijski izračun; cijeli df]
 
 ```{r}
 # Izračunaj korelacijsku tablicu
@@ -1033,16 +1067,20 @@ c("0.9 to 1.0", "Izrazito jaka", "Pozitivna")), col.names=c("Korelacija", "Snaga
 layout:true
 # NOVI PODATKOVNI SKUP
 ---
+<br>
+<br>
+<br>
 ```{r}
 rm(list=ls()) # Očisti radni prostor
 load("../Podatci/effort.Rdata") # Učitaj podatke
 who(TRUE) # Pregledaj podatke
 ```
---
+---
+
 .hi[Pregled podataka]
 
 ```{r}
-head(effort, 3) #Pregledaj podatke
+head(effort, 10) #Pregledaj podatke
 ```
 --
 ```{r}
@@ -1083,35 +1121,135 @@ layout:true
 ---
 
 ```{r}
-sati_studiranja <- rank( effort$hours ) # Rang sati
-ocjena <- rank( effort$grade ) # Rang ocjena
+korelacije <- data.frame(
+  sati = effort$hours,
+  ocjena = effort$grade,
+  satiRang = rank(effort$hours), # Rang sati
+  ocjenaRang = rank(effort$grade)) # Rang ocjena
+
+korelacije # Pregledaj podatke (+ rang varijable)
 ```
 
-| | Rang sati rada | Rang visine ocjene |
-|-|---------------------|-----------------------|
-|student | 1 |   1 |   1 |
-|student | 2  | 10   |10 |
-|student | 3 |   6  |  6 |
-|student | 4 |   2 |   2 |
-|student | 5 |   3 |   3 |
-|student | 6  |  5  |  5 |
-|student | 7  |  4  |  4 |
-|student | 8  |  8  |  8 |
-|student | 9   | 7  |  7 |
-|student | 10 | 9| 9
+.footnote[[*]Spearmanova korelacijska metoda računa korelaciju između ranga dvije varijable.]
 
 ---
-
+<br>
+<br>
 .hi[Funkcijski izračun]
 
+
 ```{r}
-cor(sati_studiranja,ocjena) # Izračunaj korelaciju
+cor(korelacije$sati,korelacije$ocjena, method = "pearson") # Izračunaj korelaciju
+```
+--
+
+```{r}
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "pearson") # Izračunaj korelaciju
 ```
 --
 ```{r}
 # Dodaj argument "spearman"
-cor(effort$hours, effort$grade, method = "spearman")
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "spearman")
 ```
+
+---
+layout:true
+# KENDALLOVA KORELACIJA 
+---
+
+```{r}
+# Dodaj argument "spearman"
+cor(korelacije$satiRang,korelacije$ocjenaRang, method = "kendall")
+```
+.footnote[[*]Kendallova korelacijska metoda računa korespondenciju između rangiranja dvije varijable.]
+
+---
+layout:true
+# KORELACIJA (još jedan primjer) 
+---
+
+.hi[Podatci]
+
+```{r , fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE}
+# Učitaj mtcars podatke
+my_data <- mtcars
+# Pregledaj podatke
+head(my_data, 8)
+```
+
+---
+
+.hi[Vizualizacija]
+
+```{r , fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+library(ggpubr) # Učitaj paket
+# Vizualiziraj
+ggscatter(my_data, x = "mpg", y = "wt", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Porošnja u galonima", ylab = "Težina (1000 lbs)")
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r}
+# Shapiro-Wilk test normalnosti za mpg
+shapiro.test(my_data$mpg) # => p = 0.1229
+# Shapiro-Wilk test normalnosti za wt
+shapiro.test(my_data$wt) # => p = 0.09
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r, fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+# mpg QQ plot
+ggqqplot(my_data$mpg, ylab = "MPG")
+```
+
+---
+
+.hi[Testovi distribucije]
+
+```{r, fig.height=8, echo=FALSE, fig.cap="",fig.height=6,fig.width=6, message=FALSE, warning=FALSE}
+# wt QQ plot
+ggqqplot(my_data$wt, ylab = "WT")
+```
+
+---
+
+.hi[Korelacijski test]
+
+```{r}
+pers <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "pearson")
+pers
+```
+
+---
+
+.hi[Korelacijski test]
+
+```{r}
+sper <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "spearman")
+sper
+```
+
+---
+
+.hi[Korelacijski test]
+
+
+```{r}
+kend <- cor.test(my_data$wt, my_data$mpg, 
+                    method = "kendall")
+kend
+```
+
 
 ---
 

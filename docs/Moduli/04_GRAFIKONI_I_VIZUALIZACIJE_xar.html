@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>RAD SA PODATCIMA: GRAFIKONI I VIZUALIZACIJE</title>
+    <title>PRIMJENJENA STATISTIKA</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Luka Šikić, PhD" />
-    <link href="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
-    <link href="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
-    <link rel="stylesheet" href="my-css.css" type="text/css" />
+    <meta name="author" content="Luka Sikic, PhD" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# RAD SA PODATCIMA: GRAFIKONI I VIZUALIZACIJE
-### Luka Šikić, PhD
-### 26 listopad, 2020
+# PRIMJENJENA STATISTIKA
+## Predavanje 3: Vizualizacija podataka
+### Luka Sikic, PhD
+### Fakultet hrvatskih studija | <a href="https://lusiki.github.io/WebStatistika/">Github PS</a>)
 
 ---
 
@@ -40,38 +41,44 @@ layout: true
 
 ---
 
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
-## Ciljevi
-
-- Vizualizacija, alati i podrška
+- Podrška za vizualizaciju 
+&lt;br&gt;
 - Izrada jednostavnog grafikona
+&lt;br&gt;
 - Histogram
+&lt;br&gt;
 - Box-plot
+&lt;br&gt;
 - Prikaz korelacije
+&lt;br&gt;
 - Dijagram rasipanja
+&lt;br&gt;
 - Stupčasti grafikon
 
 ---
 
 layout:false
 class: middle, inverse
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 layout:true
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/snowmap1-1.svg" style="display: block; margin: auto;" /&gt;
 
-.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na Broad St bunaru.  Prikaz koristi podatke iz paketa `HistData`.]
+.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na bunaru Broad St. Prikaz koristi podatke iz paketa `HistData`.]
 
 
 ---
-&lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
 .hi[Sustavi za vizualizaciju podataka u R]
@@ -104,9 +111,6 @@ layout:true
 ---
 
 
-.hi[Jednostavni grafikon]
-
-
 ```r
 Fibonacci &lt;- c( 1,1,2,3,5,8,13 ) # Stvori fibonacijev niz
 plot( Fibonacci ) # Prikaži niz grafički
@@ -115,8 +119,6 @@ plot( Fibonacci ) # Prikaži niz grafički
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-2-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Grafikon sa proširenim specifikacijama]
 
 
 ```r
@@ -132,8 +134,6 @@ plot( x = Fibonacci,
 
 
 ---
-
-.hi[Prilagodi izgled naslova i naziva]
 
 
 ```r
@@ -151,7 +151,7 @@ plot( x = Fibonacci,                              # Podatkovni skup
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 
 ```r
@@ -175,13 +175,11 @@ plot(Fibonacci, # Podatci
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-3-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Dodatne prilagodbe]
 
 
 ```r
@@ -199,8 +197,6 @@ plot(x = Fibonacci, # Podatci
 
 
 ---
-
-.hi[Još neke prilagodbe]
 
 
 ```r
@@ -224,24 +220,20 @@ layout:true
 
 ---
 
-.hi[Osnovni R histogram]
-
 
 ```r
 # Učitaj podatke
 load( "../Podatci/aflsmall.Rdata")
-hist(afl.margins) # Napravi histogram
+hist(afl.margins) # Napravi osnovni histogram
 ```
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/hist1a-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Smanji broj binova]
-
 
 ```r
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; manje binova
 hist( x = afl.margins, breaks = 3 )
 ```
 
@@ -249,11 +241,9 @@ hist( x = afl.margins, breaks = 3 )
 
 ---
 
-.hi[Povećaj broj binova]
-
 
 ```r
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; više binova
 hist( x = afl.margins, breaks = 0:116 )
 ```
 
@@ -261,13 +251,12 @@ hist( x = afl.margins, breaks = 0:116 )
 
 ---
 &lt;br&gt;
-
-.hi[Uređeni histogram]
 &lt;br&gt;
 &lt;br&gt;
 
 
 ```r
+# Uređeni histogram
 hist( x = afl.margins, 
       main = "2010 AFL bodovi", # Naslov
       xlab = "Margin",           # Naziv x-osi
@@ -281,8 +270,6 @@ hist( x = afl.margins,
 ```
 
 ---
-
-.hi[Uređeni histogram]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/hist2d-1.svg" style="display: block; margin: auto;" /&gt;
 
@@ -298,7 +285,6 @@ layout:true
 ---
 &lt;br&gt;
 
-.hi[Pregledaj deskriptivnu statistiku]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -316,8 +302,6 @@ summary( afl.margins )
 
 ---
 
-.hi[Izradi osnovni Box Plot pobjedničkih bodova]
-
 
 ```r
 load( "../Podatci/aflsmall.Rdata") #U čitaj podatke
@@ -329,13 +313,11 @@ boxplot( x = afl.margins )
 
 ---
 
-.hi[Označeni Box Plot]
 
 &lt;img src="../Foto/boxplot1_annotated.png" width="800" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -356,13 +338,11 @@ boxplot( x = afl.margins,           # Podatci
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/boxplot3b-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 
-.hi[Prikaži više Box Plotova]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -385,7 +365,6 @@ who( TRUE ) # Prvi pregled učitanih objekata
 
 ---
 
-.hi[Prikaži više Box Plotova]
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -406,8 +385,6 @@ head( afl2 ) # Pogledaj podatke
 
 ---
 
-.hi[Prikaži više Box Plotova]
-
 ```r
 # Napravi Box Plot za svaku godinu
 boxplot(formula = margin ~ year,
@@ -417,42 +394,6 @@ boxplot(formula = margin ~ year,
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-8-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Prikaži više Box Plotova]
-
-
-```
-#&gt;    -- Name --   -- Class --   -- Size --
-#&gt;    afl2         data.frame    4296 x 2  
-#&gt;     $margin     numeric       4296      
-#&gt;     $year       numeric       4296
-```
----
-
-.hi[Prikaži više Box Plotova]
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-
-```
-#&gt;   margin year
-#&gt; 1     33 1987
-#&gt; 2     59 1987
-#&gt; 3     45 1987
-#&gt; 4     91 1987
-#&gt; 5     39 1987
-#&gt; 6      1 1987
-```
-
----
-
-.hi[Prikaži više Box Plotova]
-
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-11-1.svg" style="display: block; margin: auto;" /&gt;
-
----
-
-.hi[Prilagodi i uredi Box Plot]
 
 
 ```r
@@ -479,8 +420,6 @@ boxplot( formula =  margin ~ year,   # the formula
 
 ---
 
-.hi[Prilagodi i uredi Box Plot]
-
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/multipleboxplots3-1.svg" style="display: block; margin: auto;" /&gt;
 
 
@@ -494,8 +433,6 @@ layout:true
 # DIJAGRAM RASIPANJA
 ---
 
-.hi[Osnovni dijagram rasipanja u R-u]
-
 
 ```r
 load(file.path("../Podatci/parenthood.Rdata")) # Učitaj podatke
@@ -507,8 +444,6 @@ plot( x = parenthood$dan.sleep,     # Podatci za x-os
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scattera-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Prilagodbe na dijagramu rasipanja]
 
 
 ```r
@@ -533,8 +468,6 @@ plot( x = parenthood$dan.sleep,         # Podatci za x-os
 
 ---
 
-.hi[Prilagodbe na dijagramu rasipanja]
-
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scatterba-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -553,8 +486,6 @@ scatterplot( dan.grump ~ dan.sleep, # Definiraj varijable
 &lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/scb-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Više dijagrama rasipanja] 
 
 
 ```r
@@ -581,7 +512,7 @@ pairs( formula = ~ dan.sleep + baby.sleep + dan.grump, # Definiraj varijable
 )
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-13-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-10-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
 layout:false
@@ -593,8 +524,9 @@ layout:true
 # STUPČASTI GRAFIKONI
 ---
 
-.hi[Pregled podataka za izradu stupčastog grafikona]
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 load(file.path("../Podatci/aflsmall.Rdata")) # Učitaj podatke
@@ -605,11 +537,13 @@ print( freq )                       # Pregled podataka
 ```
 #&gt;  [1] 26 25 26 28 32  0  6 39 27 28 28 17  6 24 26 38 24
 ```
-
+ 
 ---
 
-.hi[Pregled podataka za izradu stupčastog grafikona]
-
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 
 ```r
 # Dodavanje naziva stupcima
@@ -627,30 +561,24 @@ print( teams )                      # Pregled podataka
 
 ---
 
-.hi[Napravi stupčasti grafikon]
-
 
 ```r
 barplot( height = freq )  # Alternativno samo `barplot( freq )` 
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-16-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-13-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
  
-.hi[Napravi stupčasti grafikon]
-
 
 ```r
 # Dodaj nazive
 barplot( height = freq, names.arg = teams ) # Dodatni argument
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-17-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-14-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 
 ```r
@@ -660,11 +588,9 @@ barplot(height = freq,    # Izaberi podatke
 			las = 2)            # Zakreni nazive
 ```
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-18-1.svg" style="display: block; margin: auto;" /&gt;
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-15-1.svg" style="display: block; margin: auto;" /&gt;
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 
 ```r
@@ -683,9 +609,19 @@ barplot( height = freq,      # Izaberi podatke
 
 ---
 
-.hi[Napravi stupčasti grafikon]
+&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-17-1.svg" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="04_GRAFIKONI_I_VIZUALIZACIJE_xar_files/figure-html/unnamed-chunk-20-1.svg" style="display: block; margin: auto;" /&gt;
+---
+
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+&lt;html&gt;&lt;div style='float:left'&gt;&lt;/div&gt;&lt;hr color='#EB811B' size=1px width=796px&gt;&lt;/html&gt;
+(Sljedeće predavanje: Statističke distribucije)
+
+
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

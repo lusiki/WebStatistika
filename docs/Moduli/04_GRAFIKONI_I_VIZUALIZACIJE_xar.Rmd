@@ -1,15 +1,18 @@
 ---
-title: 'RAD SA PODATCIMA: GRAFIKONI I VIZUALIZACIJE'
-author: "Luka Šikić, PhD"
-date: "`r format(Sys.time(), '%d %B, %Y')`"
+title: "PRIMJENJENA STATISTIKA"
+# subtitle: "<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>"
+subtitle: "Predavanje 3: Vizualizacija podataka"
+author: "Luka Sikic, PhD"
+date: "Fakultet hrvatskih studija | [Github PS](https://lusiki.github.io/WebStatistika/))" #"`r format(Sys.time(), '%d %B %Y')`"
 output:
   xaringan::moon_reader:
-    css: ['default', 'metropolis', 'metropolis-fonts', 'my-css.css']
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
----
+--- 
 
 
 ```{R, setup, include = F}
@@ -171,27 +174,34 @@ layout: true
 
 ---
 
+<br>
+<br>
+<br>
 
-## Ciljevi
-
-- Vizualizacija, alati i podrška
+- Podrška za vizualizaciju 
+<br>
 - Izrada jednostavnog grafikona
+<br>
 - Histogram
+<br>
 - Box-plot
+<br>
 - Prikaz korelacije
+<br>
 - Dijagram rasipanja
+<br>
 - Stupčasti grafikon
 
 ---
 
 layout:false
 class: middle, inverse
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
 layout:true
-# VIZUALIZACIJA, ALATI I PODRŠKA 
+# PODRŠKA ZA VIZUALIZACIJU 
 
 ---
 
@@ -214,11 +224,10 @@ SnowMap(xlim = c(3, 20), ylim = c(3, 20),
 
 ```
 
-.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na Broad St bunaru.  Prikaz koristi podatke iz paketa `HistData`.]
+.footnote[[*]Prilagodba karte izbijanja kolere Johna Snow-a. Male točke označavaju incidenciju kolere, a velike lokaciju bundara. Najveći broj incidencija se dogodio na bunaru Broad St. Prikaz koristi podatke iz paketa `HistData`.]
 
 
 ---
-<br>
 <br>
 <br>
 .hi[Sustavi za vizualizaciju podataka u R]
@@ -250,9 +259,6 @@ layout:true
 
 ---
 
-
-.hi[Jednostavni grafikon]
-
 ```{r echo = T, fig.height=4, fig.width=5}
 
 Fibonacci <- c( 1,1,2,3,5,8,13 ) # Stvori fibonacijev niz
@@ -260,8 +266,6 @@ plot( Fibonacci ) # Prikaži niz grafički
 ```
 
 ---
-
-.hi[Grafikon sa proširenim specifikacijama]
 
 ```{r secondplot, echo = T, fig.height=3, fig.width=5 , fig.cap=""}
 # Prilagodi grafikon
@@ -276,8 +280,6 @@ plot( x = Fibonacci,
 
 ---
 
-.hi[Prilagodi izgled naslova i naziva]
-
 ```{r thirdplot,echo = T, fig.height=3, fig.width=5,  fig.cap=""}
 plot( x = Fibonacci,                              # Podatkovni skup
           main = "Prvih sedam Fibonacci brojeva", # Naslov
@@ -291,7 +293,7 @@ plot( x = Fibonacci,                              # Podatkovni skup
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 ```{r simpleplots, echo = T, eval=F, fig.height=5, fig.width=5, fig.cap=""}
 # Vektor argumenata ( `type()`) za izradu različitih vrsta grafikona
@@ -315,7 +317,7 @@ plot(Fibonacci, # Podatci
 
 ---
 
-.hi[Različite vrste (`type`) grafikona]
+.hi[Različite vrste (`type`) grafikona:]
 
 ```{r , echo = F, fig.height=4, fig.width=5, fig.cap=""}
 # Vektor argumenata ( `type()`) za izradu različitih vrsta grafikona
@@ -340,8 +342,6 @@ plot(Fibonacci, # Podatci
 
 ---
 
-.hi[Dodatne prilagodbe]
-
 ```{r fifthplot, echo = T, fig.height=3, fig.width=5, fig.cap=""}
 # Dodatne prilagodbe na grafikonu
 plot(x = Fibonacci, # Podatci
@@ -355,8 +355,6 @@ plot(x = Fibonacci, # Podatci
 
 
 ---
-
-.hi[Još neke prilagodbe]
 
 ```{r sixthplot, echo = T, fig.height=4, fig.width=5, fig.cap=""}
 	plot( x = Fibonacci, # Podatci
@@ -377,40 +375,33 @@ layout:true
 
 ---
 
-.hi[Osnovni R histogram]
-
 ```{r hist1a, echo = T, fig.height=4, fig.width=5, fig.cap=""}
 # Učitaj podatke
 load( "../Podatci/aflsmall.Rdata")
-hist(afl.margins) # Napravi histogram
+hist(afl.margins) # Napravi osnovni histogram
 ```
 
 ---
 
-.hi[Smanji broj binova]
-
 ```{r hist1b, echo = T, fig.height=4, fig.width=5, fig.cap=""}
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; manje binova
 hist( x = afl.margins, breaks = 3 )
 ```
 
 ---
 
-.hi[Povećaj broj binova]
-
 ```{r hist1c,  echo = T, fig.height=4, fig.width=5, fig.cap=""}
-# Histogram sa dodatnim argumentima
+# Histogram sa dodatnim argumentima; više binova
 hist( x = afl.margins, breaks = 0:116 )
 ```
 
 ---
 <br>
-
-.hi[Uređeni histogram]
 <br>
 <br>
 
 ```{r hist1d,  echo = T,eval=F, fig.height=5, fig.width=5, fig.cap=""}
+# Uređeni histogram
 hist( x = afl.margins, 
       main = "2010 AFL bodovi", # Naslov
       xlab = "Margin",           # Naziv x-osi
@@ -424,8 +415,6 @@ hist( x = afl.margins,
 ```
 
 ---
-
-.hi[Uređeni histogram]
 
 ```{r hist2d,  echo =F, fig.height=5, fig.width=5, fig.cap=""}
 hist( x = afl.margins, 
@@ -452,7 +441,6 @@ layout:true
 ---
 <br>
 
-.hi[Pregledaj deskriptivnu statistiku]
 <br>
 <br>
 <br>
@@ -464,8 +452,6 @@ summary( afl.margins )
 
 ---
 
-.hi[Izradi osnovni Box Plot pobjedničkih bodova]
-
 ```{r fig.cap="", echo=T, fig.height=4, fig.width=6}
 load( "../Podatci/aflsmall.Rdata") #U čitaj podatke
 # Napravi boxplot
@@ -475,7 +461,6 @@ boxplot( x = afl.margins )
 
 ---
 
-.hi[Označeni Box Plot]
 
 ```{r boxplot1b,echo=F, fig.cap="", fig.height=2, fig.width=5}
 knitr::include_graphics("../Foto/boxplot1_annotated.png")
@@ -483,7 +468,6 @@ knitr::include_graphics("../Foto/boxplot1_annotated.png")
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 <br>
 <br>
 <br>
@@ -504,7 +488,6 @@ boxplot( x = afl.margins,           # Podatci
 
 ---
 
-.hi[Prilagodbe na Box Plotu]
 
 ```{r boxplot3b,echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
 
@@ -520,7 +503,6 @@ boxplot( x = afl.margins,           # Podatci
 
 ---
 
-.hi[Prikaži više Box Plotova]
 <br>
 <br>
 <br>
@@ -535,7 +517,6 @@ who( TRUE ) # Prvi pregled učitanih objekata
 
 ---
 
-.hi[Prikaži više Box Plotova]
 <br>
 <br>
 <br>
@@ -544,8 +525,6 @@ head( afl2 ) # Pogledaj podatke
 ```
 
 ---
-
-.hi[Prikaži više Box Plotova]
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 # Napravi Box Plot za svaku godinu
 boxplot(formula = margin ~ year,
@@ -554,40 +533,6 @@ boxplot(formula = margin ~ year,
 ```
 
 ---
-
-.hi[Prikaži više Box Plotova]
-
-```{r echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6 }
-library(lsr) # Učitaj paket
-rm(list = ls()) # Očisti radni prostor
-load(file.path("../Podatci/aflsmall2.Rdata")) # Učitaj podatke
-who( TRUE ) # Prvi pregled učitanih objekata
-```
----
-
-.hi[Prikaži više Box Plotova]
-<br>
-<br>
-<br>
-```{r  echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
-head( afl2 ) # Pogledaj podatke
-
-```
-
----
-
-.hi[Prikaži više Box Plotova]
-
-```{r echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
-# Napravi Box Plot za svaku godinu
-boxplot(formula = margin ~ year,
-         data = afl2)
-
-```
-
----
-
-.hi[Prilagodi i uredi Box Plot]
 
 ```{r multipleboxplots2, echo=T,eval=F, fig.cap="", fig.height=4, fig.width=6}
 boxplot( formula =  margin ~ year,   # the formula
@@ -612,8 +557,6 @@ boxplot( formula =  margin ~ year,   # the formula
 ```
 
 ---
-
-.hi[Prilagodi i uredi Box Plot]
 
 ```{r multipleboxplots3, echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
 boxplot( formula =  margin ~ year,   # the formula
@@ -648,8 +591,6 @@ layout:true
 # DIJAGRAM RASIPANJA
 ---
 
-.hi[Osnovni dijagram rasipanja u R-u]
-
 ```{r scattera, echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6} 
 load(file.path("../Podatci/parenthood.Rdata")) # Učitaj podatke
 plot( x = parenthood$dan.sleep,     # Podatci za x-os
@@ -658,8 +599,6 @@ plot( x = parenthood$dan.sleep,     # Podatci za x-os
 ```
 
 ---
-
-.hi[Prilagodbe na dijagramu rasipanja]
 
 ```{r scatterb, echo=T,eval=F, fig.cap="", fig.height=4, fig.width=6, warning=FALSE}
 plot( x = parenthood$dan.sleep,         # Podatci za x-os
@@ -683,8 +622,6 @@ plot( x = parenthood$dan.sleep,         # Podatci za x-os
 
 
 ---
-
-.hi[Prilagodbe na dijagramu rasipanja]
 
 ```{r scatterba, echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6, warning=FALSE}
 plot( x = parenthood$dan.sleep,         # Podatci za x-os
@@ -719,8 +656,6 @@ scatterplot( dan.grump ~ dan.sleep, # Definiraj varijable
 
 ---
 
-.hi[Više dijagrama rasipanja] 
-
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6 }
 # Napravi dijagram rasipanja za više od dvije varijable
 cor( x = parenthood ) # Korelacijska matrica
@@ -746,8 +681,9 @@ layout:true
 # STUPČASTI GRAFIKONI
 ---
 
-.hi[Pregled podataka za izradu stupčastog grafikona]
-
+<br>
+<br>
+<br>
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 load(file.path("../Podatci/aflsmall.Rdata")) # Učitaj podatke
 freq <- tabulate( afl.finalists )   # Tabuliraj podatke
@@ -757,8 +693,10 @@ print( freq )                       # Pregled podataka
  
 ---
 
-.hi[Pregled podataka za izradu stupčastog grafikona]
-
+<br>
+<br>
+<br>
+<br>
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 # Dodavanje naziva stupcima
 teams <- levels( afl.finalists )    # Stvori razine(nazive)
@@ -767,24 +705,18 @@ print( teams )                      # Pregled podataka
 
 ---
 
-.hi[Napravi stupčasti grafikon]
-
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 barplot( height = freq )  # Alternativno samo `barplot( freq )` 
 ```
 
 ---
  
-.hi[Napravi stupčasti grafikon]
-
 ```{r echo=T,eval=T, fig.cap="", fig.height=4, fig.width=6}
 # Dodaj nazive
 barplot( height = freq, names.arg = teams ) # Dodatni argument
 ```
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 ```{r echo=T,eval=T, fig.cap="", fig.height=3, fig.width=6}
 
@@ -795,8 +727,6 @@ barplot(height = freq,    # Izaberi podatke
 ```
 
 ---
-
-.hi[Napravi stupčasti grafikon]
 
 ```{r echo=T,eval=F, fig.cap="", fig.height=4, fig.width=6}
 # Još prilagodbi
@@ -815,8 +745,6 @@ barplot( height = freq,      # Izaberi podatke
 
 ---
 
-.hi[Napravi stupčasti grafikon]
-
 ```{r echo=F,eval=T, fig.cap="", fig.height=4, fig.width=6}
 # Još prilagodbi
 old <- par( no.readonly=TRUE )       # Prilagodba
@@ -832,13 +760,13 @@ barplot( height = freq,      # Izaberi podatke
 
 ```
 
+---
 
-
-
-
-
-
-
+layout:false
+class: middle, inverse
+# HVALA NA PAŽNJI! 
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+(Sljedeće predavanje: Statističke distribucije)
 
 
 
